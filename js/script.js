@@ -267,94 +267,81 @@ window.onload = function(){
             'txt' : '감정에 공감하는 것과 행동에 동의하는 것은 별개이다.'
         }
     ];
-    let mindmap_data_sight = [
+    let mindmap_data_view = [
         {
-            'imgurl' : 'mindmap_water_01.jpg',
-            'alt' : '풍경',
-            'title' : '추가예정'
+            'imgurl' : 'mindmap_view_01.jpg',
+            'alt' : '풍경'
         },{
-            'imgurl' : 'mindmap_water_02.jpg',
-            'alt' : '풍경',
-            'title' : '추가예정'
+            'imgurl' : 'mindmap_view_02.jpg',
+            'alt' : '풍경'
         },{
-            'imgurl' : 'mindmap_water_03.jpg',
-            'alt' : '풍경',
-            'title' : '추가예정'
+            'imgurl' : 'mindmap_view_03.jpg',
+            'alt' : '풍경'
         },{
-            'imgurl' : 'mindmap_water_04.png',
-            'alt' : '풍경',
-            'title' : '추가예정'
+            'imgurl' : 'mindmap_view_04.jpg',
+            'alt' : '풍경'
         },{
-            'imgurl' : 'mindmap_water_05.png',
-            'alt' : '풍경',
-            'title' : '추가예정'
+            'imgurl' : 'mindmap_view_05.jpg',
+            'alt' : '풍경'
         },{
-            'imgurl' : 'mindmap_water_06.png',
-            'alt' : '풍경',
-            'title' : '추가예정'
+            'imgurl' : 'mindmap_view_06.jpg',
+            'alt' : '풍경'
         }
     ];
     let mindmap_data_illu = [
         {
-            'imgurl' : 'mindmap_water_01.jpg',
+            'imgurl' : 'mindmap_illu_01.png',
             'alt' : '일러스트',
-            'title' : '추가예정'
         },{
-            'imgurl' : 'mindmap_water_02.jpg',
+            'imgurl' : 'mindmap_illu_02.png',
             'alt' : '일러스트',
-            'title' : '추가예정'
         },{
-            'imgurl' : 'mindmap_water_03.jpg',
+            'imgurl' : 'mindmap_illu_03.png',
             'alt' : '일러스트',
-            'title' : '추가예정'
         },{
-            'imgurl' : 'mindmap_water_04.png',
+            'imgurl' : 'mindmap_illu_04.png',
             'alt' : '일러스트',
-            'title' : '추가예정'
         },{
-            'imgurl' : 'mindmap_water_05.png',
+            'imgurl' : 'mindmap_illu_05.png',
             'alt' : '일러스트',
-            'title' : '추가예정'
         },{
-            'imgurl' : 'mindmap_water_06.png',
+            'imgurl' : 'mindmap_illu_06.png',
             'alt' : '일러스트',
-            'title' : '추가예정'
         }
     ];
     let mindmap_data_bucket = [
         {
-            'imgurl' : 'mindmap_water_01.jpg',
+            'imgurl' : 'mindmap_bucket_01.png',
             'alt' : '버킷리스트',
-            'title' : '추가예정'
+            'title' : '스카이 다이빙'
         },{
-            'imgurl' : 'mindmap_water_02.jpg',
+            'imgurl' : 'mindmap_bucket_02.jpg',
             'alt' : '버킷리스트',
-            'title' : '추가예정'
+            'title' : '겨울 기차'
         },{
-            'imgurl' : 'mindmap_water_03.jpg',
+            'imgurl' : 'mindmap_bucket_03.jpg',
             'alt' : '버킷리스트',
-            'title' : '추가예정'
+            'title' : '스쿠버 다이빙'
         },{
-            'imgurl' : 'mindmap_water_04.png',
+            'imgurl' : 'mindmap_bucket_04.jpg',
             'alt' : '버킷리스트',
-            'title' : '추가예정'
+            'title' : '소금사막'
         },{
-            'imgurl' : 'mindmap_water_05.png',
+            'imgurl' : 'mindmap_bucket_05.jpg',
             'alt' : '버킷리스트',
-            'title' : '추가예정'
+            'title' : '특별한 호텔'
         },{
-            'imgurl' : 'mindmap_water_06.png',
+            'imgurl' : 'mindmap_bucket_06.png',
             'alt' : '버킷리스트',
-            'title' : '추가예정'
+            'title' : '디즈니랜드'
         }
     ];
 
     mindmap_item_big.each(function(index, item){
-        $(this).mouseenter(function(){
-            // console.log(index);
-        if(index == 0) {
+        let temp;
+        if(index >= 0 && index <= 2) {
             mindmap_item_arm.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-1">';
+                temp = '<div class="mindmap-page mindmap-page-1">';
                 temp += '<img src=\"images/';
                 temp += mindmap_data_fan[index].imgurl;
                 temp += '\" alt=\"';
@@ -364,23 +351,17 @@ window.onload = function(){
                 temp += mindmap_data_fan[index].title;
                 temp += '</span>';
                 temp += '</div>';
-                $(this).html(temp);
-            });
-        } else if(index == 1) {
-            mindmap_item_arm.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-2">';                
+
+                temp += '<div class="mindmap-page mindmap-page-2">';                
                 temp += '<p>';
                 temp += mindmap_data_playlist[index].txt;
                 temp += '</p>';
                 temp += '<span>';
                 temp += mindmap_data_playlist[index].title;
                 temp += '</span>';
-                temp += '</div>';
-                $(this).html(temp);
-            });
-        } else if(index == 2) {
-            mindmap_item_arm.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-3">';
+                temp += '</div>'; 
+
+                temp += '<div class="mindmap-page mindmap-page-3">';
                 temp += '<img src=\"';
                 temp += mindmap_data_media[index].imgurl;
                 temp += '\" alt=\"';
@@ -390,11 +371,12 @@ window.onload = function(){
                 temp += mindmap_data_media[index].title;
                 temp += '</span>';
                 temp += '</div>';
-                $(this).html(temp);
+
+                $(this).html(temp);    
             });
-        }else if(index == 3) {
+        } else if(index >= 3 && index <= 5) {
             mindmap_item_love.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-1">';
+                temp = '<div class="mindmap-page mindmap-page-1">';
                 temp += '<i class=\"';
                 temp += mindmap_data_goal[index].classname;
                 temp += '\" style=\"color : ';
@@ -403,12 +385,9 @@ window.onload = function(){
                 temp += '<span>';
                 temp += mindmap_data_goal[index].title;
                 temp += '</span>';
-                temp += '</div>';
-                $(this).html(temp);
-            });
-        }else if(index == 4) {
-            mindmap_item_love.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-2">';
+                temp += '</div>';  
+
+                temp += '<div class="mindmap-page mindmap-page-2">';
                 temp += '<img src=\"images/';
                 temp += mindmap_data_mine[index].imgurl;
                 temp += '\" alt=\"';
@@ -417,12 +396,9 @@ window.onload = function(){
                 temp += '<span>';
                 temp += mindmap_data_mine[index].title;
                 temp += '</span>';
-                temp += '</div>';
-                $(this).html(temp);
-            });
-        }else if(index == 5) {
-            mindmap_item_love.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-3">';
+                temp += '</div>';   
+
+                temp += '<div class="mindmap-page mindmap-page-3">';
                 temp += '<img src=\"images/';
                 temp += mindmap_data_water[index].imgurl;
                 temp += '\" alt=\"';
@@ -431,67 +407,51 @@ window.onload = function(){
                 temp += '<span>';
                 temp += mindmap_data_water[index].title;
                 temp += '</span>';
-                temp += '</div>';
-                $(this).html(temp);
+                temp += '</div>'; 
+
+                $(this).html(temp);                  
             });
-        }else if(index == 6) {
+        } else if(index >= 6 && index <= 8) {
             mindmap_item_uni.each(function(index, item){                
-                let temp = '<div class="mindmap-page mindmap-page-1">';                
+                temp = '<div class="mindmap-page mindmap-page-1">';                
                 temp += '<p>';
                 temp += mindmap_data_myself[index].txt;
                 temp += '</p>';                
                 temp += '</div>';
-                $(this).html(temp);
-            });
-        }else if(index == 7) {
-            mindmap_item_uni.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-2">';                
+
+                temp += '<div class="mindmap-page mindmap-page-2">';                
                 temp += '<p>';
                 temp += mindmap_data_comm[index].txt;
                 temp += '</p>';                
                 temp += '</div>';
-                $(this).html(temp);
-            });
-        }else if(index == 8) {
-            mindmap_item_uni.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-3">';                
+
+                temp += '<div class="mindmap-page mindmap-page-3">';                
                 temp += '<p>';
                 temp += mindmap_data_empathy[index].txt;
                 temp += '</p>';                
                 temp += '</div>';
-                $(this).html(temp);
+                
+                $(this).html(temp); 
             });
-        }else if(index == 9) {
+        }else {
             mindmap_item_life.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-1">';
+                temp = '<div class="mindmap-page mindmap-page-1">';
                 temp += '<img src=\"images/';
-                temp += mindmap_data_sight[index].imgurl;
+                temp += mindmap_data_view[index].imgurl;
                 temp += '\" alt=\"';
-                temp += mindmap_data_sight[index].alt;
+                temp += mindmap_data_view[index].alt;
                 temp += '\">';
-                temp += '<span>';
-                temp += mindmap_data_sight[index].title;
-                temp += '</span>';
                 temp += '</div>';
-                $(this).html(temp);
-            });
-        }else if(index == 10) {
-            mindmap_item_life.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-2">';
+
+                temp += '<div class="mindmap-page mindmap-page-2">';
                 temp += '<img src=\"images/';
                 temp += mindmap_data_illu[index].imgurl;
                 temp += '\" alt=\"';
                 temp += mindmap_data_illu[index].alt;
                 temp += '\">';
-                temp += '<span>';
-                temp += mindmap_data_illu[index].title;
-                temp += '</span>';
                 temp += '</div>';
-                $(this).html(temp);
-            });
-        }else if(index == 11) {
-            mindmap_item_life.each(function(index, item){
-                let temp = '<div class="mindmap-page mindmap-page-3">';
+
+                temp += '<div class="mindmap-page mindmap-page-3">';
                 temp += '<img src=\"images/';
                 temp += mindmap_data_bucket[index].imgurl;
                 temp += '\" alt=\"';
@@ -501,22 +461,63 @@ window.onload = function(){
                 temp += mindmap_data_bucket[index].title;
                 temp += '</span>';
                 temp += '</div>';
-                $(this).html(temp);
+
+                $(this).html(temp); 
             });
         }
-            
-        });        
+    });
+
+    mindmap_item_big.each(function(index, item){
+        $(this).mouseenter(function(){
+            mindmap_item.each(function(index, item){
+                $(this).find('.mindmap-page').removeClass("mindmap-page-active");
+            });
+            if(index >= 0 && index <= 2 ) {
+                if(index == 0) {
+                    mindmap_item_arm.find('.mindmap-page-1').addClass("mindmap-page-active");
+                } else if(index == 1) {
+                    mindmap_item_arm.find('.mindmap-page-2').addClass("mindmap-page-active");
+                } else {
+                    mindmap_item_arm.find('.mindmap-page-3').addClass("mindmap-page-active");
+                }
+            } else if(index >= 3 && index <= 5 ) {
+                if(index == 3) {
+                    mindmap_item_love.find('.mindmap-page-1').addClass("mindmap-page-active");
+                } else if(index == 4) {
+                    mindmap_item_love.find('.mindmap-page-2').addClass("mindmap-page-active");
+                } else {
+                    mindmap_item_love.find('.mindmap-page-3').addClass("mindmap-page-active");
+                }
+            } else if(index >= 6 && index <= 8 ) {
+                if(index == 6) {
+                    mindmap_item_uni.find('.mindmap-page-1').addClass("mindmap-page-active");
+                } else if(index == 7) {
+                    mindmap_item_uni.find('.mindmap-page-2').addClass("mindmap-page-active");
+                } else {
+                    mindmap_item_uni.find('.mindmap-page-3').addClass("mindmap-page-active");
+                }
+            }else  {
+                if(index == 9) {
+                    mindmap_item_life.find('.mindmap-page-1').addClass("mindmap-page-active");
+                } else if(index == 10) {
+                    mindmap_item_life.find('.mindmap-page-2').addClass("mindmap-page-active");
+                } else {
+                    mindmap_item_life.find('.mindmap-page-3').addClass("mindmap-page-active");
+                }
+            }
+        }); 
     });
     mindmap_wrap.mouseleave(function(){
         mindmap_item.each(function(index, item){
-            $(this).html("");
+            // $(this).html("");
+            $(this).find('.mindmap-page').removeClass("mindmap-page-active");
         });
     });
 
 
     // mbti 그래프
     let mbti_e_value = 0.67;
-    let mbti_i_value = 0.33;
+    let mbti_i_value = 0.43;
     let mbti_n_value = 0.58;
     let mbti_s_value = 0.27;
     let mbti_f_value = 0.12;
@@ -693,7 +694,24 @@ window.onload = function(){
       mbti_bar_j.animate(mbti_j_value);  // Number from 0.0 to 1.0
 
 
-      new Swiper(".sw-portfolio", {
+      // mbti slide
+      let mbti_data = ['E', 'N', 'T', 'J'];
+      let sw_mbti = new Swiper(".sw-mbti", {
+        slidesPerView: 1,
+        direction: "vertical",
+        spaceBetween: 30,
+        pagination: {
+          el: ".sw-mbti-pg",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<div class="' + className + '"><span class="mbti-entj">' + (mbti_data[index]) + '</span></div>';
+          }
+        },
+      });
+
+
+      // portfolio slide
+      let sw_port = new Swiper(".sw-portfolio", {
         slidesPerView: 3,
         slidesPerGroup : 3,
         spaceBetween: 30,
@@ -701,6 +719,8 @@ window.onload = function(){
           el: ".sw-portfolio-pg",
           clickable: true,
         },
-
       });
+
+
+      
 }
