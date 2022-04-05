@@ -516,14 +516,14 @@ window.onload = function(){
 
 
     // mbti 그래프
-    let mbti_e_value = 0.67;
-    let mbti_i_value = 0.43;
+    let mbti_e_value = 0.53;
+    let mbti_i_value = 0.46;
     let mbti_n_value = 0.58;
     let mbti_s_value = 0.27;
     let mbti_f_value = 0.12;
     let mbti_t_value = 1.0;
-    let mbti_p_value = 0.44;
-    let mbti_j_value = 1.00;
+    let mbti_p_value = 0.45;
+    let mbti_j_value = 0.44;
 
     let mbti_bar_e = new ProgressBar.Line(mbtiE, {
         strokeWidth: 6,
@@ -695,7 +695,7 @@ window.onload = function(){
 
 
       // mbti slide
-      let mbti_data = ['E', 'N', 'T', 'J'];
+      let mbti_data = ['Te', 'Ni', 'Se', 'Fi'];
       let sw_mbti = new Swiper(".sw-mbti", {
         slidesPerView: 1,
         direction: "vertical",
@@ -703,10 +703,10 @@ window.onload = function(){
         pagination: {
           el: ".sw-mbti-pg",
           clickable: true,
-          renderBullet: function (index, className) {
+          renderBullet: function (index, className) {              
             return '<div class="' + className + '"><span class="mbti-entj">' + (mbti_data[index]) + '</span></div>';
           }
-        },
+        },        
       });
 
 

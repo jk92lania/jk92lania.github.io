@@ -61,10 +61,16 @@
             <!-- 비주얼 -->
             <section class="visual">
                 <div class="container">
-                    <img src="images/cloud_001.png" alt="구름" class="visual-cloud">
-                    <img src="images/logo_yeouiju01.png" alt="로고" class="visual-logo">
-                    <h1 class="title-first">pjk</h1>
-                    <img src="images/cloud_001.png" alt="구름" class="visual-cloud2">
+                    <div class="visual-logo-bg"></div>
+                    <div class="visual-logo">
+                        <img src="images/logo_yeouiju01.png" alt="로고">
+                    </div>
+                    <div class="title-first">
+                        <h1>박주경</h1>
+
+                    </div>
+                    <img src="images/cloud_002.png" alt="구름" class="visual-cloud">
+                    <img src="images/cloud_002.png" alt="구름" class="visual-cloud2">
 
                 </div>
             </section>
@@ -272,40 +278,38 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <dl class="mbti-more mbti-extraversion">
-                                            <dt>외향형 (Extraversion)</dt>
-                                            <dd>글보다는 말로 표현하길 선호한다</dd>
-                                            <dd>외부에 주의를 집중한다</dd>
-                                            <dd>남에게 의지 하는 것보다 나를 믿는 편이다.</dd>
-                                            <dd>경험한 다음에 이해하는 편이다</dd>
+                                            <dt><i class="mbti-more-str">강</i> : 외향형(Extraversion) 사고(Thinking)</dt>
+                                            <dd>진실, 사실에 초점을 두어 '맞다', '틀리다'를 선호하는 편입니다.</dd>
+                                            <dd>최대한 신뢰할 수 있는 객관적인 정보를 탐색하고 수집합니다.</dd>
+                                            <dd>빠른 판단을 위해 보편적으로 인증을 거친 정보들을 토대로 판단을 내립니다.</dd>
+                                            <dd>일의 효율성을 중시하며, 목표지향적입니다.</dd>
                                         </dl>
                                     </div>
                                     <div class="swiper-slide">
                                         <dl class="mbti-more mbti-intuition">
-                                            <dt>직관형 (iNtuition)</dt>
-                                            <dd>직관형 중에서 감각형에 가까운 편이다</dd>
-                                            <dd>세상을 보는 시선에서 주로 나무보다 숲을 보려는 경향이 있다</dd>
-                                            <dd>미래 가능성에 초점을 두는 편이다</dd>
-                                            <dd>앞서 걱정하는 것보다 해결책을 찾아가는 편이다.</dd>
-                                            <dd>아이디어에 중시한다</dd>
+                                            <dt><i class="mbti-more-str">강</i> : 내향형(Introversion) 직관(iNtuition)</dt>
+                                            <dd>하나의 사실, 하나의 사건을 두고 그 배후의 의미, 위상 다른 관념과의 연결점을 쉴새없이 모색합니다.</dd>
+                                            <dd>개별적인 사실/사건/자료/정보를 취합해 하나의 통찰을 확립하는데 능숙합니다.</dd>
+                                            <dd>활동적이고 장기적인 계획과 거시적 비전을 선호합니다.</dd>
+                                            <dd>지적인 작극을 주는 새로운 아이디어에 높은 관심을 가지고 있습니다.</dd>
                                         </dl>
                                     </div>
                                     <div class="swiper-slide">
                                         <dl class="mbti-more mbti-thinking">
-                                            <dt>사고형 (Thinking)</dt>
-                                            <dd>진실, 사실에 초점을 둔다.</dd>
-                                            <dd>원리와 원칙을 중시하다.</dd>
-                                            <dd>지적 욕구가 강하다.</dd>
-                                            <dd>논리적이다</dd>
-                                            <dd>관계에 주고 받음을 선호하지 않으며, 타인의 일에 간섭을 선호하지 않는다.</dd>
+                                            <dt><i class="mbti-more-week">약</i> :  외향형(Extraversion) 감각 (Sensing)</dt>
+                                            <dd>필요할 때 대인 교류에 적극적입니다.</dd>
+                                            <dd>주변인들에게 재미 없는 사람으로 보이는 경향이 큽니다.</dd>
+                                            <dd>감정표현이 솔직하여 타인에게 상처주기도 합니다.</dd>
+                                            <dd>현실감각이 부족한 편입니다.</dd>
                                         </dl>
                                     </div>
                                     <div class="swiper-slide">
                                         <dl class="mbti-more mbti-judging">
-                                            <dt>판단형 (Judging)</dt>
-                                            <dd>계획을 세워 실천을 하는 편이다.</dd>
-                                            <dd>신속하게 결론내리기를 선호한다.</dd>
-                                            <dd>분명한 목표를 세우고 노력한다.</dd>
-                                            <dd>목표를 위한 최단 루트를 파악하려는 편이다.</dd>
+                                            <dt><i class="mbti-more-week">약</i> :내향형(Introversion) 감정 (Feeling)</dt>
+                                            <dd>자기감정에 둔하여, 감정표출이 어려움을 겪는 편입니다.</dd>
+                                            <dd>상대의 감정을 고려하는 데 어려움을 겪는 편입니다.</dd>
+                                            <dd>냉혈하거나 무정하게 보입니다.</dd>
+                                            <dd>타인의 입장에서 생각하는데 어려운 편입니다.</dd>
                                         </dl>
                                     </div>
                                 </div>                                
@@ -566,8 +570,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-pagination sw-portfolio-pg"></div>
+                        <div class="sw-portfolio-nav">
+                            <div class="swiper-pagination sw-portfolio-pg"></div> 
+                            <button class="sw-protfolio-all">
+                                <i class="fa fa-list fa-2x"></i>
+                            </button>
+                        </div>
                     </div>
+
                 </div> 
                 
             </section>

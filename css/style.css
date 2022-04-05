@@ -175,29 +175,52 @@ body {
     position: relative;
     display: block;
     padding-top: 120px;
-
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,ffffff+100&1+0,0+100 */
-    /* background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0.7) 65%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%), url("../images/night_sky_004.png"); */
-    /* FF3.6-15 */
-    /* background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0.7) 65%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%), url("../images/night_sky_004.png"); */
-    /* Chrome10-25,Safari5.1-6 */
-    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.5) 45%, rgba(255, 255, 255, 0.7) 65%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%), url("../images/night_sky_004.png"); */
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00ffffff', GradientType=0); */
-    /* IE6-9 */
-
-
-
 }
 
 .visual .container {
     text-align: center;
 }
 
+.visual-logo-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 50%;    
+    height: 300px;
+
+    background-color: #ee7678;
+    border-radius: 25px;
+}
+
 .visual-logo {
-    width: 38%;
+    position: relative;
+    display: block;
+    width: 200px;
+    margin-left: 220px;
+    padding-bottom: 80px;
+}
+
+.visual-logo img {
+    margin-top: 80px;
+    width: 100%;
+    
+}
+
+.title-first {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.title-first h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 6px 3px 0px #76b7ee;
 }
 
 .visual-cloud {
@@ -210,33 +233,19 @@ body {
 
 .visual-cloud2 {
     position: absolute;
-    left: 140px;
-    bottom: 0;
+    left: 210px;
+    bottom: 20px;
     transform: scaleX(-1);
     display: block;
-    width: 260px;
+    width: 200px;
 }
 
-.title-first {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-
-    font-size: 64px;
-    font-weight: 800;
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 6px 3px 0px #ee7678;
-}
 
 /* //비주얼 */
 /* 나의 소개 */
 .about {
     position: relative;
     display: block;
-    padding-top: 100px;
 
 }
 
@@ -818,17 +827,22 @@ body {
     margin-bottom: 20px;
 }
 
+.mbti-more-str {
+    color: #76b7ee;
+}
+.mbti-more-week {
+    color: #ee7678;
+}
+
 
 .mbti-entj {
     position: relative;
     display: inline-block;
 
-    writing-mode: tb-rl;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 700;
-    letter-spacing: 10px;
     text-transform: uppercase;
-    color: #ee7678;
+    color: #eee;
 }
 
 .sw-mbti-pg {
@@ -837,10 +851,15 @@ body {
 
 .sw-mbti-pg .swiper-pagination-bullet { 
     width: 100%; 
-    min-height: 30px; 
+    min-height: 20px; 
     background: transparent; 
     opacity: 1; 
 }
+.sw-mbti-pg .swiper-pagination-bullet-active .mbti-entj {
+    color: #eeb776;
+}
+
+
 .sw-mbti-pg .swiper-pagination-bullet-active:before { 
     content: ""; 
     display: block; 
@@ -1026,11 +1045,14 @@ body {
     width: 300px;
     height: 485px;
 
-    background-color: #eee;
     text-align: center;
     padding: 100px 0;
     border-radius: 15px;
+    border: 8px solid #eee;
 }
+
+
+
 .pf-box-bg {}
 .pf-box-name {
     font-size: 24px;
@@ -1119,10 +1141,26 @@ body {
     background-color: #76b7ee;
 }
 
+.sw-portfolio-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
 .sw-portfolio-pg {
     position: relative;
     display: block;
     margin-top: 50px;
+}
+
+.sw-protfolio-all {
+    position: relative;
+    display: block;
+    border: 0;
+    background-color: transparent;
+    color: #76b7ee;
+    
 }
 
 /* //포트폴리오 */
