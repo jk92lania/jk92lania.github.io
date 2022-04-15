@@ -84,6 +84,20 @@ body {
 
 }
 
+.flex-left {
+    position: relative;
+    display: block;
+    flex-grow: 5;
+}
+
+.flex-right {
+    position: relative;
+    display: block;
+    flex-grow: 7;
+    flex-shrink: 5;
+    flex-basis: 700px;
+}
+
 /* //공통요소 */
 
 .wrap {
@@ -101,7 +115,7 @@ body {
     height: 80px;
     background-color: #fff;
     z-index: 99;
-    box-shadow: 0px 0px 5px 1px #76b7ee;
+    /* box-shadow: 0px 0px 5px 1px #76b7ee; */
 }
 
 .header .container {
@@ -158,8 +172,9 @@ body {
 
 .gnb li a {
     /* color: #fff; */
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.2rem;
     text-transform: uppercase;
 }
 
@@ -938,51 +953,40 @@ body {
     padding-top: 100px;
 }
 
-.profile-list {
-    position: relative;
-    display: block;
+.sw-profile {
     margin-top: 80px;
 }
 
-.profile-list li {
-    position: relative;
-    display: block;
-    float: left;
-    margin: 0 20px;
+.profile-box { 
+    padding: 20px; 
+    border: 10px double #ee7678;
 }
 
-.profile-list li:first-child {
-    margin-left: 0;
-}
-
-.profile-list li:last-child {
-    margin-right: 0;
-}
 
 .profile-img {
     position: relative;
     display: block;
-    width: 250px;
+    width: auto;
     height: 180px;
 
 }
 
-.profile-list li:nth-child(1) .profile-img {
+.sw-profile .swiper-slide:nth-child(1) .profile-img {
     background: url('../images/profile_1.jpg') no-repeat center;
 
 }
 
-.profile-list li:nth-child(2) .profile-img {
+.sw-profile .swiper-slide:nth-child(2) .profile-img {
     background: url('../images/profile_2.png') no-repeat center;
 
 }
 
-.profile-list li:nth-child(3) .profile-img {
+.sw-profile .swiper-slide:nth-child(3) .profile-img {
     background: url('../images/profile_3.png') no-repeat top center;
 
 }
 
-.profile-list li:nth-child(4) .profile-img {
+.sw-profile .swiper-slide:nth-child(4) .profile-img {
     background: url('../images/profile_4.jpg') no-repeat center;
 
 }
@@ -1010,50 +1014,29 @@ body {
 }
 
 .skill .container {
-    padding-top: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.skill-list {
-    margin-top: 80px;
+.skill-wrap {
+    display: flex;
 }
 
-.skill-list li {
-    float: left;
-    overflow: hidden;
+.sw-skill {
+    width: 100%;
+    margin: 80px 0;
 }
 
 .skill-icon {
     position: relative;
     display: block;
-    width: 80px;
-    height: 80px;
-    float: left;
-
-}
-
-.skill-list li:nth-child(1) .skill-icon {
-    background: url('../images/icon_html.png') no-repeat center;
-    background-size: contain;
-}
-
-.skill-list li:nth-child(2) .skill-icon {
-    background: url('../images/icon_css.png') no-repeat center;
-    background-size: contain;
-}
-
-.skill-list li:nth-child(3) .skill-icon {
-    background: url('../images/icon_js.png') no-repeat center;
-    background-size: contain;
-}
-
-.skill-list li:nth-child(4) .skill-icon {
-    background: url('../images/icon_jquery.png') no-repeat center;
-    background-size: contain;
+    width: 100%;
+    height: auto;
 }
 
 .skill-txt {
-    float: right;
-    padding: 15px 20px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .skill-name {
@@ -1083,11 +1066,13 @@ body {
 .portfolio {
     position: relative;
     display: block;
+    background-color: #eee;
 }
 
 .portfolio .container {
-    padding-top: 100px;
+    padding-top: 40px;
 }
+
 
 .sw-portfolio {
     margin-top: 80px;
@@ -1095,34 +1080,39 @@ body {
 
 .portfolio-box {
     position: relative;
-    display: block;
-    width: 300px;
-    height: 485px;
-
-    text-align: center;
-    padding: 100px 0;
-    border-radius: 15px;
-    border: 8px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
-.pf-box-bg {}
 .pf-box-name {
-    font-size: 24px;
+    position: relative;
+    display: block;
+    font-size: 40px;
     color: #333;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: -0.07rem;
 }
+
 .pf-box-info {
-    font-size: 14px;
-    color: #333;
-    margin: 20px 20px 0;    
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 26px;
+    color: #333; 
+    
+    margin-top: 14px;
+}
+
+.pf-box-info span{
+    position: relative;
+    display: block; 
 }
 
 .pf-label-list {
     position: relative;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .pf-box-label {
@@ -1150,13 +1140,12 @@ body {
 }
 
 .pf-nav {
-    position: absolute;
-    left: 50%;
-    top: 75%;
-    transform: translate(-50%, -50%);
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-top: 100px;
 }
 .pf-btn {
     position: relative;
@@ -1195,17 +1184,24 @@ body {
     background-color: #76b7ee;
 }
 
+.pf-box-img {
+    width: 100%;
+}
+.pf-box-img img {
+    width: 100%;
+}
+
 .sw-portfolio-nav {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: baseline;
+    margin: 20px 0 40px;
 }
 
 .sw-portfolio-pg {
     position: relative;
     display: block;
-    margin-top: 50px;
 }
 
 .sw-protfolio-all {

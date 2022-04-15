@@ -710,10 +710,165 @@ window.onload = function(){
       });
 
 
+      // skill slide
+      let skill = new Swiper(".sw-skill", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        pagination: {
+        },
+        
+      });
+
+      // skill html
+      let barHtml = new ProgressBar.SemiCircle(skillHtml, {
+        strokeWidth: 6,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        svgStyle: null,
+        text: {
+          value: '',
+          alignToBottom: false
+        },
+        from: {color: '#eeb776'},
+        to: {color: '#ee7678'},
+        // Set default step function for all animate calls
+        step: (state, barHtml) => {
+            barHtml.path.setAttribute('stroke', state.color);
+          var value = Math.round(barHtml.value() * 100);
+          if (value === 0) {
+            barHtml.setText('');
+          } else {
+            barHtml.setText(value);
+          }
+      
+          barHtml.text.style.color = state.color;
+        }
+      });
+      barHtml.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      barHtml.text.style.fontSize = '2rem';      
+      barHtml.animate(0.98);
+
+
+      // skill css
+      let barCss = new ProgressBar.SemiCircle(skillCss, {
+        strokeWidth: 6,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        svgStyle: null,
+        text: {
+          value: '',
+          alignToBottom: false
+        },
+        from: {color: '#eeb776'},
+        to: {color: '#ee7678'},
+        // Set default step function for all animate calls
+        step: (state, barCss) => {
+            barCss.path.setAttribute('stroke', state.color);
+          var value = Math.round(barCss.value() * 100);
+          if (value === 0) {
+            barCss.setText('');
+          } else {
+            barCss.setText(value);
+          }
+      
+          barCss.text.style.color = state.color;
+        }
+      });
+      barCss.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      barCss.text.style.fontSize = '2rem';      
+      barCss.animate(0.97);
+
+
+      // skill js
+      let barJs = new ProgressBar.SemiCircle(skillJs, {
+        strokeWidth: 6,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        svgStyle: null,
+        text: {
+          value: '',
+          alignToBottom: false
+        },
+        from: {color: '#eeb776'},
+        to: {color: '#ee7678'},
+        // Set default step function for all animate calls
+        step: (state, barJs) => {
+            barJs.path.setAttribute('stroke', state.color);
+          var value = Math.round(barJs.value() * 100);
+          if (value === 0) {
+            barJs.setText('');
+          } else {
+            barJs.setText(value);
+          }
+      
+          barJs.text.style.color = state.color;
+        }
+      });
+      barJs.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      barJs.text.style.fontSize = '2rem';      
+      barJs.animate(0.95);
+
+      // skill jquery
+      let barJq = new ProgressBar.SemiCircle(skillJq, {
+        strokeWidth: 6,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        svgStyle: null,
+        text: {
+          value: '',
+          alignToBottom: false
+        },
+        from: {color: '#eeb776'},
+        to: {color: '#ee7678'},
+        // Set default step function for all animate calls
+        step: (state, barJq) => {
+            barJq.path.setAttribute('stroke', state.color);
+          var value = Math.round(barJq.value() * 100);
+          if (value === 0) {
+            barJq.setText('');
+          } else {
+            barJq.setText(value);
+          }
+      
+          barJq.text.style.color = state.color;
+        }
+      });
+      barJq.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      barJq.text.style.fontSize = '2rem';      
+      barJq.animate(0.92);
+
+
+      // portfolio slide
+      let sw_profile = new Swiper(".sw-profile", {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        pagination: {
+        },
+        breakpoint : {
+            1200 : {
+                slidesPerView: 4,
+
+            }
+        }
+      });
+
+
       // portfolio slide
       let sw_port = new Swiper(".sw-portfolio", {
-        slidesPerView: 3,
-        slidesPerGroup : 3,
+        slidesPerView: 1,
+        slidesPerGroup : 1,
         spaceBetween: 30,
         pagination: {
           el: ".sw-portfolio-pg",

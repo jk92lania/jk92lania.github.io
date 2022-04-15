@@ -45,11 +45,10 @@
                 </a>
                 <nav class="nav">
                     <ul class="gnb clearfix">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#profile">profile</a></li>
+                        <li><a href="#about">about</a></li>
+                        <li><a href="#profile">skill</a></li>
                         <li><a href="#portfolio">portfolio</a></li>
                         <li><a href="#life">life</a></li>
-                        <li><a href="#contact">contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -339,28 +338,42 @@
                             profile
                         </span>
                     </div>
-                    <ul class="profile-list clearfix">
-                        <li>
-                            <div class="profile-img"></div>
-                            <p class="profile-info">창원대학교 정보통신공학과 수료</p>
-                            <span class="profile-date">2015.08</span>
-                        </li>
-                        <li>
-                            <div class="profile-img"></div>
-                            <p class="profile-info">창원대학교 앱창작터 iPhone 앱교육 보조</p>
-                            <span class="profile-date">2013.12</span>
-                        </li>
-                        <li>
-                            <div class="profile-img"></div>
-                            <p class="profile-info">sk서비스탑 근무</p>
-                            <span class="profile-date">2017.05</span>
-                        </li>
-                        <li>
-                            <div class="profile-img"></div>
-                            <p class="profile-info">다이소 반야월점 근무</p>
-                            <span class="profile-date">2020.08</span>
-                        </li>
-                    </ul>
+                    <div class="swiper-container sw-profile">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="profile-box">
+                                    <div class="profile-img"></div>
+                                    <p class="profile-info">창원대학교 정보통신공학과 수료</p>
+                                    <span class="profile-date">2015.08</span>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="profile-box">
+                                    <div class="profile-img"></div>
+                                    <p class="profile-info">앱창작터 iPhone 앱교육 보조</p>
+                                    <span class="profile-date">2013.12</span>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="profile-box">
+                                    <div class="profile-img"></div>
+                                    <p class="profile-info">sk서비스탑 근무</p>
+                                    <span class="profile-date">2017.05</span>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="profile-box">
+                                    <div class="profile-img"></div>
+                                    <p class="profile-info">다이소 반야월점 근무</p>
+                                    <span class="profile-date">2020.08</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
             </section>
@@ -369,41 +382,58 @@
             <!-- 기술 -->
             <section class="skill">
                 <div class="container">
-                    <div class="title">                        
-                        <span class="title-main">
-                            skill
-                        </span>
-                    </div>
-                    <ul class="skill-list clearfix">
-                        <li>
-                            <div class="skill-icon"></div>
-                            <div class="skill-txt">
-                                <h3 class="skill-name">html</h3>
-                                <p class="skill-info">기본적인 틀 제작이 가능하다</p>
+                    <div class="skill-wrap">
+                        <div class="flex-left">
+                            <div class="title">                        
+                                <span class="title-main">
+                                    skill
+                                </span>
                             </div>
-                        </li>
-                        <li>
-                            <div class="skill-icon"></div>
-                            <div class="skill-txt">
-                                <h3 class="skill-name">css</h3>
-                                <p class="skill-info">기본적인 틀 제작이 가능하다</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-icon"></div>
-                            <div class="skill-txt">
-                                <h3 class="skill-name">js</h3>
-                                <p class="skill-info">기본적인 틀 제작이 가능하다</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-icon"></div>
-                            <div class="skill-txt">
-                                <h3 class="skill-name">jquery</h3>
-                                <p class="skill-info">기본적인 틀 제작이 가능하다</p>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+    
+                        <div class="flex-right">
+                            <div class="swiper-container sw-skill">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div id="skillHtml" class="skill-icon"></div>
+                                        <div class="skill-txt">
+                                            <h3 class="skill-name">html</h3>
+                                            <p class="skill-info">
+                                                <!-- 기본적인 틀 제작이 가능하다 -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillCss" class="skill-icon"></div>
+                                        <div class="skill-txt">
+                                            <h3 class="skill-name">css</h3>
+                                            <p class="skill-info">
+                                                <!-- 기본적인 틀 제작이 가능하다 -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillJs" class="skill-icon"></div>
+                                        <div class="skill-txt">
+                                            <h3 class="skill-name">js</h3>
+                                            <p class="skill-info">
+                                                <!-- 기본적인 틀 제작이 가능하다 -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillJq" class="skill-icon"></div>
+                                        <div class="skill-txt">
+                                            <h3 class="skill-name">jquery</h3>
+                                            <p class="skill-info">
+                                                <!-- 기본적인 틀 제작이 가능하다 -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>                 
                 </div>
                 
             </section>
@@ -421,159 +451,216 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="portfolio-box">
-                                    <span class="pf-box-bg"></span>
-                                    <h3 class="pf-box-name">포트폴리오</h3>
-                                    <p class="pf-box-info">
-                                        개인제작 클론 코딩
-                                        제작 기간 : 10일
+                                    <div class="flex-left">
+                                        <h3 class="pf-box-name">포트폴리오</h3>
                                         <div class="pf-label-list clearfix">
                                             <span class="pf-box-label label-html">html</span>                                        
                                             <span class="pf-box-label label-css">css</span>                                        
                                             <span class="pf-box-label label-js">js</span>
-
                                         </div>                             
-                                    </p>
-                                    <div class="pf-nav">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/portfolio/')">work</button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/portfolio')">git</button>
+                                        <p class="pf-box-info">
+                                            <span>
+                                                개인제작 클론 코딩
+                                            </span>
+                                            제작 기간 : 10일
+                                        </p>
+                                        <div class="pf-nav">
+                                            <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/portfolio')">git</button>
+                                        </div>
+                                    </div>
+                                    <div class="flex-right">
+                                        <div class="pf-box-img">
+                                            <img src="images/port_001.jpg" alt="포트폴리오">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="portfolio-box">
-                                    <span class="pf-box-bg"></span>
-                                    <h3 class="pf-box-name">생명보험협회</h3>
-                                    <p class="pf-box-info">
-                                        스터디용 클론 코딩
-                                        제작 기간 : 10일
+                                    <div class="flex-left">
+                                        <h3 class="pf-box-name">생명보험협회</h3>
                                         <div class="pf-label-list clearfix">
                                             <span class="pf-box-label label-html">html</span>                                        
                                             <span class="pf-box-label label-css">css</span>                                        
                                             <span class="pf-box-label label-js">js</span>
-
                                         </div>                             
-                                    </p>
-                                    <div class="pf-nav">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/klia/')">work</button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/klia')">git</button>
-                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.klia.or.kr/')">origin</button>
+                                        <p class="pf-box-info">
+                                            <span>
+                                                스터디용 클론 코딩
+                                            </span>
+                                            제작 기간 : 10일
+                                        </p>
+                                        <div class="pf-nav">
+                                            <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/klia/')">work</button>
+                                            <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/klia')">git</button>
+                                            <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.klia.or.kr/')">origin</button>
+                                        </div>
                                     </div>
+                                    <div class="flex-right">
+                                        <div class="pf-box-img">
+                                            <img src="images/cloud_001.png" alt="포트폴리오">
+                                        </div>
+                                    </div>                                    
                                 </div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="portfolio-box">
-                                    <span class="pf-box-bg"></span>
-                                    <h3 class="pf-box-name">산청군청</h3>
-                                    <p class="pf-box-info">
-                                        스터디용 클론 코딩
-                                        제작 기간 : 10일
+                                    <div class="flex-left">
+                                        <h3 class="pf-box-name">산청군청</h3>
                                         <div class="pf-label-list clearfix">
                                             <span class="pf-box-label label-html">html</span>                                        
                                             <span class="pf-box-label label-css">css</span>                                        
                                             <span class="pf-box-label label-js">js</span>
-
+                                        </div>                             
+                                        <p class="pf-box-info">
+                                            <span>
+                                                스터디용 클론 코딩
+                                            </span>
+                                            제작 기간 : 10일
+                                        </p>
+                                        <div class="pf-nav">
+                                            <button class="pf-btn pf-work" type="button" onclick="window.open(' https://jk92lania.github.io/sancheong/')">work</button>
+                                            <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/sancheong')">git</button>
+                                            <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.sancheong.go.kr/www/index.do')">origin</button>
                                         </div>
-                                    </p>
-                                    <div class="pf-nav">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open(' https://jk92lania.github.io/sancheong/')">work</button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/sancheong')">git</button>
-                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.sancheong.go.kr/www/index.do')">origin</button>
                                     </div>
+                                    <div class="flex-right">
+                                        <div class="pf-box-img">
+                                            <img src="images/cloud_001.png" alt="포트폴리오">
+                                        </div>
+                                    </div>
+
+                                    
+                                    
                                 </div>
 
                             </div>
                             <div class="swiper-slide">
                                 <div class="portfolio-box">
-                                    <span class="pf-box-bg"></span>
-                                    <h3 class="pf-box-name">한살림</h3>
-                                    <p class="pf-box-info">
-                                        스터디용 클론 코딩
-                                        제작 기간 : 10일
+                                    <div class="flex-left">
+                                        <h3 class="pf-box-name">한살림</h3>
                                         <div class="pf-label-list clearfix">
                                             <span class="pf-box-label label-html">html</span>                                        
                                             <span class="pf-box-label label-css">css</span>                                        
                                             <span class="pf-box-label label-js">js</span>
-
+                                        </div>                             
+                                        <p class="pf-box-info">
+                                            <span>
+                                                스터디용 클론 코딩
+                                            </span>
+                                            제작 기간 : 10일
+                                        </p>
+                                        <div class="pf-nav">
+                                            <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/hansalim/')">work</button>
+                                            <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/hansalim')">git</button>
+                                            <button class="pf-btn pf-ori" type="button" onclick="window.open('https://shop.hansalim.or.kr/shopping/spMain.do')">origin</button>
                                         </div>
-                                    </p>
-                                    <div class="pf-nav">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/hansalim/')">work</button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/hansalim')">git</button>
-                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('https://shop.hansalim.or.kr/shopping/spMain.do')">origin</button>
                                     </div>
+                                    <div class="flex-right">
+                                        <div class="pf-box-img">
+                                            <img src="images/cloud_001.png" alt="포트폴리오">
+                                        </div>
+                                    </div>  
+                                    
                                 </div>
 
                             </div>
                             <div class="swiper-slide">
                                 <div class="portfolio-box">
-                                    <span class="pf-box-bg"></span>
-                                    <h3 class="pf-box-name">풀무원</h3>
-                                    <p class="pf-box-info">
-                                        스터디용 클론 코딩
-                                        제작 기간 : 10일
+                                    <div class="flex-left">
+                                        <h3 class="pf-box-name">풀무원</h3>
                                         <div class="pf-label-list clearfix">
                                             <span class="pf-box-label label-html">html</span>                                        
                                             <span class="pf-box-label label-css">css</span>                                        
                                             <span class="pf-box-label label-js">js</span>
-
+                                        </div>                             
+                                        <p class="pf-box-info">
+                                            <span>
+                                                스터디용 클론 코딩
+                                            </span>
+                                            제작 기간 : 10일
+                                        </p>
+                                        <div class="pf-nav">
+                                            <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/klia/')">work</button>
+                                            <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/klia')">git</button>
+                                            <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.klia.or.kr/')">origin</button>
                                         </div>
-                                    </p>
-                                    <div class="pf-nav">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/klia/')">work</button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/klia')">git</button>
-                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.klia.or.kr/')">origin</button>
                                     </div>
+                                    <div class="flex-right">
+                                        <div class="pf-box-img">
+                                            <img src="images/cloud_001.png" alt="포트폴리오">
+                                        </div>
+                                    </div> 
+
                                 </div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="portfolio-box">
-                                    <span class="pf-box-bg"></span>
-                                    <h3 class="pf-box-name">부산대학교병원</h3>
-                                    <p class="pf-box-info">
-                                        스터디용 클론 코딩
-                                        제작 기간 : 10일
+                                    <div class="flex-left">
+                                        <h3 class="pf-box-name">부산대학교병원</h3>
                                         <div class="pf-label-list clearfix">
                                             <span class="pf-box-label label-html">html</span>                                        
                                             <span class="pf-box-label label-css">css</span>                                        
                                             <span class="pf-box-label label-js">js</span>
-
+                                        </div>                             
+                                        <p class="pf-box-info">
+                                            <span>
+                                                스터디용 클론 코딩
+                                            </span>
+                                            제작 기간 : 10일
+                                        </p>
+                                        <div class="pf-nav">
+                                            <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/pnuh/')">work</button>
+                                            <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/pnuh')">git</button>
+                                            <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.pnuh.or.kr/pnuh/main/main.do?rbsIdx=1')">origin</button>
                                         </div>
-                                    </p>
-                                    <div class="pf-nav">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/pnuh/')">work</button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/pnuh')">git</button>
-                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('https://www.pnuh.or.kr/pnuh/main/main.do?rbsIdx=1')">origin</button>
                                     </div>
+                                    <div class="flex-right">
+                                        <div class="pf-box-img">
+                                            <img src="images/cloud_001.png" alt="포트폴리오">
+                                        </div>
+                                    </div> 
+
+                                    
                                 </div>
                             </div>
 
                             <div class="swiper-slide">
                                 <div class="portfolio-box">
-                                    <span class="pf-box-bg"></span>
-                                    <h3 class="pf-box-name">stx건설</h3>
-                                    <p class="pf-box-info">
-                                        스터디용 클론 코딩
-                                        제작 기간 : 5일
+                                    <div class="flex-left">
+                                        <h3 class="pf-box-name">stx건설</h3>
                                         <div class="pf-label-list clearfix">
                                             <span class="pf-box-label label-html">html</span>                                        
                                             <span class="pf-box-label label-css">css</span>                                        
                                             <span class="pf-box-label label-js">js</span>
-
+                                        </div>                             
+                                        <p class="pf-box-info">
+                                            <span>
+                                                스터디용 클론 코딩
+                                            </span>
+                                            제작 기간 : 5일
+                                        </p>
+                                        <div class="pf-nav">
+                                            <button class="pf-btn pf-work" type="button" onclick="window.open(' https://jk92lania.github.io/stxconst/')">
+                                                work
+                                            </button>
+                                            <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/stxconst')">
+                                                git
+                                            </button>
+                                            <button class="pf-btn pf-ori" type="button" onclick="window.open('http://www.stxconst.co.kr/')">
+                                                origin
+                                            </button>
                                         </div>
-                                    </p>
-                                    <div class="pf-nav">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open(' https://jk92lania.github.io/stxconst/')">
-                                            work
-                                        </button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/stxconst')">
-                                            git
-                                        </button>
-                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('http://www.stxconst.co.kr/')">
-                                            origin
-                                        </button>
                                     </div>
+                                    <div class="flex-right">
+                                        <div class="pf-box-img">
+                                            <img src="images/cloud_001.png" alt="포트폴리오">
+                                        </div>
+                                    </div> 
+
+                                    
                                 </div>
                             </div>
                         </div>
