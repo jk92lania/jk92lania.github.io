@@ -695,17 +695,20 @@ window.onload = function(){
 
 
       // mbti slide
-      let mbti_data = ['Te', 'Ni', 'Se', 'Fi'];
+    //   let mbti_data = ['Te', 'Ni', 'Se', 'Fi'];
       let sw_mbti = new Swiper(".sw-mbti", {
         slidesPerView: 1,
         direction: "vertical",
-        spaceBetween: 30,
+        spaceBetween: 0,
+        autoHeight : true,
+        centeredSlides : true,
         pagination: {
           el: ".sw-mbti-pg",
           clickable: true,
-          renderBullet: function (index, className) {              
-            return '<div class="' + className + '"><span class="mbti-entj">' + (mbti_data[index]) + '</span></div>';
-          }
+          type : "progressbar",
+        //   renderBullet: function (index, className) {              
+        //     return '<div class="' + className + '"><span class="mbti-entj">' + (mbti_data[index]) + '</span></div>';
+        //   }
         },        
       });
 
@@ -852,16 +855,8 @@ window.onload = function(){
 
       // portfolio slide
       let sw_profile = new Swiper(".sw-profile", {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 10,
-        pagination: {
-        },
-        breakpoint : {
-            1200 : {
-                slidesPerView: 4,
-
-            }
-        }
       });
 
 
