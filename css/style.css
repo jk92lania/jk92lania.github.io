@@ -87,15 +87,16 @@ body {
 .flex-left {
     position: relative;
     display: block;
-    flex-grow: 5;
+    flex-grow: 3;
+    flex-basis: 100px;
 }
 
 .flex-right {
     position: relative;
     display: block;
-    flex-grow: 7;
+    flex-grow: 10;
     flex-shrink: 5;
-    flex-basis: 700px;
+    flex-basis: 400px;
 }
 
 /* //공통요소 */
@@ -240,7 +241,7 @@ body {
 }
 
 .visual .flex-right {
-    flex-grow: 1;
+    flex-grow: 4;
 }
 
 .visual-bg {
@@ -266,6 +267,7 @@ body {
 .about {
     position: relative;
     display: block;
+    margin: 40px 0;
 
 }
 
@@ -343,263 +345,7 @@ body {
 
 
 /* //나의 소개 */
-/* 마인드맵 */
-.mindmap {
-    position: relative;
-    display: block;
-}
 
-.mindmap .container {
-
-    padding-bottom: 600px;
-}
-
-.mindmap-menu-list {
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 100px;
-}
-
-.mindmap-menu-list li {
-    position: relative;
-    display: block;
-
-    text-align: center;
-}
-
-.mindmap-menu-list li a {
-    position: relative;
-    display: block;
-    width: 80px;
-    font-size: 15px;
-}
-
-.mindmap-menu-focus {
-    position: absolute;
-    left: 214px;
-    top: 120px;
-    transform: rotate(45deg);
-    display: block;
-    width: 100px;
-    height: 100px;
-    border: 3px solid #ee7678;
-    z-index: -1;
-    transition: all 0.5s;
-}
-
-.mindmap-wrap {
-    position: absolute;
-    left: 0;
-    top: 240px;
-    display: block;
-    width: 100%;
-    
-    padding: 10px;
-    border: 3px solid #ee7678;
-    visibility: hidden;
-    border-radius: 15px;
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-.mindmap-wrap-active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.mindmap-list {
-    position: relative;
-    display: flex;
-    height: 540px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
-}
-
-.item {
-    position: relative;
-    display: flex;
-    width: 290px;
-    height: 180px;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 15px;
-    color: #fff;
-    border-radius: 15px;
-}
-
-
-.item-big {
-    position: relative;
-    display: flex;
-    width: 290px;
-    height: 360px;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.item-big span {
-    position: relative;
-    display: flex;
-    width: 250px;
-    height: 308px;
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 15px;
-    color: #fff;
-    border-radius: 15px;
-}
-
-.item-big-first span {
-    background-color: #ee7678;    
-    
-}
-.item-big-second span {
-    background-color: #eeb776;
-    
-}
-.item-big-third span {
-    background-color: #76b7ee;
-    
-}
-
-.mindmap-page {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 250px;
-    height: 154px;
-    overflow: hidden;
-    border-radius: 15px;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-.mindmap-page-active {
-    visibility: visible;
-    opacity: 1;
-}
-
-.mindmap-page img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 120%;
-}
-
-.mindmap-page i {
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 65%;
-    color: #fff;
-    text-align: center;
-}
-
-.mindmap-page p {
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 65%;
-    font-size: 14px;
-    color: #fff;
-    padding: 5px 20px;
-    line-height: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.mindmap-page span {
-    position: absolute;
-    left: 50%;
-    top: 80%;
-    transform: translate(-50%, -50%);
-    display: block;
-    font-size: 14px;
-    color: #fff;
-    padding: 5px 20px;
-    border-radius: 10px;
-    white-space: nowrap;
-}
-
-.mindmap-page::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 92%;
-    height: 90%;
-    
-    opacity: 0.8;
-    border-radius: 15px;
-    z-index: 1;
-}
-.mindmap-page::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 92%;
-    height: 90%;  
-    
-    border-radius: 15px;  
-}
-
-.mindmap-page-1 {
-    background-color: #ee7678;
-}
-.mindmap-page-1 span {
-    background-color: #ee7678;
-}
-.mindmap-page-1::before {    
-    border: 15px solid #ee7678;
-}
-.mindmap-page-1::after {
-    border: 5px solid #ee7678;
-}
-.mindmap-page-2 {
-    background-color: #eeb776;
-}
-.mindmap-page-2 span {
-    background-color: #eeb776;
-}
-.mindmap-page-2::before {    
-    border: 15px solid #eeb776;
-}
-.mindmap-page-2::after {
-    border: 5px solid #eeb776;
-}
-.mindmap-page-3 {
-    background-color: #76b7ee;
-}
-.mindmap-page-3 span {
-    background-color: #76b7ee;
-}
-.mindmap-page-3::before {    
-    border: 15px solid #76b7ee;
-}
-.mindmap-page-3::after {
-    border: 5px solid #76b7ee;
-}
-
-/* //마인드맵 */
 /* mbti */
 .mbti {
     position: relative;
@@ -759,6 +505,9 @@ body {
     display: block;    
 }
 
+.mbti-wrap .flex-right {
+    flex-grow: 4;
+}
 
 .sw-mbti {
     width: 100%;
@@ -933,6 +682,11 @@ body {
     margin: 80px 0;
 }
 
+.sw-skill .swiper-slide{
+    padding: 0 20px;
+    border-left: 1px solid #eee;
+}
+
 .skill-icon {
     position: relative;
     display: block;
@@ -942,11 +696,11 @@ body {
 
 .skill-txt {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 .skill-name {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
     color: #76b7ee;
@@ -1124,123 +878,65 @@ body {
 .life {
     position: relative;
     display: block;
-
+    margin: 40px 0;
 }
 
 .life .container {
-    padding-top: 100px;
 }
 
-.life-read {
-    position: relative;
-    display: block;
-    margin-top: 80px;
+.sw-life {
+    width: 100%;
+    margin-top: 60px;
 }
 
-.life-travel {    
-    position: relative;
-    display: block;
-    margin-top: 40px;
-}
-.life-show {    
-    position: relative;
-    display: block;
-    margin-top: 40px;
+.sw-life .swiper-slide {
+    height: 360px;
 }
 
 .life-box {
     position: relative;
     display: block;
-    width: 230px;
-    height: 230px;
-
-    border-radius: 50%;
-    margin: 0 5px;
-    float: left;
-}
-
-.life-read .life-box:nth-child(1) {
-    background: url('../images/life_read_001.jpg') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #ee7678;
-}
-.life-read .life-box:nth-child(2) {
-    background: url('../images/life_read_002.jpg') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #ee7678;
-}
-.life-read .life-box:nth-child(3) {
-    background: url('../images/life_read_002.jpg') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #ee7678;
-}
-.life-travel .life-box:nth-child(1) {
+    width: auto;
+    height: 360px;
     background: url('../images/life_travel_001.jpg') no-repeat center;
     background-size: cover;
-    box-shadow: 4px 6px 0px #eeb776;
-    float: right;
-}
-.life-travel .life-box:nth-child(2) {
-    background: url('../images/life_travel_002.jpg') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #eeb776;
-    float: right;
-}
-.life-travel .life-box:nth-child(3) {
-    background: url('../images/life_travel_003.jpg') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #eeb776;
-    float: right;
-}
-.life-show .life-box:nth-child(1) {
-    background: url('../images/life_show_001.jpg') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #76b7ee;
-}
-.life-show .life-box:nth-child(2) {
-    background: url('../images/life_show_002.jpg') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #76b7ee;
-}
-.life-show .life-box:nth-child(3) {
-    background: url('../images/life_show_003.png') no-repeat center;
-    background-size: cover;
-    box-shadow: 4px 6px 0px #76b7ee;
 }
 
 
 .life-read-tit {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     font-size: 24px;
     font-weight: 700;
     color: #ee7678;
-    line-height: 230px;
-    margin-left: 20px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .life-travel-tit {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     font-size: 24px;
     font-weight: 700;
     color: #eeb776;
-    line-height: 230px;
-    margin-right: 20px;
     text-transform: uppercase;
-    float: right;
+    text-align: center;
 }
 
 .life-show-tit {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     font-size: 24px;
     font-weight: 700;
     color: #76b7ee;
-    line-height: 230px;
-    margin-left: 20px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 
@@ -1249,11 +945,11 @@ body {
 .contact {
     position: relative;
     display: block;
-
+    
 }
 
 .contact .container {
-    padding-top: 100px;
+    padding: 40px 0;
 }
 
 .contact-wrap {
