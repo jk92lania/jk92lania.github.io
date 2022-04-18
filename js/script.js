@@ -5,32 +5,30 @@ window.onload = function(){
         slidesPerColumn : 2,
         spaceBetween: 10,
         pagination: {
-          // el: ".swiper-pagination",
-          // clickable: true,
         },      
     });
 
 
     // mbti 그래프
-    let mbti_e_value = 0.53;
+    let mbti_e_value = 0.64;
     let mbti_i_value = 0.46;
-    let mbti_n_value = 0.58;
-    let mbti_s_value = 0.27;
+    let mbti_n_value = 0.78;
+    let mbti_s_value = 0.37;
     let mbti_f_value = 0.12;
     let mbti_t_value = 1.0;
-    let mbti_p_value = 0.45;
+    let mbti_p_value = 0.65;
     let mbti_j_value = 0.44;
 
     let mbti_bar_e = new ProgressBar.Line(mbtiE, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_e) => {
             mbti_bar_e.path.setAttribute('stroke', state.color);
@@ -51,15 +49,15 @@ window.onload = function(){
       console.log(mbti_bar_e);
     
       let mbti_bar_i = new ProgressBar.Line(mbtiI, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_i) => {
             mbti_bar_i.path.setAttribute('stroke', state.color);
@@ -71,15 +69,15 @@ window.onload = function(){
       
     
     let mbti_bar_n = new ProgressBar.Line(mbtiN, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_n) => {
             mbti_bar_n.path.setAttribute('stroke', state.color);
@@ -91,15 +89,15 @@ window.onload = function(){
     
     
       let mbti_bar_s = new ProgressBar.Line(mbtiS, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_s) => {
             mbti_bar_s.path.setAttribute('stroke', state.color);
@@ -111,15 +109,15 @@ window.onload = function(){
       
       
       let mbti_bar_f = new ProgressBar.Line(mbtiF, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_f) => {
             mbti_bar_f.path.setAttribute('stroke', state.color);
@@ -131,15 +129,15 @@ window.onload = function(){
       
       
       let mbti_bar_t = new ProgressBar.Line(mbtiT, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_t) => {
             mbti_bar_t.path.setAttribute('stroke', state.color);
@@ -151,15 +149,15 @@ window.onload = function(){
       
       
       let mbti_bar_p = new ProgressBar.Line(mbtiP, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_p) => {
             mbti_bar_p.path.setAttribute('stroke', state.color);
@@ -171,15 +169,15 @@ window.onload = function(){
       
       
       let mbti_bar_j = new ProgressBar.Line(mbtiJ, {
-        strokeWidth: 6,
-        color: '#FFEA82',
+        strokeWidth: 2,
+        color: '#76b7ee',
         trailColor: '#eee',
         trailWidth: 1,
         easing: 'easeInOut',
         duration: 1400,
         svgStyle: null,        
-        from: {color: '#FFEA82'},
-        to: {color: '#ED6A5A'},
+        from: {color: '#76b7ee'},
+        to: {color: '#ee7678'},
         // Set default step function for all animate calls
         step: (state, mbti_bar_j) => {
             mbti_bar_j.path.setAttribute('stroke', state.color);
@@ -374,6 +372,8 @@ window.onload = function(){
         slidesPerGroup : 4,
         spaceBetween: 10,
         pagination: {
+          el: ".sw-life-pg",
+          clickable: true,
         },
       });
 
