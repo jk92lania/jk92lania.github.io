@@ -1,4 +1,16 @@
 window.onload = function(){
+    // skill slide
+    let sw_about = new Swiper(".sw-about", {
+      slidesPerView: 3,
+        slidesPerColumn : 2,
+        spaceBetween: 10,
+        pagination: {
+          // el: ".swiper-pagination",
+          // clickable: true,
+        },      
+    });
+
+
     // mbti 그래프
     let mbti_e_value = 0.53;
     let mbti_i_value = 0.46;

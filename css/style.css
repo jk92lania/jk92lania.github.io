@@ -191,6 +191,8 @@ body {
     position: relative;
     display: block;
     padding-top: 120px;
+    background: url('../images/bg_012.png') no-repeat center;
+    background-size: cover;
 }
 
 .visual .container {
@@ -245,7 +247,10 @@ body {
 }
 
 .visual-bg {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
     display: block;
     width: 100%;
 }
@@ -255,11 +260,9 @@ body {
 }
 
 .visual-pjk {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
+    position: relative;
     display: block;
+
 }
 
 /* //비주얼 */
@@ -272,25 +275,66 @@ body {
 }
 
 .about .container {
-    padding: 100px;
-}
-
-.about .title {
-    margin-bottom: 76px;
+    
 }
 
 .about-wrap {
     position: relative;
     display: flex;
+    width: 100%;
+}
+
+
+.about-info {
+    position: relative;
+    display: block;
+    width: 100%;
+    
+    font-size: 18px;
+    line-height: 26px;
+    color: #333;
+}
+
+.about-info strong {
+    position: relative;
+    display: block;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.02rem;
+    line-height: 50px;
+}
+
+.about-info span {    
+    position: relative;
+    display: block;
+    padding: 20px 35px 20px 0;
+}
+
+
+.about-wrap .flex-right {
+    max-width: 800px;
+}
+
+.sw-about {
+    width: 100%;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 90px;
+}
+
+.sw-about .swiper-slide {
+    height: calc( (100% - 10px) / 2 ) !important;
 }
 
 .about-face {
     position: relative;
     display: block;
-    width: 232px;
-    height: 232px;
+    width: auto;
+    height: 235px;
 
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background-color: #333;
     overflow: hidden;
 }
@@ -300,7 +344,31 @@ body {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.sw-about .swiper-wrapper .swiper-slide:nth-child(1) .about-face span {
     background: url('../images/about_001.png') no-repeat center;
+    background-size: cover;
+}
+.sw-about .swiper-wrapper .swiper-slide:nth-child(2) .about-face span {
+    background: url('../images/mindmap_mine_01.png') no-repeat center;
+    background-size: cover;
+}
+.sw-about .swiper-wrapper .swiper-slide:nth-child(3) .about-face span {
+    background: url('../images/mindmap_mine_05.png') no-repeat center;
+    background-size: cover;
+}
+.sw-about .swiper-wrapper .swiper-slide:nth-child(4) .about-face span {
+    background: url('../images/about_002.jpg') no-repeat center;
+    background-size: cover;
+}
+.sw-about .swiper-wrapper .swiper-slide:nth-child(5) .about-face span {
+    background: url('../images/about_003.jpg') no-repeat center;
+    background-size: cover;
+}
+.sw-about .swiper-wrapper .swiper-slide:nth-child(6) .about-face span {
+    background: url('../images/about_004.jpg') no-repeat center;
+    background-size: cover;
 }
 
 
@@ -308,8 +376,6 @@ body {
     position: relative;
     display: inline-block;
     font-size: 14px;
-    padding-left: 70px;
-    margin-top: 20px;
 }
 
 .about-name strong{
@@ -318,7 +384,6 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    margin: 0 15px;
 }
 
 .about-name::after {
@@ -331,16 +396,6 @@ body {
     width: 50px;
     height: 3px;
     background-color: #ee7678;
-}
-
-.about-info {
-    position: relative;
-    display: block;
-    width: 100%;
-    
-    font-size: 15px;
-    color: #eeb776;
-    padding: 25px 10px 25px 22px;
 }
 
 
