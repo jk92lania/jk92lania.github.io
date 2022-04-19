@@ -427,7 +427,7 @@ window.onload = function () {
     }
 
     let sw_pf_wrapper = $('.sw-portfolio .swiper-wrapper');
-    sw_pf_wrapper.html(sw_pf_html);
+    // sw_pf_wrapper.html(sw_pf_html);
 
 
   // portfolio slide
