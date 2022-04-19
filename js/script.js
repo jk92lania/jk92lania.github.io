@@ -409,21 +409,61 @@ window.onload = function () {
       'res' : '반응형',
       'work' : 'https://jk92lania.github.io/palgongtea/',
       'git' : 'https://github.com/jk92lania/palgongtea',
-      'origin' : 'http://www.palgongtea.co.kr/'
+      'origin' : 'http://www.palgongtea.co.kr/',
+      'study' : '개인제작 클론 코딩',
+      'day' : '10'
     },
     {
       'name' : '포트폴리오',
       'html' : 'html',
       'css' : 'css',
       'js' : 'js',
-      'git' : 'https://github.com/jk92lania/palgongtea'
+      'git' : 'https://github.com/jk92lania/portfolio',
+      'study' : '개인제작 클론 코딩',
+      'day' : '10'
     },
+    {
+      'name' : '생명보험협회',
+      'html' : 'html',
+      'css' : 'css',
+      'js' : 'js',
+      'work' : 'https://jk92lania.github.io/klia/',
+      'git' : 'https://github.com/jk92lania/klia',
+      'origin' : 'https://www.klia.or.kr/',
+      'study' : '스터디용 제작 클론 코딩',
+      'day' : '10'
+    }
   ];
 
   let sw_pf_total = sw_pf_data.length;
     let sw_pf_html = '';
     for (let i = 0; i < sw_pf_total; i++) {
+      let temp_data = sw_pf_data[i];
+      sw_pf_html += '<div class="swiper-slide">';
+      sw_pf_html += '<div class="portfolio-box">';
+      sw_pf_html += '<div class="flex-left">';
+      sw_pf_html += '<h3 class="pf-box-name">';
+      sw_pf_html += temp_data.name;
+      sw_pf_html += '</h3>';
+      sw_pf_html += '<div class="pf-label-list clearfix">';
+      if(temp_data.html) {
+        sw_pf_html += '<span class="pf-box-label label-html">html</span>';
+      }
+      if(temp_data.css) {
+        sw_pf_html += '<span class="pf-box-label label-css">css</span>';
+      }
+      if(temp_data.js) {
+        sw_pf_html += '<span class="pf-box-label label-js">js</span>';
+      }
+      if(temp_data.res){
+        sw_pf_html += '<span class="pf-box-label label-res">반응형</span> ';
+      }
+      sw_pf_html += '</div>';
 
+      sw_pf_html += '</div>';
+      sw_pf_html += '</div>';
+      sw_pf_html += '</div>';
+      
     }
 
     let sw_pf_wrapper = $('.sw-portfolio .swiper-wrapper');
