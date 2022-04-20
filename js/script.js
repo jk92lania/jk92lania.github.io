@@ -551,6 +551,24 @@ window.onload = function () {
     sw_pf_html += '<div class="swiper-slide">';
     sw_pf_html += '<div class="portfolio-box">';
     
+    sw_pf_html += '<div class="kor-pattern">';
+    sw_pf_html += '<div class="kp-sqr kp-1"></div>';
+    sw_pf_html += '<div class="kp-sqr kp-2"></div>';
+    sw_pf_html += '<div class="kp-sqr kp-3"></div>';
+    sw_pf_html += '<div class="kp-nieun kp-4"></div>';
+    sw_pf_html += '<div class="kp-nieun kp-5"></div>';
+    sw_pf_html += '<div class="kp-nieun kp-6"></div>';
+    sw_pf_html += '<div class="kp-line kp-7"></div>';
+    sw_pf_html += '<div class="kp-line kp-8"></div></div>';
+    
+    sw_pf_html += '<div class="kor-pattern kp-right-bottom">';
+    sw_pf_html += '<div class="kp-sqr kp-1"></div>';
+    sw_pf_html += '<div class="kp-sqr kp-2"></div>';
+    sw_pf_html += '<div class="kp-sqr kp-3"></div>';
+    sw_pf_html += '<div class="kp-nieun kp-4"></div>';
+    sw_pf_html += '<div class="kp-nieun kp-5"></div>';
+    sw_pf_html += '<div class="kp-nieun kp-6"></div></div>';
+
     sw_pf_html += '<div class="pf-box-img"><img src=\"';
     sw_pf_html += temp_data.imgurl;
     sw_pf_html += '\" alt="포트폴리오"></div>';
