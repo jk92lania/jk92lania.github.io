@@ -1,4 +1,30 @@
 window.onload = function () {
+  // gotop button hide
+  let topmenu = $('.topmenu');
+
+  let about_top = $('.about').offset().top;
+  let skill_top = $('.skill').offset().top;
+  let pf_top = $('.portfolio').offset().top;
+  let life_top = $('.life').offset().top;
+
+
+
+  $(window).scroll(function(){
+    if( $(this).scrollTop() > parseInt(about_top) ) {
+      topmenu.fadeIn();
+    }else {
+      topmenu.fadeOut();
+
+    }
+  })
+
+
+  // gotop button action
+  topmenu.click(function(){
+    $('html').animate({
+      scrollTop : 0
+    }, 400);
+  });
 
   // about slide
   let sw_about = new Swiper(".sw-about", {
@@ -237,7 +263,7 @@ window.onload = function () {
     },
   });
 
-  
+
   // profile slide
   let sw_profile = new Swiper(".sw-profile", {
     slidesPerView: 4,
@@ -430,7 +456,7 @@ window.onload = function () {
   // skill slide
   let skill = new Swiper(".sw-skill", {
     slidesPerView: 4,
-    slidesPerColumn : 2,
+    slidesPerColumn: 2,
     spaceBetween: 30,
     slidesPerColumnFill: 'row',
 
@@ -438,7 +464,8 @@ window.onload = function () {
 
 
   // portfolio data
-  let sw_pf_data = [{
+  let sw_pf_data = [
+    {
       'name': '팔공티',
       'imgurl': 'images/port_pal_001.jpg',
       'html': 'html',
@@ -449,6 +476,19 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/palgongtea/',
       'git': 'https://github.com/jk92lania/palgongtea',
       'origin': 'http://www.palgongtea.co.kr/',
+      'study': '개인제작 클론 코딩',
+      'day': '10'
+    },
+    {
+      'name': '삼양맛샵',
+      'imgurl': 'images/port_deli_001.jpg',
+      'html': 'html',
+      'css': 'css',
+      'js': 'js',
+      'pc': 'PC',
+      'work': 'https://jk92lania.github.io/sydeliciousshop/',
+      'git': 'https://github.com/jk92lania/sydeliciousshop',
+      'origin': 'https://sydeliciousshop.com/',
       'study': '개인제작 클론 코딩',
       'day': '10'
     },
@@ -479,7 +519,7 @@ window.onload = function () {
     },
     {
       'name': '산청군청',
-      'imgurl': 'images/cloud_001.png',
+      'imgurl': 'images/port_san_001.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -492,7 +532,7 @@ window.onload = function () {
     },
     {
       'name': '한살림',
-      'imgurl': 'images/cloud_001.png',
+      'imgurl': 'images/port_han_001.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -505,7 +545,7 @@ window.onload = function () {
     },
     {
       'name': '풀무원',
-      'imgurl': 'images/cloud_001.png',
+      'imgurl': 'images/port_gre_001.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -518,7 +558,7 @@ window.onload = function () {
     },
     {
       'name': '부산대학교병원',
-      'imgurl': 'images/cloud_001.png',
+      'imgurl': 'images/port_pnuh_001.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -531,7 +571,7 @@ window.onload = function () {
     },
     {
       'name': 'stx건설',
-      'imgurl': 'images/cloud_001.png',
+      'imgurl': 'images/port_stx_001.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -543,14 +583,14 @@ window.onload = function () {
       'day': '6'
     },
   ];
-  
+
   let sw_pf_total = sw_pf_data.length;
   let sw_pf_html = '';
   for (let i = 0; i < sw_pf_total; i++) {
     let temp_data = sw_pf_data[i];
     sw_pf_html += '<div class="swiper-slide">';
     sw_pf_html += '<div class="portfolio-box">';
-    
+
     sw_pf_html += '<div class="kor-pattern">';
     sw_pf_html += '<div class="kp-sqr kp-1"></div>';
     sw_pf_html += '<div class="kp-sqr kp-2"></div>';
@@ -560,7 +600,7 @@ window.onload = function () {
     sw_pf_html += '<div class="kp-nieun kp-6"></div>';
     sw_pf_html += '<div class="kp-line kp-7"></div>';
     sw_pf_html += '<div class="kp-line kp-8"></div></div>';
-    
+
     sw_pf_html += '<div class="kor-pattern kp-right-bottom">';
     sw_pf_html += '<div class="kp-sqr kp-1"></div>';
     sw_pf_html += '<div class="kp-sqr kp-2"></div>';
@@ -572,7 +612,39 @@ window.onload = function () {
     sw_pf_html += '<div class="pf-box-img"><img src=\"';
     sw_pf_html += temp_data.imgurl;
     sw_pf_html += '\" alt="포트폴리오"></div>';
-    
+
+    sw_pf_html += '<div class="pf-box-txt">';
+    sw_pf_html += '<div class="pf-box-txt-bg pf-bg-1"></div>';
+    sw_pf_html += '<div class="pf-box-txt-bg pf-bg-2"></div>';
+    sw_pf_html += '<h3 class="pf-box-name">';
+    sw_pf_html += temp_data.name;
+    sw_pf_html += '</h3>';
+
+    sw_pf_html += '<p class="pf-box-info"><span>';
+    sw_pf_html += temp_data.study;
+    sw_pf_html += '</span>제작 기간 :';
+    sw_pf_html += temp_data.day;
+    sw_pf_html += '일</p>';
+    sw_pf_html += '</div>';
+
+    sw_pf_html += '<div class="pf-nav mt-10">';
+    if (temp_data.work) {
+      sw_pf_html += '<button class="pf-btn pf-work" type="button" onclick="window.open(\'';
+      sw_pf_html += temp_data.work;
+      sw_pf_html += '\')">work</button>';
+    }
+    if (temp_data.git) {
+      sw_pf_html += '<button class="pf-btn pf-git" type="button" onclick="window.open(\'';
+      sw_pf_html += temp_data.git;
+      sw_pf_html += '\')">git</button>';
+    }
+    if (temp_data.origin) {
+      sw_pf_html += '<button class="pf-btn pf-ori" type="button" onclick="window.open(\'';
+      sw_pf_html += temp_data.origin;
+      sw_pf_html += '\')">origin</button>';
+    }
+    sw_pf_html += '</div>';
+
     sw_pf_html += '<div class="pf-label-list clearfix">';
     if (temp_data.html) {
       sw_pf_html += '<span class="pf-box-label label-html">html</span>';
@@ -595,35 +667,6 @@ window.onload = function () {
     }
     sw_pf_html += '</div>';
 
-        sw_pf_html += '<div class="pf-box-txt">';
-        sw_pf_html += '<h3 class="pf-box-name">';
-        sw_pf_html += temp_data.name;
-        sw_pf_html += '</h3>';
-
-    sw_pf_html += '<p class="pf-box-info"><span>';
-    sw_pf_html += temp_data.study;
-    sw_pf_html += '</span>제작 기간 :';
-    sw_pf_html += temp_data.day;
-    sw_pf_html += '일</p>';
-    sw_pf_html += '</div>';
-    
-    sw_pf_html += '<div class="pf-nav mt-10">';
-    if (temp_data.work) {
-      sw_pf_html += '<button class="pf-btn pf-work" type="button" onclick="window.open(\'';
-      sw_pf_html += temp_data.work;
-      sw_pf_html += '\')">work</button>';
-    }
-    if (temp_data.git) {
-      sw_pf_html += '<button class="pf-btn pf-git" type="button" onclick="window.open(\'';
-      sw_pf_html += temp_data.git;
-      sw_pf_html += '\')">git</button>';
-    }
-    if (temp_data.origin) {
-      sw_pf_html += '<button class="pf-btn pf-ori" type="button" onclick="window.open(\'';
-      sw_pf_html += temp_data.origin;
-      sw_pf_html += '\')">origin</button>';
-    }
-    sw_pf_html += '</div>';
 
     sw_pf_html += '</div></div>';
   }
@@ -633,8 +676,8 @@ window.onload = function () {
 
   // portfolio slide
   let sw_port = new Swiper(".sw-portfolio", {
-    slidesPerView: 4,
-    slidesPerColumn : 4,
+    slidesPerView: 3,
+    slidesPerColumn: 4,
     slidesPerColumnFill: 'row',
     slidesPerGroup: 16,
     spaceBetween: 30,
@@ -664,7 +707,7 @@ window.onload = function () {
     sw_all_html += '<div class="all-pf-img"><img src=\"';
     sw_all_html += temp_data.imgurl;
     sw_all_html += '\" alt="포트폴리오"></div>';
-    
+
     sw_all_html += '<div class="pf-nav all-pf-nav">';
     if (temp_data.work) {
       sw_all_html += '<button class="pf-btn pf-work" type="button" onclick="window.open(\'';
