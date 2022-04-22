@@ -88,15 +88,15 @@ body {
     position: relative;
     display: block;
     flex-grow: 3;
-    flex-basis: 100px;
+    /* flex-basis: 100px; */
 }
 
 .flex-right {
     position: relative;
     display: block;
-    flex-grow: 10;
-    flex-shrink: 5;
-    flex-basis: 400px;
+    flex-grow: 5;
+    /* flex-shrink: 5; */
+    /* flex-basis: 400px; */
     max-width: 1000px;
 }
 
@@ -249,6 +249,20 @@ body {
     top: 42px;
     width: 2px;
     height: calc(100% - 42px);    
+}
+
+@media all and (max-width:1200px) {
+    .container {
+        width: 1000px;
+    }
+    .flex-left {
+        /* flex-basis: 0px; */
+    }
+    
+    .flex-right {
+        flex-grow: 6;
+        flex-basis: 0px;
+    }
 }
 
 /* //공통요소 */
@@ -620,7 +634,7 @@ body {
 .about-info {
     position: relative;
     display: block;
-    width: 100%;
+    /* width: 100%; */
 
     font-size: 18px;
     line-height: 26px;
@@ -641,12 +655,13 @@ body {
 .about-info span {
     position: relative;
     display: block;
+    width: 400px;
     padding: 20px 35px 20px 0;
 }
 
 
 .about-wrap .flex-right {
-    max-width: 800px;
+    /* max-width: 800px; */
 }
 
 .sw-about {
@@ -993,6 +1008,15 @@ body {
     font-weight: 500;
     color: #76b7ee;
     margin-left: 20px;
+}
+
+@media all and (max-width : 1200px) {
+    .mbti-wrap .flex-left {
+        /* margin-right: 0px; */
+    }
+    .mbti-wrap .flex-right {
+        flex-grow: 7;
+    }
 }
 
 /* //mbti */
