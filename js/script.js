@@ -2,15 +2,12 @@ window.onload = function () {
   // gotop button hide
   let topmenu = $('.topmenu');
 
-  let about_top = $('.about').offset().top;
-  let skill_top = $('.skill').offset().top;
-  let pf_top = $('.portfolio').offset().top;
-  let life_top = $('.life').offset().top;
-
-
-
+  let header_h = $('.header').height();
+  let visual_h = $('.visual').height();  
+  
+  
   $(window).scroll(function(){
-    if( $(this).scrollTop() > parseInt(about_top) ) {
+    if( $(this).scrollTop() > parseInt(visual_h) ) {
       topmenu.fadeIn();
     }else {
       topmenu.fadeOut();
@@ -28,10 +25,11 @@ window.onload = function () {
 
   // about slide
   let sw_about = new Swiper(".sw-about", {
-    slidesPerView: 3,
+    slidesPerView:3,
     slidesPerColumn: 2,
-    spaceBetween: 10,
-    pagination: {},
+    spaceBetween: 10,    
+    // observer: true,
+    // observeParents: true,
   });
 
   // mbti 그래프
