@@ -27,9 +27,14 @@ window.onload = function () {
   let sw_about = new Swiper(".sw-about", {
     slidesPerView:3,
     slidesPerColumn: 2,
-    spaceBetween: 10,    
-    // observer: true,
-    // observeParents: true,
+    spaceBetween: 10,
+    on: {
+      init() {
+          setTimeout(() => {
+        window.dispatchEvent(new Event("resize"))
+          }, 100)
+      },
+    },
   });
 
   // mbti 그래프

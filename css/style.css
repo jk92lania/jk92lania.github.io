@@ -253,15 +253,13 @@ body {
 
 @media all and (max-width:1200px) {
     .container {
-        width: 1000px;
+        width: 100%;
     }
     .flex-left {
         /* flex-basis: 0px; */
     }
     
     .flex-right {
-        flex-grow: 6;
-        flex-basis: 0px;
     }
 }
 
@@ -629,7 +627,7 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;        
-    width: 100%;
+    /* width: 100%; */
 }
 
 
@@ -666,12 +664,13 @@ body {
 
 
 .about-wrap .flex-right {
-    /* max-width: 800px; */
+    max-width: 57vw;
+    padding-left: 40px;
 }
 
 .sw-about {
     width: 100%;
-    height: 600px;
+    height: 36vw;
     /* margin-left: auto;
     margin-right: auto; */
 
@@ -679,7 +678,7 @@ body {
 }
 
 .sw-about .swiper-wrapper {
-    width: 100% !important;
+    /* width: 100% !important; */
 }
 
 .sw-about .swiper-slide {
@@ -710,12 +709,12 @@ body {
 }
 
 .sw-about .swiper-wrapper .swiper-slide:nth-child(2) .about-face span {
-    background: url('../images/mindmap_mine_01.png') no-repeat center;
+    /* background: url('../images/mindmap_mine_01.png') no-repeat center; */
     background-size: cover;
 }
 
 .sw-about .swiper-wrapper .swiper-slide:nth-child(3) .about-face span {
-    background: url('../images/mindmap_mine_05.png') no-repeat center;
+    /* background: url('../images/mindmap_mine_05.png') no-repeat center; */
     background-size: cover;
 }
 
@@ -735,32 +734,6 @@ body {
 }
 
 
-.about-name {
-    position: relative;
-    display: inline-block;
-    font-size: 14px;
-}
-
-.about-name strong {
-    position: relative;
-    display: inline-block;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.about-name::after {
-    content: '';
-    position: absolute;
-    left: 12px;
-    top: 100%;
-    transform: translateY(-50%);
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #ee7678;
-}
-
 
 /* //나의 소개 */
 
@@ -778,18 +751,19 @@ body {
 .mbti-wrap {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 
     margin-top: 70px;
 }
 
 .mbti-wrap .flex-left {
-    margin-right: 40px;
+    padding: 10px 20px;
 }
 
 .mbti-wrap-bar {
     position: relative;
     display: flex;
+    width: 32vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -933,9 +907,6 @@ body {
     height: 100%;
 }
 
-.mbti-wrap .flex-right {
-    flex-grow: 4;
-}
 
 .sw-mbti {
     width: 100%;
@@ -1024,7 +995,27 @@ body {
         /* margin-right: 0px; */
     }
     .mbti-wrap .flex-right {
-        flex-grow: 7;
+        /* flex-grow: 7; */
+    }
+    .mbti-wrap-bar {
+        /* width: 100%; */
+    }
+}
+
+@media all and (max-width : 1000px) {
+    .mbti-wrap {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 5vw;
+    }
+    .mbti-wrap .flex-left {
+        padding: 3vw;
+    }
+    .mbti-wrap .flex-right {
+        padding: 3vw;
+    }
+    .mbti-wrap-bar {
+        width: 100%;
     }
 }
 
@@ -1101,6 +1092,15 @@ body {
     margin-top: 10px;
 }
 
+
+@media all and (max-width : 1200px) {
+    .profile-wrap .flex-left {
+        /* margin-right: 0px; */
+    }
+    .profile-wrap .flex-right {
+        /* flex-grow: 7; */
+    }
+}
 
 /* //프로필 */
 /* 기술 */
