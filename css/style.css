@@ -670,7 +670,8 @@ body {
 
 .sw-about {
     width: 100%;
-    height: 36vw;
+    /* height: 36vw; */
+    height: 650px;
     /* margin-left: auto;
     margin-right: auto; */
 
@@ -1096,11 +1097,20 @@ body {
 @media all and (max-width : 1200px) {
     .profile-wrap .flex-left {
         /* margin-right: 0px; */
+        padding: 1vw 3vw;
     }
     .profile-wrap .flex-right {
         /* flex-grow: 7; */
     }
+    .profile .kor-pattern {
+        display: none;
+    }
 }
+
+@media all and (max-width : 1000px) {
+    
+}
+
 
 /* //프로필 */
 /* 기술 */
