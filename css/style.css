@@ -254,6 +254,7 @@ body {
 @media all and (max-width:1200px) {
     .container {
         width: 100%;
+        margin: 0;
     }
     .flex-left {
         /* flex-basis: 0px; */
@@ -559,17 +560,6 @@ body {
     margin-bottom: 210px;
 }
 
-.visual-title-bg {
-    position: absolute;
-    left: 50%;
-    top: 58%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 140px;
-    height: 140px;
-    background-color: #eeb776;
-    border-radius: 50%;
-}
 
 .title-first {
     position: absolute;
@@ -596,6 +586,20 @@ body {
     text-shadow: 6px 3px 0px #333;
 }
 
+.title-first h1::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 140px;
+    height: 140px;
+    background-color: #eeb776;
+    border-radius: 50%;
+    z-index: -1;
+}
+
 .visual .flex-right {
     flex-grow: 2;
 }
@@ -612,6 +616,63 @@ body {
 .visual-pjk img {
 }
 
+@media all and (max-width:1200px) {
+    .visual-wrap {
+    }
+    .visual-wrap .flex-left {
+        margin: 0;
+        padding-bottom: 300px;
+    }
+    .title-first {
+        width: 75%;
+    }
+    .visual-wrap .flex-right {
+        margin: 0;
+        padding-bottom: 300px;
+    }
+    .visual-pjk {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }    
+}
+@media all and (max-width:1000px) {
+    
+}
+@media all and (max-width:800px) {
+    .visual-wrap {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .visual-wrap .flex-left {
+        padding-bottom: 25vw;
+    }
+    .title-first {
+        left: 35%;
+        width: 55%;
+    }
+    .visual-wrap .flex-right {
+        padding-bottom: 35vw;
+    }
+    .visual-pjk {
+        margin: 0;
+        left: unset;
+        right: 5%;
+    }   
+}
+@media all and (max-width:640px) {
+    .title-first {
+        left: 50%;
+        width: 80%;
+    }
+    .visual-wrap .flex-right {
+        padding-bottom: 20vw;
+    }
+    .visual-pjk {
+        display: none;
+    } 
+}
+
 /* //비주얼 */
 /* 나의 소개 */
 .about {
@@ -626,28 +687,30 @@ body {
 .about-wrap {
     position: relative;
     display: flex;
-    justify-content: space-between;        
-    /* width: 100%; */
+    justify-content: center;
+    align-items: center; 
+
+    width: 100%;
 }
 
+.about-wrap .flex-left {
+}
 
 .about-info {
     position: relative;
     display: block;
-    /* width: 100%; */
     width: 350px;
 
     font-size: 18px;
     line-height: 26px;
     color: #333;
     word-break: keep-all;
-    /* padding: 30px 0 0 50px; */
 }
 
 .about-info strong {
     position: relative;
     display: inline-block;
-    width: 350px;
+    width: 100%;
     
     font-weight: 700;
     font-size: 40px;
@@ -658,83 +721,113 @@ body {
 .about-info span {
     position: relative;
     display: block;
-    width: 400px;
+    width: 100%;
     padding: 20px 35px 20px 0;
 }
 
 
 .about-wrap .flex-right {
-    max-width: 57vw;
-    padding-left: 40px;
+    /* max-width: 50vw; */
 }
 
 .sw-about {
-    width: 100%;
-    /* height: 36vw; */
-    height: 650px;
-    /* margin-left: auto;
-    margin-right: auto; */
-
-    margin-top: 90px;
+    position: relative;
+    display: block;
+    height: 580px;
 }
 
 .sw-about .swiper-wrapper {
     /* width: 100% !important; */
+    /* width: 100% !important; */
+    display: block;
 }
 
 .sw-about .swiper-slide {
-    height: calc((100% - 10px) / 2) !important;
+    display: inline-block;
+    width: auto;
+    height: calc((100% - 10px) / 2);
 }
 
 .about-face {
     position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
+    display: inline-block;
+    width: 240px;
+    height: 320px;
+    margin-right: 32px;
+    margin-bottom: 20px;
 
-    /* border-radius: 50%; */
-    background-color: #333;
-    overflow: hidden;
 }
 
 .about-face span {
     position: relative;
-    display: block;
+    display: inline-block;
     width: 100%;
-    height: 100%;
 }
 
-.sw-about .swiper-wrapper .swiper-slide:nth-child(1) .about-face span {
-    background: url('../images/about_001.png') no-repeat center;
-    background-size: cover;
-}
-
-.sw-about .swiper-wrapper .swiper-slide:nth-child(2) .about-face span {
-    /* background: url('../images/mindmap_mine_01.png') no-repeat center; */
-    background-size: cover;
-}
-
-.sw-about .swiper-wrapper .swiper-slide:nth-child(3) .about-face span {
-    /* background: url('../images/mindmap_mine_05.png') no-repeat center; */
-    background-size: cover;
-}
-
-.sw-about .swiper-wrapper .swiper-slide:nth-child(4) .about-face span {
-    background: url('../images/about_002.jpg') no-repeat center;
-    background-size: cover;
-}
-
-.sw-about .swiper-wrapper .swiper-slide:nth-child(5) .about-face span {
-    background: url('../images/about_003.jpg') no-repeat center;
-    background-size: cover;
-}
-
-.sw-about .swiper-wrapper .swiper-slide:nth-child(6) .about-face span {
-    background: url('../images/about_004.jpg') no-repeat center;
-    background-size: cover;
+.about-face span img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
 }
 
 
+@media all and (max-width:1200px) {
+    .about-wrap {
+    }
+    .about-info {
+        /* width: 30%; */
+        padding: 0 2vw;
+    }
+    .sw-about {
+        max-width: 60vw;
+    }
+    .sw-about .swiper-wrapper {
+        display: flex;
+    }
+    
+    .sw-about .swiper-slide {
+        display: block;
+        /* height: 100%; */
+        height: auto;
+    }
+    .about-face {
+        margin: 0;
+        width: 100%;       
+    }
+    .about-face span {
+        width: 100%;
+        height: 100%;
+    }
+    .about-face span img {
+        width: auto;
+        height: 100%;
+    }
+}
+@media all and (max-width:1000px) {
+    .about-wrap {
+        flex-direction: column;
+    }
+    .about-wrap .flex-left {
+        width: 100%;
+    }
+    .about-info {
+        width: 100%;
+    }
+    .about-wrap .flex-right {
+        width: 100%;
+    }
+    .sw-about {
+        width: 100%;
+    }
+
+}
+@media all and (max-width:800px) {
+      
+}
+@media all and (max-width:640px) {
+    
+}
 
 /* //나의 소개 */
 
@@ -1017,6 +1110,13 @@ body {
     }
     .mbti-wrap-bar {
         width: 100%;
+    }
+}
+
+
+@media all and (max-width:1200px) {
+    .mbil {
+        
     }
 }
 

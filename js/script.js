@@ -24,18 +24,53 @@ window.onload = function () {
   });
 
   // about slide
-  let sw_about = new Swiper(".sw-about", {
-    slidesPerView:3,
-    slidesPerColumn: 2,
+  let sw_about;
+  let sw_about_obj = {
+    slidesPerView:1,
+    slidesPerGroup:1,
     spaceBetween: 10,
-    on: {
-      init() {
-          setTimeout(() => {
-        window.dispatchEvent(new Event("resize"))
-          }, 100)
+    breakpoints : {
+      800 : {
+        slidesPerView:2,
+        slidesPerGroup:2,
+        
       },
-    },
-  });
+    }
+    
+  };
+
+  $(window).resize(function(){
+    resetAbout();
+});
+
+function resetAbout() {
+    let temp = $(window).width();
+
+    if(temp <= 1180 && sw_about == undefined){
+        console.log('새로 생성되었다.')
+     //    $('.sw-quick-1').addClass('quick-list-focus');
+     sw_about = new Swiper('.sw-about', sw_about_obj);        
+     }else if(temp <= 1200 && sw_about != undefined){
+         // slide 이미 존재할 때 새로 생성할 필요 없음
+     }else{
+         if(sw_about != undefined) {
+             // 이미 생성된 slide 삭제
+             console.log('삭제됨')
+             sw_about.destroy();
+             sw_about = undefined;
+
+             // swiper wrapper 스타일시트 제거
+             $('.sw-about').find('swiper-wrapper').removeAttr('sytle');
+             
+             // swiper slide 스타일시트 제거
+             $('.sw-about').find('swiper-slide').removeAttr('sytle');
+             // $('.sw-quick-1').removeClass('quick-list-focus');
+         }            
+     }
+ }
+ // 처음에 너비 계산 후 실행
+ resetAbout();
+
 
   // mbti 그래프
   let mbti_e_value = 0.64;
