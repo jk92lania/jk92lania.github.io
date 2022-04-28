@@ -304,8 +304,18 @@ function resetAbout() {
 
   // profile slide
   let sw_profile = new Swiper(".sw-profile", {
-    slidesPerView: 4,
+    slidesPerView: 2,
     spaceBetween: 10,
+    breakpoints : {
+      1000 : {
+        slidesPerView: 4,
+
+      },
+      640 : {
+        slidesPerView: 3,
+
+      },
+    }
   });
 
   // skill html
@@ -490,13 +500,133 @@ function resetAbout() {
   barRes.text.style.fontSize = '2rem';
   barRes.animate(0.91);
 
+  // skill github
+  let barGit = new ProgressBar.Circle(skillGit, {
+    strokeWidth: 3,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    svgStyle: null,
+    text: {
+      value: '',
+      alignToBottom: false
+    },
+    from: {
+      color: '#eeb776'
+    },
+    to: {
+      color: '#ee7678'
+    },
+    // Set default step function for all animate calls
+    step: (state, barGit) => {
+      barGit.path.setAttribute('stroke', state.color);
+      var value = Math.round(barGit.value() * 100);
+      if (value === 0) {
+        barGit.setText('');
+      } else {
+        // barRes.setText(value);
+      }
+
+      barGit.text.style.color = state.color;
+    }
+  });
+  barGit.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+  barGit.text.style.fontSize = '2rem';
+  barGit.animate(0.95);
+
+  // skill scss
+  let barScss = new ProgressBar.Circle(skillScss, {
+    strokeWidth: 3,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    svgStyle: null,
+    text: {
+      value: '',
+      alignToBottom: false
+    },
+    from: {
+      color: '#eeb776'
+    },
+    to: {
+      color: '#ee7678'
+    },
+    // Set default step function for all animate calls
+    step: (state, barScss) => {
+      barScss.path.setAttribute('stroke', state.color);
+      var value = Math.round(barScss.value() * 100);
+      if (value === 0) {
+        barScss.setText('');
+      } else {
+        // barRes.setText(value);
+      }
+
+      barScss.text.style.color = state.color;
+    }
+  });
+  barScss.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+  barScss.text.style.fontSize = '2rem';
+  barScss.animate(0.90);
+
+  // skill vue
+  let barVue = new ProgressBar.Circle(skillVue, {
+    strokeWidth: 3,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    svgStyle: null,
+    text: {
+      value: '',
+      alignToBottom: false
+    },
+    from: {
+      color: '#eeb776'
+    },
+    to: {
+      color: '#ee7678'
+    },
+    // Set default step function for all animate calls
+    step: (state, barVue) => {
+      barVue.path.setAttribute('stroke', state.color);
+      var value = Math.round(barVue.value() * 100);
+      if (value === 0) {
+        barVue.setText('');
+      } else {
+        // barRes.setText(value);
+      }
+
+      barVue.text.style.color = state.color;
+    }
+  });
+  barVue.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+  barVue.text.style.fontSize = '2rem';
+  barVue.animate(0.90);
+
 
   // skill slide
   let skill = new Swiper(".sw-skill", {
-    slidesPerView: 4,
+    slidesPerView: 2,
     slidesPerColumn: 2,
     spaceBetween: 30,
     slidesPerColumnFill: 'row',
+    breakpoints : {
+      800 : {
+        slidesPerView: 4,
+        slidesPerColumn: 2,
+        
+      },
+      640 : {
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        
+      },
+    }
 
   });
 
@@ -515,7 +645,7 @@ function resetAbout() {
       'git': 'https://github.com/jk92lania/palgongtea',
       'origin': 'http://www.palgongtea.co.kr/',
       'study': '개인제작 클론 코딩',
-      'day': '10'
+      'day': '8'
     },
     {
       'name': '삼양맛샵',
@@ -528,7 +658,7 @@ function resetAbout() {
       'git': 'https://github.com/jk92lania/sydeliciousshop',
       'origin': 'https://sydeliciousshop.com/',
       'study': '개인제작 클론 코딩',
-      'day': '10'
+      'day': '6'
     },
     {
       'name': '포트폴리오',
@@ -579,7 +709,7 @@ function resetAbout() {
       'git': 'https://github.com/jk92lania/hansalim',
       'origin': 'https://shop.hansalim.or.kr/shopping/spMain.do',
       'study': '스터디용 제작 클론 코딩',
-      'day': '10'
+      'day': '5'
     },
     {
       'name': '풀무원',
@@ -592,7 +722,7 @@ function resetAbout() {
       'git': 'https://github.com/jk92lania/greenjuice',
       'origin': 'https://greenjuice.pulmuone.com/',
       'study': '스터디용 제작 클론 코딩',
-      'day': '10'
+      'day': '4'
     },
     {
       'name': '부산대학교병원',
@@ -605,7 +735,7 @@ function resetAbout() {
       'git': 'https://github.com/jk92lania/pnuh',
       'origin': 'https://www.pnuh.or.kr/pnuh/main/main.do?rbsIdx=1',
       'study': '스터디용 제작 클론 코딩',
-      'day': '10'
+      'day': '6'
     },
     {
       'name': 'stx건설',
@@ -618,7 +748,7 @@ function resetAbout() {
       'git': 'https://github.com/jk92lania/stxconst',
       'origin': 'http://www.stxconst.co.kr/',
       'study': '스터디용 제작 클론 코딩',
-      'day': '6'
+      'day': '3'
     },
   ];
 
@@ -714,15 +844,32 @@ function resetAbout() {
 
   // portfolio slide
   let sw_port = new Swiper(".sw-portfolio", {
-    slidesPerView: 3,
-    slidesPerColumn: 4,
+    slidesPerView: 1,
+    slidesPerColumn: 2,
     slidesPerColumnFill: 'row',
-    slidesPerGroup: 16,
+    slidesPerGroup: 1,
     spaceBetween: 30,
     pagination: {
       el: ".sw-portfolio-pg",
       clickable: true,
     },
+    breakpoints : {
+      1200 : {
+        slidesPerView: 3,
+        slidesPerColumn: 4,        
+        slidesPerGroup: 3,
+      },
+      800 : {
+        slidesPerView: 2,
+        slidesPerColumn: 3,        
+        slidesPerGroup: 2,
+      },
+      640 : {
+        slidesPerView: 2,
+        slidesPerColumn: 2,        
+        slidesPerGroup: 2,
+      },
+    }
   });
 
   // all portfolio
