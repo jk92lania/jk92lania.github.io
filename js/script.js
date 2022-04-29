@@ -3,13 +3,13 @@ window.onload = function () {
   let topmenu = $('.topmenu');
 
   let header_h = $('.header').height();
-  let visual_h = $('.visual').height();  
-  
-  
-  $(window).scroll(function(){
-    if( $(this).scrollTop() > parseInt(visual_h) ) {
+  let visual_h = $('.visual').height();
+
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > parseInt(visual_h)) {
       topmenu.fadeIn();
-    }else {
+    } else {
       topmenu.fadeOut();
 
     }
@@ -17,271 +17,109 @@ window.onload = function () {
 
 
   // gotop button action
-  topmenu.click(function(){
+  topmenu.click(function () {
     $('html').animate({
-      scrollTop : 0
+      scrollTop: 0
     }, 400);
   });
+
+
 
   // about slide
   let sw_about;
   let sw_about_obj = {
-    slidesPerView:1,
-    slidesPerGroup:1,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
     spaceBetween: 10,
-    breakpoints : {
-      800 : {
-        slidesPerView:2,
-        slidesPerGroup:2,
-        
+    breakpoints: {
+      800: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+
       },
     }
-    
+
   };
 
-  $(window).resize(function(){
+  $(window).resize(function () {
     resetAbout();
-});
+  });
 
-function resetAbout() {
+  function resetAbout() {
     let temp = $(window).width();
 
-    if(temp <= 1180 && sw_about == undefined){
-        console.log('새로 생성되었다.')
-     //    $('.sw-quick-1').addClass('quick-list-focus');
-     sw_about = new Swiper('.sw-about', sw_about_obj);        
-     }else if(temp <= 1200 && sw_about != undefined){
-         // slide 이미 존재할 때 새로 생성할 필요 없음
-     }else{
-         if(sw_about != undefined) {
-             // 이미 생성된 slide 삭제
-             console.log('삭제됨')
-             sw_about.destroy();
-             sw_about = undefined;
+    if (temp <= 1180 && sw_about == undefined) {
+      console.log('새로 생성되었다.')
+      //    $('.sw-quick-1').addClass('quick-list-focus');
+      sw_about = new Swiper('.sw-about', sw_about_obj);
+    } else if (temp <= 1200 && sw_about != undefined) {
+      // slide 이미 존재할 때 새로 생성할 필요 없음
+    } else {
+      if (sw_about != undefined) {
+        // 이미 생성된 slide 삭제
+        console.log('삭제됨')
+        sw_about.destroy();
+        sw_about = undefined;
 
-             // swiper wrapper 스타일시트 제거
-             $('.sw-about').find('swiper-wrapper').removeAttr('sytle');
-             
-             // swiper slide 스타일시트 제거
-             $('.sw-about').find('swiper-slide').removeAttr('sytle');
-             // $('.sw-quick-1').removeClass('quick-list-focus');
-         }            
-     }
- }
- // 처음에 너비 계산 후 실행
- resetAbout();
+        // swiper wrapper 스타일시트 제거
+        $('.sw-about').find('swiper-wrapper').removeAttr('sytle');
+
+        // swiper slide 스타일시트 제거
+        $('.sw-about').find('swiper-slide').removeAttr('sytle');
+        // $('.sw-quick-1').removeClass('quick-list-focus');
+      }
+    }
+  }
+  // 처음에 너비 계산 후 실행
+  resetAbout();
 
 
   // mbti 그래프
-  let mbti_e_value = 0.64;
-  let mbti_i_value = 0.46;
-  let mbti_n_value = 0.78;
-  let mbti_s_value = 0.37;
-  let mbti_f_value = 0.12;
-  let mbti_t_value = 1.0;
-  let mbti_p_value = 0.65;
-  let mbti_j_value = 0.44;
+  let mbti_e_value = 17.2;
+  let mbti_i_value = 16.4;
+  let mbti_n_value = 7.8;
+  let mbti_s_value = 23.5;
+  let mbti_f_value = 37.4;
+  let mbti_t_value = 51.6;
+  let mbti_p_value = 6;
+  let mbti_j_value = 4.2;
 
-  let mbti_bar_e = new ProgressBar.Line(mbtiE, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
+
+  let mbti_chart = bb.generate({
+    data: {
+      x: "x",
+      columns: [
+        ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
+        ["ENTJ", mbti_e_value, mbti_i_value, mbti_n_value, mbti_s_value, mbti_t_value, mbti_f_value, mbti_j_value, mbti_p_value]
+      ],
+      type: "radar", // for ESM specify as: radar()
+      colors : {
+        ENTJ : "#ee7678"
+      },
+      labels: true
     },
-    to: {
-      color: '#ee7678'
+    radar: {
+      axis: {
+        max: 60
+      },
+      level: {
+        depth: 4
+      },
+      direction: {
+        clockwise: true
+      }
     },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_e) => {
-      mbti_bar_e.path.setAttribute('stroke', state.color);
-      //   var value = Math.round(mbti_bar_e.value() * 100);
-      //   if (value === 0) {
-      //     mbti_bar_e.setText('');
-      //   } else {
-      //     mbti_bar_e.setText(value);
-      //   }
-
-      //   mbti_bar_e.text.style.color = state.color;
-    }
-  });
-  //   mbti_bar_e.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-  //   mbti_bar_e.text.style.fontSize = '2rem';
-
-  mbti_bar_e.animate(mbti_e_value); // Number from 0.0 to 1.0
-  console.log(mbti_bar_e);
-
-  let mbti_bar_i = new ProgressBar.Line(mbtiI, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
-    },
-    to: {
-      color: '#ee7678'
-    },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_i) => {
-      mbti_bar_i.path.setAttribute('stroke', state.color);
-
-    }
+    
+    bindto: "#mbtiChart"
   });
 
-  mbti_bar_i.animate(mbti_i_value); // Number from 0.0 to 1.0
+  setTimeout(function(){
+    mbti_chart.data.colors({            
+      ENTJ: d3.rgb("#eeb776").darker(1)
+    });
+  }, 2000);
 
-
-  let mbti_bar_n = new ProgressBar.Line(mbtiN, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
-    },
-    to: {
-      color: '#ee7678'
-    },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_n) => {
-      mbti_bar_n.path.setAttribute('stroke', state.color);
-
-    }
-  });
-
-  mbti_bar_n.animate(mbti_n_value); // Number from 0.0 to 1.0
-
-
-  let mbti_bar_s = new ProgressBar.Line(mbtiS, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
-    },
-    to: {
-      color: '#ee7678'
-    },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_s) => {
-      mbti_bar_s.path.setAttribute('stroke', state.color);
-
-    }
-  });
-
-  mbti_bar_s.animate(mbti_s_value); // Number from 0.0 to 1.0
-
-
-  let mbti_bar_f = new ProgressBar.Line(mbtiF, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
-    },
-    to: {
-      color: '#ee7678'
-    },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_f) => {
-      mbti_bar_f.path.setAttribute('stroke', state.color);
-
-    }
-  });
-
-  mbti_bar_f.animate(mbti_f_value); // Number from 0.0 to 1.0
-
-
-  let mbti_bar_t = new ProgressBar.Line(mbtiT, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
-    },
-    to: {
-      color: '#ee7678'
-    },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_t) => {
-      mbti_bar_t.path.setAttribute('stroke', state.color);
-
-    }
-  });
-
-  mbti_bar_t.animate(mbti_t_value); // Number from 0.0 to 1.0
-
-
-  let mbti_bar_p = new ProgressBar.Line(mbtiP, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
-    },
-    to: {
-      color: '#ee7678'
-    },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_p) => {
-      mbti_bar_p.path.setAttribute('stroke', state.color);
-
-    }
-  });
-
-  mbti_bar_p.animate(mbti_p_value); // Number from 0.0 to 1.0
-
-
-  let mbti_bar_j = new ProgressBar.Line(mbtiJ, {
-    strokeWidth: 2,
-    color: '#76b7ee',
-    trailColor: '#eee',
-    trailWidth: 1,
-    easing: 'easeInOut',
-    duration: 1400,
-    svgStyle: null,
-    from: {
-      color: '#76b7ee'
-    },
-    to: {
-      color: '#ee7678'
-    },
-    // Set default step function for all animate calls
-    step: (state, mbti_bar_j) => {
-      mbti_bar_j.path.setAttribute('stroke', state.color);
-
-    }
-  });
-
-  mbti_bar_j.animate(mbti_j_value); // Number from 0.0 to 1.0
-
+ 
 
   // mbti slide
   //   let mbti_data = ['Te', 'Ni', 'Se', 'Fi'];
@@ -306,12 +144,12 @@ function resetAbout() {
   let sw_profile = new Swiper(".sw-profile", {
     slidesPerView: 2,
     spaceBetween: 10,
-    breakpoints : {
-      1000 : {
+    breakpoints: {
+      1000: {
         slidesPerView: 4,
 
       },
-      640 : {
+      640: {
         slidesPerView: 3,
 
       },
@@ -613,27 +451,30 @@ function resetAbout() {
   let skill = new Swiper(".sw-skill", {
     slidesPerView: 2,
     slidesPerColumn: 2,
-    spaceBetween: 30,
+    spaceBetween: 0,
     slidesPerColumnFill: 'row',
-    breakpoints : {
-      800 : {
+    breakpoints: {
+      800: {
         slidesPerView: 4,
         slidesPerColumn: 2,
-        
+
       },
-      640 : {
+      640: {
         slidesPerView: 3,
         slidesPerColumn: 2,
-        
+
       },
-    }
+    },
+    pagination : {
+      el : ".sw-skill-pg",
+      clickable : true
+    },
 
   });
 
 
   // portfolio data
-  let sw_pf_data = [
-    {
+  let sw_pf_data = [{
       'name': '팔공티',
       'imgurl': 'images/port_pal_001.jpg',
       'html': 'html',
@@ -853,20 +694,20 @@ function resetAbout() {
       el: ".sw-portfolio-pg",
       clickable: true,
     },
-    breakpoints : {
-      1200 : {
+    breakpoints: {
+      1200: {
         slidesPerView: 3,
-        slidesPerColumn: 4,        
+        slidesPerColumn: 4,
         slidesPerGroup: 3,
       },
-      800 : {
+      800: {
         slidesPerView: 2,
-        slidesPerColumn: 3,        
+        slidesPerColumn: 3,
         slidesPerGroup: 2,
       },
-      640 : {
+      640: {
         slidesPerView: 2,
-        slidesPerColumn: 2,        
+        slidesPerColumn: 2,
         slidesPerGroup: 2,
       },
     }
@@ -959,14 +800,63 @@ function resetAbout() {
 
 
   // life slide
-  let sw_life = new Swiper(".sw-life", {
-    slidesPerView: 4,
-    slidesPerGroup: 4,
+  let sw_travel = new Swiper(".sw-travel", {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
     spaceBetween: 10,
     pagination: {
-      el: ".sw-life-pg",
+      el: ".sw-travel-pg",
       clickable: true,
     },
+    breakpoints: {
+      1000: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      800: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+      },
+    }
+  });
+  let sw_read = new Swiper(".sw-read", {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: ".sw-read-pg",
+      clickable: true,
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      800: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+      },
+    }
+  });
+
+  let sw_show = new Swiper(".sw-show", {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: ".sw-show-pg",
+      clickable: true,
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      800: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+      },
+    }
   });
 
 

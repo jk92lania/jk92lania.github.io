@@ -30,6 +30,17 @@
     <!-- font-awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 
+    Step 1. Load billboard.js and D3.js
+<!-- Step 1) Load D3.js -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- Step 2) Load billboard.js with style -->
+<script src="js/billboard/billboard.min.js"></script>
+
+<!-- Load with base style -->
+<link rel="stylesheet" href="js/billboard/billboard.min.css">
+
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
@@ -38,6 +49,7 @@
     <div class="topmenu">
         <span>top</span>
     </div>
+    
     <div class="all-portfolio">
         <div class="all-pf-wrap">
             <button class="all-pf-close"><i class="fa fa-window-close fa-3x"></i></button>
@@ -255,56 +267,8 @@
                     <div class="mbti-wrap">
                         <div class="flex-left">
                             
+                            <div id="mbtiChart"></div>
 
-                            <div class="mbti-wrap-bar">
-                                <div class="mbti-ei clearfix">
-                                    <div class="mbti-bar">
-        
-                                        <div id="mbtiE" class="mbti-bar-e"></div>
-                                        <div id="mbtiI" class="mbti-bar-i"></div>
-                                    </div>
-                                    <div class="mbti-txt">
-                                        <span class="mbti-txt mbti-txt-e">E</span>
-                                        <!-- <span class="mbti-txt-i">I</span>         -->
-                                    </div>
-                                </div>
-                                <div class="mbti-ns clearfix">
-                                    <div class="mbti-bar">
-                                        <div id="mbtiN" class="mbti-bar-n"></div>
-                                        <div id="mbtiS" class="mbti-bar-s"></div>
-        
-                                    </div>
-                                    <div class="mbti-txt">
-                                        <span class="mbti-txt mbti-txt-n">N</span>
-                                        <!-- <span class="mbti-txt-s">S</span> -->
-        
-                                    </div>
-                                </div>
-                                <div class="mbti-ft clearfix">
-                                    <div class="mbti-bar">
-                                        <div id="mbtiF" class="mbti-bar-f"></div>
-                                        <div id="mbtiT" class="mbti-bar-t"></div>
-        
-                                    </div>
-                                    <div class="mbti-txt">
-                                        <!-- <span class="mbti-txt-f">F</span> -->
-                                        <span class="mbti-txt mbti-txt-t">T</span>
-        
-                                    </div>
-                                </div>
-                                <div class="mbti-pj clearfix">
-                                    <div class="mbti-bar">
-                                        <div id="mbtiP" class="mbti-bar-p"></div>
-                                        <div id="mbtiJ" class="mbti-bar-j"></div>
-                                        
-                                    </div>
-                                    <div class="mbti-txt">
-                                        <!-- <span class="mbti-txt-p">P</span> -->
-                                        <span class="mbti-txt mbti-txt-j">J</span>
-                                        
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="flex-right">
                             <div class="mbti-wrap-info">
@@ -503,6 +467,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="swiper-pagination sw-skill-pg"></div> 
                             </div> 
                         </div>
                     </div>                 
@@ -581,48 +546,73 @@
                             life
                         </span>
                     </div>
-                    <div class="swiper-container sw-life">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <p class="life-travel-tit">travel</p>
+                    <div class="travel clearfix">
+                        <div class="left">
+                            <h3 class="life-tit life-tit-travel">travel</h3>
+                        </div>
+                        <div class="right">
+                            <div class="swiper-container sw-travel">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-1"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-2"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-3"></div>
+                                    </div>                                    
+                                </div>
+                                <div class="swiper-pagination sw-travel-pg"></div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-1"></div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-2"></div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-3"></div>
-                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="read clearfix">
+                        <div class="left">
+                            <h3 class="life-tit life-tit-read">reading</h3>
+                        </div>
+                        <div class="right">
                             
-                            <div class="swiper-slide">
-                                <p class="life-read-tit">reading</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-4"></div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-5"></div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-6"></div>
-                            </div>
-                            
-                            <div class="swiper-slide">
-                                <p class="life-show-tit">show</p>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-7"></div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-8"></div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="life-box life-9"></div>
+                            <div class="swiper-container sw-read">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-4"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-5"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-6"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination sw-read-pg"></div>
                             </div>
                         </div>
-                        <div class="swiper-pagination sw-life-pg"></div>
+                    </div>
+                    <div class="show clearfix">
+                        <div class="left">
+                            <h3 class="life-tit life-tit-show">show</h3>
+                        </div>
+                        <div class="right">
+                            
+                            <div class="swiper-container sw-show">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-7"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-8"></div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="life-box life-9"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination sw-show-pg"></div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 
