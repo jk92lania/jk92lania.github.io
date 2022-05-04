@@ -28,50 +28,52 @@ window.onload = function () {
   // about slide
   let sw_about;
   let sw_about_obj = {
-    slidesPerView: 1,
+    slidesPerView: 2,
     slidesPerGroup: 1,
-    spaceBetween: 10,
+    // spaceBetween: 10,
     breakpoints: {
       800: {
         slidesPerView: 2,
-        slidesPerGroup: 2,
+        slidesPerGroup: 1,
 
       },
     }
 
   };
 
-  $(window).resize(function () {
-    resetAbout();
-  });
+  sw_about = new Swiper('.sw-about', sw_about_obj);
 
-  function resetAbout() {
-    let temp = $(window).width();
+  // $(window).resize(function () {
+  //   resetAbout();
+  // });
 
-    if (temp <= 1180 && sw_about == undefined) {
-      console.log('새로 생성되었다.')
-      //    $('.sw-quick-1').addClass('quick-list-focus');
-      sw_about = new Swiper('.sw-about', sw_about_obj);
-    } else if (temp <= 1200 && sw_about != undefined) {
-      // slide 이미 존재할 때 새로 생성할 필요 없음
-    } else {
-      if (sw_about != undefined) {
-        // 이미 생성된 slide 삭제
-        console.log('삭제됨')
-        sw_about.destroy();
-        sw_about = undefined;
+  // function resetAbout() {
+  //   let temp = $(window).width();
 
-        // swiper wrapper 스타일시트 제거
-        $('.sw-about').find('swiper-wrapper').removeAttr('sytle');
+  //   if (temp <= 1180 && sw_about == undefined) {
+  //     console.log('새로 생성되었다.')
+  //     //    $('.sw-quick-1').addClass('quick-list-focus');
+  //     sw_about = new Swiper('.sw-about', sw_about_obj);
+  //   } else if (temp <= 1200 && sw_about != undefined) {
+  //     // slide 이미 존재할 때 새로 생성할 필요 없음
+  //   } else {
+  //     if (sw_about != undefined) {
+  //       // 이미 생성된 slide 삭제
+  //       console.log('삭제됨')
+  //       sw_about.destroy();
+  //       sw_about = undefined;
 
-        // swiper slide 스타일시트 제거
-        $('.sw-about').find('swiper-slide').removeAttr('sytle');
-        // $('.sw-quick-1').removeClass('quick-list-focus');
-      }
-    }
-  }
-  // 처음에 너비 계산 후 실행
-  resetAbout();
+  //       // swiper wrapper 스타일시트 제거
+  //       $('.sw-about').find('swiper-wrapper').removeAttr('sytle');
+
+  //       // swiper slide 스타일시트 제거
+  //       $('.sw-about').find('swiper-slide').removeAttr('sytle');
+  //       // $('.sw-quick-1').removeClass('quick-list-focus');
+  //     }
+  //   }
+  // }
+  // // 처음에 너비 계산 후 실행
+  // resetAbout();
 
 
   // mbti 그래프
@@ -86,6 +88,7 @@ window.onload = function () {
 
 
   let mbti_chart = bb.generate({
+    
     data: {
       x: "x",
       columns: [
@@ -100,14 +103,23 @@ window.onload = function () {
     },
     radar: {
       axis: {
-        max: 60
+        max: 50,
+        text: {
+          position: {
+            x: -20,
+            y: -15
+          }
+        }        
       },
       level: {
         depth: 4
       },
       direction: {
         clockwise: true
-      }
+      }, 
+      width : {
+        ratio : 0.9
+      },    
     },
     
     bindto: "#mbtiChart"
@@ -125,9 +137,9 @@ window.onload = function () {
   //   let mbti_data = ['Te', 'Ni', 'Se', 'Fi'];
   let sw_mbti = new Swiper(".sw-mbti", {
     slidesPerView: 1,
-    direction: "vertical",
+    // direction: "vertical",
     spaceBetween: 0,
-    autoHeight: true,
+    // autoHeight: true,
     centeredSlides: true,
     pagination: {
       el: ".sw-mbti-pg",
