@@ -182,10 +182,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barHtml) => {
@@ -219,10 +219,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barCss) => {
@@ -256,10 +256,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barJs) => {
@@ -276,7 +276,7 @@ window.onload = function () {
   });
   barJs.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
   barJs.text.style.fontSize = '2rem';
-  barJs.animate(0.95);
+  barJs.animate(0.85);
 
   // skill jquery
   let barJq = new ProgressBar.Circle(skillJq, {
@@ -292,10 +292,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barJq) => {
@@ -312,7 +312,7 @@ window.onload = function () {
   });
   barJq.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
   barJq.text.style.fontSize = '2rem';
-  barJq.animate(0.92);
+  barJq.animate(0.62);
 
   // skill 반응형
   let barRes = new ProgressBar.Circle(skillRs, {
@@ -328,10 +328,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barRes) => {
@@ -364,10 +364,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barGit) => {
@@ -384,7 +384,7 @@ window.onload = function () {
   });
   barGit.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
   barGit.text.style.fontSize = '2rem';
-  barGit.animate(0.95);
+  barGit.animate(0.75);
 
   // skill scss
   let barScss = new ProgressBar.Circle(skillScss, {
@@ -400,10 +400,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barScss) => {
@@ -420,7 +420,7 @@ window.onload = function () {
   });
   barScss.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
   barScss.text.style.fontSize = '2rem';
-  barScss.animate(0.90);
+  barScss.animate(0.70);
 
   // skill vue
   let barVue = new ProgressBar.Circle(skillVue, {
@@ -436,10 +436,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#eeb776'
+      color: '#cdbaa4'
     },
     to: {
-      color: '#ee7678'
+      color: '#333'
     },
     // Set default step function for all animate calls
     step: (state, barVue) => {
@@ -456,7 +456,7 @@ window.onload = function () {
   });
   barVue.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
   barVue.text.style.fontSize = '2rem';
-  barVue.animate(0.90);
+  barVue.animate(0.30);
 
 
   // skill slide
@@ -498,7 +498,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/palgongtea',
       'origin': 'http://www.palgongtea.co.kr/',
       'study': '개인제작 클론 코딩',
-      'day': '8'
+      'day': '8',
+      'info' : '100% 개인 작업하였습니다. 반응형 포함되어있습니다.'
     },
     {
       'name': '삼양맛샵',
@@ -511,7 +512,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/sydeliciousshop',
       'origin': 'https://sydeliciousshop.com/',
       'study': '개인제작 클론 코딩',
-      'day': '6'
+      'day': '6',
+      'info' : '100% 개인 작업하였습니다.'
     },
     {
       'name': '포트폴리오',
@@ -522,7 +524,8 @@ window.onload = function () {
       'pc': 'PC',
       'git': 'https://github.com/jk92lania/portfolio',
       'study': '개인제작 클론 코딩',
-      'day': '20'
+      'day': '20',
+      'info' : '100% 개인 작업하였습니다. 현재 반응형 추가 등 작업중입니다.'
     },
     {
       'name': '생명보험협회',
@@ -536,7 +539,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/klia',
       'origin': 'https://www.klia.or.kr/',
       'study': '스터디용 제작 클론 코딩',
-      'day': '10'
+      'day': '10',
+      'info' : '수업을 들으며 제작하였습니다. 원페이지 제작방법 및 애니메이션 추가 방법을 배웠습니다. 반응형 포함되어 있습니다.'
     },
     {
       'name': '산청군청',
@@ -549,7 +553,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/sancheong',
       'origin': 'https://www.sancheong.go.kr/www/index.do',
       'study': '스터디용 제작 클론 코딩',
-      'day': '10'
+      'day': '10',
+      'info' : '수업을 들으며 제작하였습니다. 원페이지 제작방법 및 애니메이션 추가에 대해 배워나갔습니다. 반응형 포함되어 있습니다.'
     },
     {
       'name': '한살림',
@@ -562,7 +567,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/hansalim',
       'origin': 'https://shop.hansalim.or.kr/shopping/spMain.do',
       'study': '스터디용 제작 클론 코딩',
-      'day': '5'
+      'day': '8',
+      'info' : '수업을 들으며 제작하였습니다. 장바구니 계산 및 json 방식에 대해 배워나갔습니다.'
     },
     {
       'name': '풀무원',
@@ -575,7 +581,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/greenjuice',
       'origin': 'https://greenjuice.pulmuone.com/',
       'study': '스터디용 제작 클론 코딩',
-      'day': '4'
+      'day': '4',
+      'info' : '수업을 들으며 제작하였습니다. js를 이용한 class 추가, 제거 및 slide 제작에 대해 배워나갔습니다.'
     },
     {
       'name': '부산대학교병원',
@@ -588,7 +595,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/pnuh',
       'origin': 'https://www.pnuh.or.kr/pnuh/main/main.do?rbsIdx=1',
       'study': '스터디용 제작 클론 코딩',
-      'day': '6'
+      'day': '6',
+      'info' : '수업을 들으며 제작하였습니다. 헤더 제작, 슬라이드 더보기 제작하는 방법에 대해 배워나갔습니다.'
     },
     {
       'name': 'stx건설',
@@ -601,7 +609,8 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/stxconst',
       'origin': 'http://www.stxconst.co.kr/',
       'study': '스터디용 제작 클론 코딩',
-      'day': '3'
+      'day': '3',
+      'info' : '수업을 들으며 제작하였습니다. 헤더 제작 등에 대해 배워나갔습니다.'
     },
   ];
 
@@ -611,24 +620,6 @@ window.onload = function () {
     let temp_data = sw_pf_data[i];
     sw_pf_html += '<div class="swiper-slide">';
     sw_pf_html += '<div class="portfolio-box">';
-
-    // sw_pf_html += '<div class="kor-pattern">';
-    // sw_pf_html += '<div class="kp-sqr kp-1"></div>';
-    // sw_pf_html += '<div class="kp-sqr kp-2"></div>';
-    // sw_pf_html += '<div class="kp-sqr kp-3"></div>';
-    // sw_pf_html += '<div class="kp-nieun kp-4"></div>';
-    // sw_pf_html += '<div class="kp-nieun kp-5"></div>';
-    // sw_pf_html += '<div class="kp-nieun kp-6"></div>';
-    // sw_pf_html += '<div class="kp-line kp-7"></div>';
-    // sw_pf_html += '<div class="kp-line kp-8"></div></div>';
-
-    // sw_pf_html += '<div class="kor-pattern kp-right-bottom">';
-    // sw_pf_html += '<div class="kp-sqr kp-1"></div>';
-    // sw_pf_html += '<div class="kp-sqr kp-2"></div>';
-    // sw_pf_html += '<div class="kp-sqr kp-3"></div>';
-    // sw_pf_html += '<div class="kp-nieun kp-4"></div>';
-    // sw_pf_html += '<div class="kp-nieun kp-5"></div>';
-    // sw_pf_html += '<div class="kp-nieun kp-6"></div></div>';
 
     sw_pf_html += '<div class="pf-box-img"><img src=\"';
     sw_pf_html += temp_data.imgurl;
@@ -645,7 +636,9 @@ window.onload = function () {
     sw_pf_html += temp_data.study;
     sw_pf_html += '</span>제작 기간 :';
     sw_pf_html += temp_data.day;
-    sw_pf_html += '일</p>';
+    sw_pf_html += '일';
+    sw_pf_html += `<em>${temp_data.info}</em>`;
+    sw_pf_html += '</p>';
     sw_pf_html += '</div>';
 
     sw_pf_html += '<div class="pf-nav mt-10">';
