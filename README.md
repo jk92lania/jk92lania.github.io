@@ -17,3 +17,4 @@ Tools :
 <img src="https://img.shields.io/badge/VisualStudio-5C2D91?style=flat-square&logo=VisualStudio&logoColor=white"/>
 
 
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jk92lania)](https://github.com/jk92lania/github-readme-stats)
