@@ -390,9 +390,9 @@ body {
     display: block;
     width: 100%;
     height: 80px;
-    background-color: #fff;
+    background-color: #cdbaa4;
     z-index: 99;
-    box-shadow: 0px 0px 5px 1px #eee;
+    box-shadow: 0px 0px 2px 1px #eee;
 }
 
 .header .container {
@@ -466,7 +466,7 @@ body {
 .visual {
     position: relative;
     display: block;
-    padding-top: 120px;
+    padding-top: 90px;
     background-color: #cdbaa4;
 }
 
@@ -1167,7 +1167,8 @@ body {
     width: 90%;
     height: 90%;
     border-radius: 50%;
-    border: 5px solid #cdbaa4;
+    border: 10px solid #cdbaa4;
+    z-index: -1;
 }
 
 .skill-info {
@@ -1231,7 +1232,7 @@ body {
 }
 
 .portfolio .container {
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
 
@@ -1488,7 +1489,7 @@ body {
 
 @media all and (max-width:1200px) {
     .portfolio .container {
-        padding: 60px 20px;
+        /* padding: 60px 20px; */
     }
 }
 
@@ -1750,7 +1751,7 @@ body {
 .footer {
     position: relative;
     display: block;
-    background-color: #ee7678;
+    background-color: #cdbaa4;
 
 }
 
