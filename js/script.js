@@ -1,10 +1,22 @@
 window.onload = function () {
   // gotop button hide
   let topmenu = $('.topmenu');
-
   let header_h = $('.header').height();
   let visual_h = $('.visual').height();
+  let port_top = $('.portfolio').offset().top - header_h;
+  let skill_top = $('.skill').offset().top - header_h;
+  let about_top = $('.about').offset().top - header_h;
+  let life_top = $('.life').offset().top - header_h;
+  let gnbLink = $('.gnb li a');
+  let gnbLinkPos = [port_top, skill_top, about_top, life_top];
 
+  function makeTop() {
+    port_top = $('.portfolio').offset().top - header_h;
+    skill_top = $('.skill').offset().top - header_h;
+    about_top = $('.about').offset().top - header_h;
+    life_top = $('.life').offset().top - header_h;
+    gnbLinkPos = [port_top, skill_top, about_top, life_top];
+  }
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > parseInt(visual_h)) {
@@ -15,7 +27,6 @@ window.onload = function () {
     }
   })
 
-
   // gotop button action
   topmenu.click(function () {
     $('html').animate({
@@ -23,16 +34,26 @@ window.onload = function () {
     }, 400);
   });
 
+  $.each(gnbLink, function(index, item) {
+    $(this).click(function(event){
+      event.preventDefault();
+      console.log(gnbLinkPos[index]);
+      $('html').animate({
+        scrollTop : gnbLinkPos[index]
+      }, 400);
+    });
+  });
+
 
 
   // about slide
   let sw_about;
   let sw_about_obj = {
-    slidesPerView: 2,
+    slidesPerView: 1,
     slidesPerGroup: 1,
     // spaceBetween: 10,
     breakpoints: {
-      800: {
+      1000: {
         slidesPerView: 2,
         slidesPerGroup: 1,
 
@@ -42,38 +63,6 @@ window.onload = function () {
   };
 
   sw_about = new Swiper('.sw-about', sw_about_obj);
-
-  // $(window).resize(function () {
-  //   resetAbout();
-  // });
-
-  // function resetAbout() {
-  //   let temp = $(window).width();
-
-  //   if (temp <= 1180 && sw_about == undefined) {
-  //     console.log('새로 생성되었다.')
-  //     //    $('.sw-quick-1').addClass('quick-list-focus');
-  //     sw_about = new Swiper('.sw-about', sw_about_obj);
-  //   } else if (temp <= 1200 && sw_about != undefined) {
-  //     // slide 이미 존재할 때 새로 생성할 필요 없음
-  //   } else {
-  //     if (sw_about != undefined) {
-  //       // 이미 생성된 slide 삭제
-  //       console.log('삭제됨')
-  //       sw_about.destroy();
-  //       sw_about = undefined;
-
-  //       // swiper wrapper 스타일시트 제거
-  //       $('.sw-about').find('swiper-wrapper').removeAttr('sytle');
-
-  //       // swiper slide 스타일시트 제거
-  //       $('.sw-about').find('swiper-slide').removeAttr('sytle');
-  //       // $('.sw-quick-1').removeClass('quick-list-focus');
-  //     }
-  //   }
-  // }
-  // // 처음에 너비 계산 후 실행
-  // resetAbout();
 
 
   // mbti 그래프
@@ -864,6 +853,6 @@ window.onload = function () {
     }
   });
 
-
+  makeTop();
 
 }

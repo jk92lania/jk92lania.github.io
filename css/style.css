@@ -202,14 +202,11 @@ body {
     width: 80px;
     height: 80px;
 
-    border-radius: 50%;
-    border: 6px double #ee7678;
-    background-color: #eeb776;
 
     z-index: 99999;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 
 .topmenu span {
     position: absolute;
@@ -219,13 +216,43 @@ body {
     display: block;
 
     color: #fff;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: -0.02rem;
     text-transform: uppercase;
-    text-shadow: 2px 2px 2px #000;
-
+    /* text-shadow: 2px 2px 2px #000; */
 }
+
+.topmenu span::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    
+    border-radius: 50%;
+    background-color: #eeb776;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+
+.topmenu span:hover:before {
+    width: 80px;
+    height: 80px;
+}
+
+@media all and (max-width:800px) {
+    .topmenu {
+        display: none !important;
+    }    
+}
+
 
 /* //topmenu */
 
@@ -448,11 +475,31 @@ body {
 }
 
 .gnb li a {
-    /* color: #fff; */
+    color: #fff;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.2rem;
     text-transform: uppercase;
+}
+
+.gnb li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 0px;
+    height: 0px;
+    background-color: #eeb776;
+    border-radius: 50%;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.gnb li a:hover::before {
+    width: 50px;
+    height: 50px;
 }
 
 /* //상단 */
@@ -790,39 +837,11 @@ body {
 
 
 @media all and (max-width:1200px) {
-    .about-wrap {
-    }
+    
     .about-info {
-        /* width: 30%; */
         padding: 0 2vw;
     }
-    .about-wrap .flex-right {
-        width: calc(100vw - 350px);
-    }
-    .sw-about {
-        max-width: 60vw;
-    }
-    .sw-about .swiper-wrapper {
-        display: flex;
-    }
     
-    .sw-about .swiper-slide {
-        display: block;
-        /* height: 100%; */
-        height: auto;
-    }
-    .about-face {
-        margin: 0;
-        width: 100%;       
-    }
-    .about-face span {
-        width: 100%;
-        height: 100%;
-    }
-    .about-face span img {
-        width: auto;
-        height: 100%;
-    }
 }
 @media all and (max-width:1000px) {
     .about-wrap {
