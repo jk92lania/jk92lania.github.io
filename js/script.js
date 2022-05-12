@@ -19,13 +19,27 @@ window.onload = function () {
   }
 
   $(window).scroll(function () {
-    if ($(this).scrollTop() > parseInt(visual_h)) {
+    let nowTop = $(this).scrollTop();
+    if (nowTop > parseInt(visual_h)) {
       topmenu.fadeIn();
     } else {
       topmenu.fadeOut();
-
     }
+    animateNowPos(nowTop);
+   
   })
+
+  function animateNowPos(_nowTop) {
+    $.each(gnbLink, function(index, item) {
+      if(_nowTop >  parseInt(gnbLinkPos[index])) {
+        gnbLink.removeClass('gnb-a-active');
+        gnbLink.eq(index).addClass('gnb-a-active');
+      }else if(_nowTop < parseInt(gnbLinkPos[0])) {
+        gnbLink.removeClass('gnb-a-active');
+      }        
+
+    });
+  }
 
   // gotop button action
   topmenu.click(function () {
@@ -37,7 +51,6 @@ window.onload = function () {
   $.each(gnbLink, function(index, item) {
     $(this).click(function(event){
       event.preventDefault();
-      console.log(gnbLinkPos[index]);
       $('html').animate({
         scrollTop : gnbLinkPos[index]
       }, 400);
