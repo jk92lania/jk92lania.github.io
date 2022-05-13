@@ -51,14 +51,41 @@
 <!-- Load with base style -->
 <link rel="stylesheet" href="js/billboard/billboard.min.css">
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="topmenu">
-        <span>top</span>
+    <div class="quickmenu">
+        <div class="quickmenu-more">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="quickmenu-wrap">
+            <a href="mailto:jk92lania@gmail.com?Subject=Hello%20ju%20kyeong" target="_blank" class="quickmenu-icon">
+                <i class="fas fa-envelope fa-4x" style="color: #806E59;"></i>
+                <span>메일</span>                        
+            </a>
+            <a href="https://open.kakao.com/o/sLMLkWfe" target="_blank" class="quickmenu-icon">
+                <i class="fas fa-comment-dots fa-4x" style="color: #806E59;"></i>
+                <span>카카오 오픈채팅</span> 
+            </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScLh6DjYJdE27HIcn12BlIf8Gam3hLIAtaMw0WKW699LBkTww/viewform?usp=sf_link" target="_blank" class="quickmenu-icon">
+                <i class="fas fa-question fa-4x" style="color: #806E59;"></i>
+                <span>구글 문의</span>
+            </a>
+            <a href="#" class="quickmenu-icon">
+                <i class="fas fa-download fa-4x" style="color: #806E59;"></i>
+                <span>pdf download</span>
+            </a>
+        </div>
+        <span class="topmenu">top</span>
     </div>
     
     <div class="all-portfolio">
@@ -102,7 +129,7 @@
             </div>
         </div>
     </div>
-    <div class="wrap">
+    <div class="wrap" id="wrap">
         <!-- 상단 -->
         <header class="header">
             <div class="container">
@@ -112,9 +139,9 @@
                 </a>
                 <nav class="nav">
                     <ul class="gnb clearfix">
+                        <li><a href="#">about</a></li>
                         <li><a href="#">portfolio</a></li>
                         <li><a href="#">skill</a></li>
-                        <li><a href="#">about</a></li>
                         <li><a href="#">life</a></li>
                     </ul>
                 </nav>
@@ -139,157 +166,9 @@
                 </div>
             </section>
             <!-- //비주얼 -->
-            
-            <!-- 포트폴리오 -->
-            <section class="portfolio" id="portfolio">
-                <div class="container">
-                    <div class="title">                        
-                        <span class="title-main">
-                            portfolio
-                        </span>
-                    </div>
-                    <div class="swiper-container sw-portfolio">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="portfolio-box">                                                                    
-                                    <div class="pf-box-img">
-                                        <img src="images/port_pal_001.jpg" alt="포트폴리오">
-                                    </div>
-                                    <div class="pf-label-list clearfix">
-                                        <span class="pf-box-label label-html">html</span>                                        
-                                        <span class="pf-box-label label-css">css</span>                                        
-                                        <span class="pf-box-label label-js">js</span>
-                                        <span class="pf-box-label label-pc">PC</span>                                        
-                                        <span class="pf-box-label label-mobile">Mobile</span>                                        
-                                    </div>
-                                    <div class="pf-box-txt">
-                                        <h3 class="pf-box-name">팔공티</h3>
-                                        <p class="pf-box-info">
-                                            <span>
-                                                개인제작 클론 코딩
-                                            </span>
-                                            제작 기간 : 10일
-                                        </p>
-                                    </div>                             
-                                    <div class="pf-nav mt-10">
-                                        <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/palgongtea/')">work</button>
-                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/palgongtea')">git</button>
-                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('http://www.palgongtea.co.kr/')">origin</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sw-portfolio-nav">
-                            <div class="swiper-pagination sw-portfolio-pg"></div> 
-                            <!-- <button class="sw-protfolio-all">
-                                <i class="fa fa-list fa-2x"></i>
-                            </button> -->
-                        </div>
-                    </div>
 
-                </div> 
-                
-            </section>
-            <!-- //포트폴리오 -->
-            
-            <!-- 기술 -->
-            <section class="skill" id="skill">
-                <div class="container">
-                    <div class="skill-wrap">
-                        <div class="flex-left">
-                            <div class="title">                        
-                                <span class="title-main">
-                                    skill
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="flex-right">
-                            <div class="swiper-container sw-skill">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div id="skillHtml" class="skill-progress"></div>
-                                        <div class="skill-info skill-html">
-                                            <img src="images/skill_html.png" alt="html">
-                                            <h3 class="skill-name">html</h3>
-                                            <!-- <p class="skill-info">
-                                                기본적인 틀 제작이 가능하다
-                                            </p> -->
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div id="skillCss" class="skill-progress"></div>
-                                        <div class="skill-info skill-css">
-                                            <img src="images/skill_css.png" alt="css">
-                                            <h3 class="skill-name">css</h3>
-                                            <!-- <p class="skill-info">
-                                                기본적인 틀 제작이 가능하다
-                                            </p> -->
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div id="skillJs" class="skill-progress"></div>
-                                        <div class="skill-info skill-js">
-                                            <img src="images/skill_js.png" alt="javascript">
-                                            <h3 class="skill-name">js</h3>
-                                            <!-- <p class="skill-info">
-                                                기본적인 틀 제작이 가능하다
-                                            </p> -->
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div id="skillJq" class="skill-progress"></div>
-                                        <div class="skill-info skill-jq">
-                                            <img src="images/skill_jq.png" alt="jquery">
-                                            <h3 class="skill-name">jquery</h3>
-                                            <!-- <p class="skill-info">
-                                                기본적인 틀 제작이 가능하다
-                                            </p> -->
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div id="skillRs" class="skill-progress"></div>
-                                        <div class="skill-info skill-res">
-                                            <img src="images/skill_res.png" alt="반응형">
-                                            <h3 class="skill-name">flex, grid</h3>
-                                            <!-- <p class="skill-info">
-                                                기본적인 틀 제작이 가능하다
-                                            </p> -->
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div id="skillGit" class="skill-progress"></div>
-                                        <div class="skill-info skill-git">
-                                            <img src="images/github.png" alt="github">
-                                            <h3 class="skill-name">github</h3>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div id="skillScss" class="skill-progress"></div>
-                                        <div class="skill-info skill-scss">
-                                            <img src="images/skill_scss.png" alt="scss">
-                                            <h3 class="skill-name">scss</h3>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div id="skillVue" class="skill-progress"></div>
-                                        <div class="skill-info skill-vue">
-                                            <img src="images/skill_vue.png" alt="vue">
-                                            <h3 class="skill-name">vue</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination sw-skill-pg"></div> 
-                            </div> 
-                        </div>
-                    </div>                 
-                </div>
-                
-            </section>
-            <!-- //기술 -->
-            
-            <!-- 나의 소개 -->
-            <section class="about" id="about">
+             <!-- 나의 소개 -->
+             <section class="about" id="about">
                 <div class="container">
                     <!-- <div class="kor-pattern">
                         <div class="kp-sqr kp-1"></div>
@@ -454,6 +333,155 @@
             </section>
             <!-- //mbti -->
             
+            <!-- 포트폴리오 -->
+            <section class="portfolio" id="portfolio">
+                <div class="container">
+                    <div class="title">                        
+                        <span class="title-main">
+                            portfolio
+                        </span>
+                    </div>
+                    <div class="swiper-container sw-portfolio">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="portfolio-box">                                                                    
+                                    <div class="pf-box-img">
+                                        <img src="images/port_pal_001.jpg" alt="포트폴리오">
+                                    </div>
+                                    <div class="pf-label-list clearfix">
+                                        <span class="pf-box-label label-html">html</span>                                        
+                                        <span class="pf-box-label label-css">css</span>                                        
+                                        <span class="pf-box-label label-js">js</span>
+                                        <span class="pf-box-label label-pc">PC</span>                                        
+                                        <span class="pf-box-label label-mobile">Mobile</span>                                        
+                                    </div>
+                                    <div class="pf-box-txt">
+                                        <h3 class="pf-box-name">팔공티</h3>
+                                        <p class="pf-box-info">
+                                            <span>
+                                                개인제작 클론 코딩
+                                            </span>
+                                            제작 기간 : 10일
+                                        </p>
+                                    </div>                             
+                                    <div class="pf-nav mt-10">
+                                        <button class="pf-btn pf-work" type="button" onclick="window.open('https://jk92lania.github.io/palgongtea/')">work</button>
+                                        <button class="pf-btn pf-git" type="button" onclick="window.open('https://github.com/jk92lania/palgongtea')">git</button>
+                                        <button class="pf-btn pf-ori" type="button" onclick="window.open('http://www.palgongtea.co.kr/')">origin</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sw-portfolio-nav">
+                            <div class="swiper-pagination sw-portfolio-pg"></div> 
+                            <!-- <button class="sw-protfolio-all">
+                                <i class="fa fa-list fa-2x"></i>
+                            </button> -->
+                        </div>
+                    </div>
+
+                </div> 
+                
+            </section>
+            <!-- //포트폴리오 -->
+            
+            <!-- 기술 -->
+            <section class="skill" id="skill">
+                <div class="container">
+                    <div class="skill-wrap">
+                        <div class="flex-left">
+                            <div class="title">                        
+                                <span class="title-main">
+                                    skill
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex-right">
+                            <div class="swiper-container sw-skill">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div id="skillHtml" class="skill-progress"></div>
+                                        <div class="skill-info skill-html">
+                                            <img src="images/skill_html.png" alt="html">
+                                            <h3 class="skill-name">html</h3>
+                                            <!-- <p class="skill-info">
+                                                기본적인 틀 제작이 가능하다
+                                            </p> -->
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillCss" class="skill-progress"></div>
+                                        <div class="skill-info skill-css">
+                                            <img src="images/skill_css.png" alt="css">
+                                            <h3 class="skill-name">css</h3>
+                                            <!-- <p class="skill-info">
+                                                기본적인 틀 제작이 가능하다
+                                            </p> -->
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillJs" class="skill-progress"></div>
+                                        <div class="skill-info skill-js">
+                                            <img src="images/skill_js.png" alt="javascript">
+                                            <h3 class="skill-name">js</h3>
+                                            <!-- <p class="skill-info">
+                                                기본적인 틀 제작이 가능하다
+                                            </p> -->
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillJq" class="skill-progress"></div>
+                                        <div class="skill-info skill-jq">
+                                            <img src="images/skill_jq.png" alt="jquery">
+                                            <h3 class="skill-name">jquery</h3>
+                                            <!-- <p class="skill-info">
+                                                기본적인 틀 제작이 가능하다
+                                            </p> -->
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillRs" class="skill-progress"></div>
+                                        <div class="skill-info skill-res">
+                                            <img src="images/skill_res.png" alt="반응형">
+                                            <h3 class="skill-name">flex, grid</h3>
+                                            <!-- <p class="skill-info">
+                                                기본적인 틀 제작이 가능하다
+                                            </p> -->
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillGit" class="skill-progress"></div>
+                                        <div class="skill-info skill-git">
+                                            <img src="images/github.png" alt="github">
+                                            <h3 class="skill-name">github</h3>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillScss" class="skill-progress"></div>
+                                        <div class="skill-info skill-scss">
+                                            <img src="images/skill_scss.png" alt="scss">
+                                            <h3 class="skill-name">scss</h3>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div id="skillVue" class="skill-progress"></div>
+                                        <div class="skill-info skill-vue">
+                                            <img src="images/skill_vue.png" alt="vue">
+                                            <h3 class="skill-name">vue</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination sw-skill-pg"></div> 
+                            </div> 
+                        </div>
+                    </div>                 
+                </div>
+                
+            </section>
+            <!-- //기술 -->           
+           
+            
             <!-- 프로필 -->
             <section class="profile" id="profile">
                 <div class="container clearfix">
@@ -600,15 +628,15 @@
                         </span>
                     </div>
                     <div class="contact-wrap">
-                        <a href="#" class="email">
+                        <a href="mailto:jk92lania@gmail.com?Subject=Hello%20ju%20kyeong" target="_blank" class="email">
                             <i class="fas fa-envelope fa-10x" style="color: #cdbaa4;"></i>
                             <span>메일</span>                        
                         </a>
-                        <a href="#" class="kakao">
+                        <a href="https://open.kakao.com/o/sLMLkWfe" target="_blank" class="kakao">
                             <i class="fas fa-comment-dots fa-10x" style="color: #cdbaa4;"></i>
                             <span>카카오 오픈채팅</span> 
                         </a>
-                        <a href="#" class="survey">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScLh6DjYJdE27HIcn12BlIf8Gam3hLIAtaMw0WKW699LBkTww/viewform?usp=sf_link" target="_blank" class="survey">
                             <i class="fas fa-question fa-10x" style="color: #cdbaa4;"></i>
                             <span>구글 문의</span>
                         </a>

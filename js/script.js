@@ -1,5 +1,6 @@
 window.onload = function () {
   // gotop button hide
+  let quickmenu = $('.quickmenu');
   let topmenu = $('.topmenu');
   let header_h = $('.header').height();
   let visual_h = $('.visual').height();
@@ -8,26 +9,35 @@ window.onload = function () {
   let about_top = $('.about').offset().top - header_h;
   let life_top = $('.life').offset().top - header_h;
   let gnbLink = $('.gnb li a');
-  let gnbLinkPos = [port_top, skill_top, about_top, life_top];
+  let gnbLinkPos = [ about_top, port_top, skill_top, life_top];
 
   function makeTop() {
     port_top = $('.portfolio').offset().top - header_h;
     skill_top = $('.skill').offset().top - header_h;
     about_top = $('.about').offset().top - header_h;
     life_top = $('.life').offset().top - header_h;
-    gnbLinkPos = [port_top, skill_top, about_top, life_top];
+    gnbLinkPos = [ about_top, port_top, skill_top, life_top];
   }
 
   $(window).scroll(function () {
     let nowTop = $(this).scrollTop();
     if (nowTop > parseInt(visual_h)) {
-      topmenu.fadeIn();
+      topmenu.removeClass('topmenu-hide');
     } else {
-      topmenu.fadeOut();
+      topmenu.removeClass('topmenu-hide');
+      topmenu.addClass('topmenu-hide');
     }
     animateNowPos(nowTop);
    
   })
+
+  quickmenu.mouseenter(function(){
+    $('.quickmenu-icon').removeClass('quickmenu-icon-active');
+    $('.quickmenu-icon').addClass('quickmenu-icon-active');
+  });
+  quickmenu.mouseleave(function(){
+    $('.quickmenu-icon').removeClass('quickmenu-icon-active');
+  });
 
   function animateNowPos(_nowTop) {
     $.each(gnbLink, function(index, item) {
@@ -42,7 +52,7 @@ window.onload = function () {
   }
 
   // gotop button action
-  topmenu.click(function () {
+  quickmenu.click(function () {
     $('html').animate({
       scrollTop: 0
     }, 400);
@@ -99,7 +109,7 @@ window.onload = function () {
       ],
       type: "radar", // for ESM specify as: radar()
       colors : {
-        ENTJ : "#ee7678"
+        ENTJ : "#4D7080"
       },
       labels: true
     },
@@ -129,7 +139,7 @@ window.onload = function () {
 
   setTimeout(function(){
     mbti_chart.data.colors({            
-      ENTJ: d3.rgb("#eeb776").darker(1)
+      ENTJ: d3.rgb("#A3C0CC").darker(1)
     });
   }, 2000);
 
@@ -184,10 +194,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barHtml) => {
@@ -221,10 +231,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barCss) => {
@@ -258,10 +268,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barJs) => {
@@ -294,10 +304,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barJq) => {
@@ -330,10 +340,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barRes) => {
@@ -366,10 +376,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barGit) => {
@@ -402,10 +412,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barScss) => {
@@ -438,10 +448,10 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#cdbaa4'
+      color: '#CDBAA4'
     },
     to: {
-      color: '#333'
+      color: '#806E59'
     },
     // Set default step function for all animate calls
     step: (state, barVue) => {
@@ -490,7 +500,8 @@ window.onload = function () {
   // portfolio data
   let sw_pf_data = [{
       'name': '팔공티',
-      'imgurl': 'images/port_pal_001.jpg',
+      'imgurl': 'images/port_pal_003.png',
+      'imgurlbefore': 'images/port_pal_007.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -505,7 +516,8 @@ window.onload = function () {
     },
     {
       'name': '삼양맛샵',
-      'imgurl': 'images/port_deli_001.jpg',
+      'imgurl': 'images/port_deli_003.png',
+      'imgurlbefore': 'images/port_deli_005.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -519,7 +531,8 @@ window.onload = function () {
     },
     {
       'name': '포트폴리오',
-      'imgurl': 'images/port_prot_001.png',
+      'imgurl': 'images/port_prot_003.png',
+      'imgurlbefore': 'images/port_prot_005.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -531,7 +544,8 @@ window.onload = function () {
     },
     {
       'name': '생명보험협회',
-      'imgurl': 'images/port_klia_001.png',
+      'imgurl': 'images/port_klia_002.png',
+      'imgurlbefore': 'images/port_klia_003.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -546,7 +560,8 @@ window.onload = function () {
     },
     {
       'name': '산청군청',
-      'imgurl': 'images/port_san_001.png',
+      'imgurl': 'images/port_san_002.png',
+      'imgurlbefore': 'images/port_san_003.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -560,7 +575,8 @@ window.onload = function () {
     },
     {
       'name': '한살림',
-      'imgurl': 'images/port_han_001.png',
+      'imgurl': 'images/port_han_002.png',
+      'imgurlbefore': 'images/port_han_003.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -574,7 +590,8 @@ window.onload = function () {
     },
     {
       'name': '풀무원',
-      'imgurl': 'images/port_gre_001.png',
+      'imgurl': 'images/port_gre_002.png',
+      'imgurlbefore': 'images/port_gre_003.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -588,7 +605,8 @@ window.onload = function () {
     },
     {
       'name': '부산대학교병원',
-      'imgurl': 'images/port_pnuh_001.png',
+      'imgurl': 'images/port_pnuh_002.png',
+      'imgurlbefore': 'images/port_pnuh_003.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -602,7 +620,8 @@ window.onload = function () {
     },
     {
       'name': 'stx건설',
-      'imgurl': 'images/port_stx_001.png',
+      'imgurl': 'images/port_stx_002.png',
+      'imgurlbefore': 'images/port_stx_003.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -624,8 +643,10 @@ window.onload = function () {
     sw_pf_html += '<div class="portfolio-box">';
 
     sw_pf_html += '<div class="pf-box-img"><img src=\"';
-    sw_pf_html += temp_data.imgurl;
-    sw_pf_html += '\" alt="포트폴리오"></div>';
+    sw_pf_html += temp_data.imgurlbefore;
+    sw_pf_html += '\" alt="포트폴리오">';
+    sw_pf_html += `<img src="${temp_data.imgurl}" alt="포트폴리오">`
+    sw_pf_html +='</div>';
 
     sw_pf_html += '<div class="pf-box-txt">';
     sw_pf_html += '<div class="pf-box-txt-bg pf-bg-1"></div>';
@@ -864,6 +885,49 @@ window.onload = function () {
         slidesPerGroup: 1,
       },
     }
+  });
+
+  $('.pdf').click(function(event){
+      event.preventDefault();
+      //저장 영역 div id
+    html2canvas($('#wrap')[0] ,{	
+      //logging : true,		// 디버그 목적 로그
+      //proxy: "html2canvasproxy.php",
+      allowTaint : true,	// cross-origin allow 
+      useCORS: true,		// CORS 사용한 서버로부터 이미지 로드할 것인지 여부
+      scale : 2,		// 기본 96dpi에서 해상도를 두 배로 증가
+      
+      
+    }).then(function(canvas) {	
+      // 캔버스를 이미지로 변환
+      var imgData = canvas.toDataURL('image/png');
+
+      var imgWidth = 190; // 이미지 가로 길이(mm) / A4 기준 210mm
+      var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+      var imgHeight = canvas.height * imgWidth / canvas.width;
+      var heightLeft = imgHeight;
+      var margin = 10; // 출력 페이지 여백설정
+      var doc = new jsPDF('p', 'mm');
+      var position = 0;
+
+      // 첫 페이지 출력
+      doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      // 한 페이지 이상일 경우 루프 돌면서 출력
+      while (heightLeft >= 20) {			// 35
+      position = heightLeft - imgHeight;
+      position = position - 20 ;		// -25
+
+      doc.addPage();
+      doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      }
+
+      // 파일 저장
+      doc.save('jukyeong.pdf');
+    });
+
   });
 
   makeTop();
