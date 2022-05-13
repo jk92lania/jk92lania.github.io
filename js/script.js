@@ -501,7 +501,7 @@ window.onload = function () {
   let sw_pf_data = [{
       'name': '팔공티',
       'imgurl': 'images/port_pal_003.png',
-      'imgurlbefore': 'images/port_pal_007.png',
+      'imgurlbefore': 'images/port_pal_009.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -517,7 +517,7 @@ window.onload = function () {
     {
       'name': '삼양맛샵',
       'imgurl': 'images/port_deli_003.png',
-      'imgurlbefore': 'images/port_deli_005.png',
+      'imgurlbefore': 'images/port_deli_006.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -532,7 +532,7 @@ window.onload = function () {
     {
       'name': '포트폴리오',
       'imgurl': 'images/port_prot_003.png',
-      'imgurlbefore': 'images/port_prot_005.png',
+      'imgurlbefore': 'images/port_prot_006.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -545,7 +545,7 @@ window.onload = function () {
     {
       'name': '생명보험협회',
       'imgurl': 'images/port_klia_002.png',
-      'imgurlbefore': 'images/port_klia_003.png',
+      'imgurlbefore': 'images/port_klia_004.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -561,7 +561,7 @@ window.onload = function () {
     {
       'name': '산청군청',
       'imgurl': 'images/port_san_002.png',
-      'imgurlbefore': 'images/port_san_003.png',
+      'imgurlbefore': 'images/port_san_004.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -576,7 +576,7 @@ window.onload = function () {
     {
       'name': '한살림',
       'imgurl': 'images/port_han_002.png',
-      'imgurlbefore': 'images/port_han_003.png',
+      'imgurlbefore': 'images/port_han_004.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -591,7 +591,7 @@ window.onload = function () {
     {
       'name': '풀무원',
       'imgurl': 'images/port_gre_002.png',
-      'imgurlbefore': 'images/port_gre_003.png',
+      'imgurlbefore': 'images/port_gre_004.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -606,7 +606,7 @@ window.onload = function () {
     {
       'name': '부산대학교병원',
       'imgurl': 'images/port_pnuh_002.png',
-      'imgurlbefore': 'images/port_pnuh_003.png',
+      'imgurlbefore': 'images/port_pnuh_004.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',
@@ -621,7 +621,7 @@ window.onload = function () {
     {
       'name': 'stx건설',
       'imgurl': 'images/port_stx_002.png',
-      'imgurlbefore': 'images/port_stx_003.png',
+      'imgurlbefore': 'images/port_stx_004.png',
       'html': 'html',
       'css': 'css',
       'js': 'js',

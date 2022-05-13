@@ -279,20 +279,30 @@ body {
 .topmenu {
     position: relative;
     display: block;
+    height: 50px;
 
     color: #806E59;
-    font-size: 32px;
+    /* font-size: 32px; */
     font-weight: 700;
     letter-spacing: -0.02rem;
     text-transform: uppercase;
     /* text-shadow: 2px 2px 2px #000; */
+    padding-bottom: 10px;
     opacity: 1;
-    /* overflow: hidden; */
+    overflow: hidden;
     transition: all 0.3s;
+}
+
+.topmenu img {
+    width: 50px;
 }
 
 .topmenu-hide {
     opacity: 0;
+    height: 0;
+}
+
+.topmenu-hide img {
 }
 
 .topmenu::before {
@@ -303,7 +313,7 @@ body {
     transform: translateX(-50%);
     display: block;
     width: 100%;
-    height: 100%;
+    height: 75%;
 
     
     border-radius: 0 0 25px 25px;
@@ -648,12 +658,6 @@ body {
     display: inline-block;
 }
 
-.title-first span:last-child{
-    font-size: 16px;
-    color: #fff;
-    -webkit-text-stroke: 0px #fff;
-}
-
 .title-first i {
     position: relative;
     display: inline-block;
@@ -705,6 +709,7 @@ body {
     font-size: 85px;
     font-weight: 800;
     color: transparent;
+    margin-top: 18px;
     
     -webkit-text-stroke: 1px #806E59;
     /* text-shadow: 6px 3px 0px #333; */
@@ -720,7 +725,7 @@ body {
     font-size: 85px;
     font-weight: 800;
     color: #806E59;
-    z-index: -2;
+    z-index: -1;
 }
 
 .title-first h1::before {
@@ -1446,7 +1451,7 @@ body {
     position: relative;
     display: block;
     font-size: 50px;
-    color: #806E59;
+    color: #4D7080;
     font-weight: 700;
     letter-spacing: -0.07rem;
     margin-top: 80px;
@@ -1466,7 +1471,7 @@ body {
     display: block;
     font-size: 18px;
     line-height: 26px;
-    color: #806E59;
+    color: #4D7080;
     padding-left: 15px;
     text-align: left;
 
@@ -1514,7 +1519,7 @@ body {
 
     font-size: 24px;
     line-height: 28px;
-    color: #806E59;
+    color: #4D7080;
     font-weight: 700;
     padding: 6px 100px 4px 10px;
     margin: 4px 0px;
