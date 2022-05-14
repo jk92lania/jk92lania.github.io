@@ -72,6 +72,7 @@ window.onload = function () {
   // about slide
   let sw_about;
   let sw_about_obj = {
+    loop : true,
     slidesPerView: 1,
     slidesPerGroup: 1,
     // spaceBetween: 10,
@@ -828,12 +829,12 @@ window.onload = function () {
 
 
   // life slide
-  let sw_travel = new Swiper(".sw-travel", {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
+  let sw_life = new Swiper(".sw-life", {
+    slidesPerView: 3,
+    slidesPerGroup: 3,
     spaceBetween: 10,
     pagination: {
-      el: ".sw-travel-pg",
+      el: ".sw-life-pg",
       clickable: true,
     },
     breakpoints: {
@@ -842,50 +843,12 @@ window.onload = function () {
         slidesPerGroup: 3,
       },
       800: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-      },
-    }
-  });
-  let sw_read = new Swiper(".sw-read", {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 10,
-    pagination: {
-      el: ".sw-read-pg",
-      clickable: true,
-    },
-    breakpoints: {
-      1000: {
         slidesPerView: 3,
         slidesPerGroup: 3,
-      },
-      800: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
       },
     }
   });
 
-  let sw_show = new Swiper(".sw-show", {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    spaceBetween: 10,
-    pagination: {
-      el: ".sw-show-pg",
-      clickable: true,
-    },
-    breakpoints: {
-      1000: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-      },
-      800: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-      },
-    }
-  });
 
   $('.pdf').click(function(event){
       event.preventDefault();

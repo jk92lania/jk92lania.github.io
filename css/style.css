@@ -62,7 +62,7 @@ body {
     transform: translateX(-50%);
     display: block;
     width: 50px;
-    height: 3px;
+    height: 5px;
     background-color: #A3C0CC;
 }
 
@@ -263,7 +263,7 @@ body {
 }
 
 .quickmenu-icon-active {
-    margin: 10px 0;
+    margin: 14px 0;
     width: 50px;
     height: 50px;
     
@@ -630,76 +630,33 @@ body {
     top : 0;
     width: 100%;
     height: 100%;
-    box-shadow: 20px 20px rgba(0, 0, 0, 0.35) inset;
+    box-shadow: 20px 20px rgba(128, 110, 89, 0.35);
 }
 
 
 .title-first {
     position: absolute;
-    left: 30%;
+    left: 26%;
     top: 50%;
     transform: translate(-50%, -50%);
     display: inline-block;
     width: 700px;
 
-    font-size: 80px;
-    line-height: 90px;
+    font-size: 50px;
+    line-height: 60px;
     font-weight: 700;
-    color: transparent;
+    color: #fff;
     letter-spacing: -0.08rem;
     word-break: keep-all;
-
-    -webkit-text-stroke: 1px #fff;
+    
+    /* -webkit-text-stroke: 1px #fff; */
     /* text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; */
 }
 
 .title-first span {
     position: relative;
     display: inline-block;
-}
-
-.title-first i {
-    position: relative;
-    display: inline-block;
-}
-
-.title-first i::after {
-    content: '달';
-    position: absolute;
-    left: 0;
-    top: 0;
-    /* transform: translate(-50%, -50%); */
-    display: inline-block;
-    /* width: 100%; */
-    font-size: 80px;
-    line-height: 90px;
-    font-weight: 700;
-    letter-spacing: -0.08rem;
-    word-break: keep-all;
     color: #fff;
-    z-index: -2;
-}
-
-.title-first em {
-    position: relative;
-    display: inline-block;
-}
-
-.title-first em::after {
-    content: '개발자';
-    position: absolute;
-    left: 0;
-    top: 0;
-    /* transform: translate(-50%, -50%); */
-    display: inline-block;
-    /* width: 100%; */
-    font-size: 80px;
-    line-height: 90px;
-    font-weight: 700;
-    letter-spacing: -0.08rem;
-    word-break: keep-all;
-    color: #fff;
-    z-index: -2;
 }
 
 
@@ -708,39 +665,35 @@ body {
     display: inline-block;
     font-size: 85px;
     font-weight: 800;
-    color: transparent;
-    margin-top: 18px;
-    
-    -webkit-text-stroke: 1px #806E59;
-    /* text-shadow: 6px 3px 0px #333; */
-}
-
-.title-first h1::after {
-    content: '박주경';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: inline-block;
-    font-size: 85px;
-    font-weight: 800;
     color: #806E59;
-    z-index: -1;
+    margin-top: 24px;
+    
+    /* -webkit-text-stroke: 1px #806E59; */
+    /* text-shadow: 6px 3px 0px #333; */
+    z-index: 1;
 }
 
-.title-first h1::before {
+.title-first h1 i {
+    position: relative;
+    display: inline-block;
+}
+
+
+.title-first h1 i::before {
     content: '';
     position: absolute;
     left: 50%;
-    top: 58%;
-    transform: translate(-50%, -50%);
+    bottom: 110%;
+    transform: translateX(-50%);
     display: block;
-    width: 140px;
-    height: 140px;
-    background-color: #FFF3E6;
+    width: 14px;
+    height: 14px;
+
     border-radius: 50%;
-    z-index: -1;
+    background-color: #fff;
 }
+
+
 
 @media all and (max-width:1200px) {
     .title-first {
@@ -812,10 +765,8 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center; 
 
     width: 100%;
-    margin-top: 100px;
 }
 
 .about-wrap .flex-left {
@@ -844,7 +795,7 @@ body {
     font-weight: 800;
     font-size: 55px;
     letter-spacing: -0.02rem;
-    line-height: 50px;
+    line-height: 70px;
     word-break: keep-all;
     padding: 40px;
     padding-top: 0;
@@ -857,6 +808,7 @@ body {
     display: block;
     width: 30vw;
     padding: 20px 35px 20px 0;
+    text-align: justify;
 }
 
 .about-info span:last-child {
@@ -873,29 +825,14 @@ body {
 .sw-about {
     position: relative;
     display: block;
-    width: 60vw;
-    height: 640px;
-}
-
-.sw-about .swiper-wrapper {
-    /* width: 100% !important; */
-    /* width: 100% !important; */
-    /* display: block; */
-}
-
-.sw-about .swiper-slide {
-    /* display: inline-block; */
-    /* width: auto; */
-    height: calc((100% - 10px) / 2);
+    width: 50vw;
+    height: 42vw;
 }
 
 .about-face {
     position: relative;
     display: inline-block;
-    width: 32vw;
-    /* height: 320px; */
-    /* margin-right: 32px;
-    margin-bottom: 20px; */
+    width: 26vw;
 }
 
 .swiper-slide-active .about-face {
@@ -903,9 +840,10 @@ body {
     
 }
 .swiper-slide-next .about-face {
-    margin-top: calc(100% - 240px);
+    margin-top: 14vw;
+    margin-left: -1vw;
     text-align: left;
-    width: 20vw;
+    width: 18vw;
 
 }
 
@@ -1026,7 +964,7 @@ body {
     line-height: 26px;
     color: #CDBAA4;
     padding: 30px 0;
-    margin-left: 40px;
+    margin-left: 5px;
     letter-spacing: -0.06rem;
     word-break: keep-all;
 }
@@ -1039,7 +977,6 @@ body {
 }
 
 .mbti-more dd {
-    margin-left: 40px;
 }
 
 .mbti-more-str {
@@ -1068,11 +1005,11 @@ body {
 }
 
 .sw-mbti .swiper-pagination-progressbar {
-    background-color: #4D7080;
+    background-color: #b3cbd5;
 }
 
 .sw-mbti .swiper-pagination-progressbar-fill {
-    background-color: #FFF3E6;
+    background-color: #4D7080;
 }
 
 
@@ -1176,7 +1113,7 @@ body {
 
 .sw-profile .swiper-slide:nth-child(3) .profile-img {
     background: url('../images/profile_3.png') no-repeat top center;
-    background-size: cover;
+    background-size: contain;
 
 }
 
@@ -1304,7 +1241,7 @@ body {
     text-transform: uppercase;
     color: #333;
     white-space: nowrap;
-    padding-top: 5px;
+    padding-top: 6px;
 }
 
 
@@ -1601,68 +1538,26 @@ body {
 
 .life .container {}
 
-.life .travel {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 10px 0;
-}
-.life .read {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-}
-.life .show {
-    position: relative;
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-}
-
-.life .left {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 360px;
-}
-
-.life-tit {
-    font-size: 30px;
-    font-weight: 700;
-    text-transform: capitalize;
-}
-
-.life-tit-travel {
-    color: #4D7080;
-}
-.life-tit-read {
-    color: #CDBAA4;
-}
-.life-tit-show {
-    color: #806E59;
-}
-
-.life .right {
-    width: calc(100% - 250px);
-}
-
-.sw-travel {
-    width: 100%;
-}
 
 .sw-life .swiper-slide {
+    height: 700px;
+}
+
+.sw-life .life-box {
+    position: absolute;
+    left: 0;
+    top: 0%;
+    display: block;
+    width: 100%;
     height: 360px;
 }
 
-.life-box {
-    position: relative;
-    display: block;
-    width: auto;
-    height: 360px;
+.sw-life .swiper-slide-next .life-box {
+    top: 20%;
+}
+
+.sw-life .swiper-slide-next+.swiper-slide .life-box {
+    top: 40%;
 }
 
 .life-1 {
@@ -1711,43 +1606,6 @@ body {
 }
 
 
-.life-read-tit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    color: #ee7678;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.life-travel-tit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    color: #eeb776;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.life-show-tit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    color: #76b7ee;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-
 .sw-life-pg {
     position: relative;
     display: block;
@@ -1757,13 +1615,13 @@ body {
 
 .sw-life-pg .swiper-pagination-bullet {
     margin: 0 3px;
-    background-color: #eeb776;
+    background-color: #b3cbd5;
     opacity: 0.8;
 }
 
 .sw-life-pg .swiper-pagination-bullet-active {
     width: 16px;
-    background-color: #ee7678;
+    background-color: #4D7080;
     border-radius: 8px;
 }
 
@@ -1791,7 +1649,7 @@ body {
     position: relative;
     display: flex;
     justify-content: space-around;
-    margin: 80px 0;
+    margin: 80px;
 }
 
 .email {
