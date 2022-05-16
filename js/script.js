@@ -27,8 +27,8 @@ window.onload = function () {
       topmenu.removeClass('topmenu-hide');
       topmenu.addClass('topmenu-hide');
     }
-    animateNowPos(nowTop);
-   
+
+    animateNowPos(nowTop);   
   })
 
   quickmenu.mouseenter(function(){
@@ -41,7 +41,7 @@ window.onload = function () {
 
   function animateNowPos(_nowTop) {
     $.each(gnbLink, function(index, item) {
-      if(_nowTop >  parseInt(gnbLinkPos[index])) {
+      if(_nowTop >=  parseInt(gnbLinkPos[index])) {
         gnbLink.removeClass('gnb-a-active');
         gnbLink.eq(index).addClass('gnb-a-active');
       }else if(_nowTop < parseInt(gnbLinkPos[0])) {
@@ -75,10 +75,10 @@ window.onload = function () {
     loop : true,
     slidesPerView: 1,
     slidesPerGroup: 1,
-    // spaceBetween: 10,
+    spaceBetween: 30,
     breakpoints: {
       1000: {
-        slidesPerView: 2,
+        slidesPerView: 3,
         slidesPerGroup: 1,
 
       },
@@ -511,9 +511,9 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/palgongtea/',
       'git': 'https://github.com/jk92lania/palgongtea',
       'origin': 'http://www.palgongtea.co.kr/',
-      'study': '개인제작 클론 코딩',
+      'study': '개인',
       'day': '8',
-      'info' : '100% 개인 작업하였습니다. 반응형 포함되어있습니다.'
+      'info' : '100% 개인 작업하였습니다. 표작성 및 swiper 배치 등에 대해 배워나갔습니다.'
     },
     {
       'name': '삼양맛샵',
@@ -526,9 +526,9 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/sydeliciousshop/',
       'git': 'https://github.com/jk92lania/sydeliciousshop',
       'origin': 'https://sydeliciousshop.com/',
-      'study': '개인제작 클론 코딩',
+      'study': '개인',
       'day': '6',
-      'info' : '100% 개인 작업하였습니다.'
+      'info' : '100% 개인 작업하였습니다. swiper 동작시 애니메이션 등 이벤트를 추가하는 방법에 대해 공부하였습니다.'
     },
     {
       'name': '포트폴리오',
@@ -539,9 +539,9 @@ window.onload = function () {
       'js': 'js',
       'pc': 'PC',
       'git': 'https://github.com/jk92lania/portfolio',
-      'study': '개인제작 클론 코딩',
+      'study': '개인',
       'day': '20',
-      'info' : '100% 개인 작업하였습니다. 현재 반응형 추가 등 작업중입니다.'
+      'info' : '100% 개인 작업하였습니다. 배운 것을 토대로 제작하였습니다. 반응형 추가중입니다.'
     },
     {
       'name': '생명보험협회',
@@ -555,9 +555,9 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/klia/',
       'git': 'https://github.com/jk92lania/klia',
       'origin': 'https://www.klia.or.kr/',
-      'study': '스터디용 제작 클론 코딩',
+      'study': '스터디용',
       'day': '10',
-      'info' : '수업을 들으며 제작하였습니다. 원페이지 제작방법 및 애니메이션 추가 방법을 배웠습니다. 반응형 포함되어 있습니다.'
+      'info' : '수업을 들으며 제작하였습니다. 원페이지 제작방법을 배웠습니다.'
     },
     {
       'name': '산청군청',
@@ -567,12 +567,13 @@ window.onload = function () {
       'css': 'css',
       'js': 'js',
       'pc': 'PC',
+      'mobile': 'Mobile',
       'work': 'https://jk92lania.github.io/sancheong/',
       'git': 'https://github.com/jk92lania/sancheong',
       'origin': 'https://www.sancheong.go.kr/www/index.do',
-      'study': '스터디용 제작 클론 코딩',
+      'study': '스터디용',
       'day': '10',
-      'info' : '수업을 들으며 제작하였습니다. 원페이지 제작방법 및 애니메이션 추가에 대해 배워나갔습니다. 반응형 포함되어 있습니다.'
+      'info' : '수업을 들으며 제작하였습니다. swiper 변형된 배치에 대해 배웠습니다.'
     },
     {
       'name': '한살림',
@@ -585,7 +586,7 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/hansalim/',
       'git': 'https://github.com/jk92lania/hansalim',
       'origin': 'https://shop.hansalim.or.kr/shopping/spMain.do',
-      'study': '스터디용 제작 클론 코딩',
+      'study': '스터디용',
       'day': '8',
       'info' : '수업을 들으며 제작하였습니다. 장바구니 계산 및 json 방식에 대해 배워나갔습니다.'
     },
@@ -600,7 +601,7 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/greenjuice/',
       'git': 'https://github.com/jk92lania/greenjuice',
       'origin': 'https://greenjuice.pulmuone.com/',
-      'study': '스터디용 제작 클론 코딩',
+      'study': '스터디용',
       'day': '4',
       'info' : '수업을 들으며 제작하였습니다. js를 이용한 class 추가, 제거 및 slide 제작에 대해 배워나갔습니다.'
     },
@@ -615,7 +616,7 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/pnuh/',
       'git': 'https://github.com/jk92lania/pnuh',
       'origin': 'https://www.pnuh.or.kr/pnuh/main/main.do?rbsIdx=1',
-      'study': '스터디용 제작 클론 코딩',
+      'study': '스터디용',
       'day': '6',
       'info' : '수업을 들으며 제작하였습니다. 헤더 제작, 슬라이드 더보기 제작하는 방법에 대해 배워나갔습니다.'
     },
@@ -630,7 +631,7 @@ window.onload = function () {
       'work': 'https://jk92lania.github.io/stxconst/',
       'git': 'https://github.com/jk92lania/stxconst',
       'origin': 'http://www.stxconst.co.kr/',
-      'study': '스터디용 제작 클론 코딩',
+      'study': '스터디용',
       'day': '3',
       'info' : '수업을 들으며 제작하였습니다. 헤더 제작 등에 대해 배워나갔습니다.'
     },
@@ -657,10 +658,10 @@ window.onload = function () {
     sw_pf_html += '</h3>';
 
     sw_pf_html += '<p class="pf-box-info"><span>';
-    sw_pf_html += temp_data.study;
-    sw_pf_html += '</span>제작 기간 :';
+    sw_pf_html += `<i>${temp_data.study}</i> 제작 클론 코딩`;
+    sw_pf_html += '</span>제작 기간 : <i>';
     sw_pf_html += temp_data.day;
-    sw_pf_html += '일';
+    sw_pf_html += '</i> 일';
     sw_pf_html += `<em>${temp_data.info}</em>`;
     sw_pf_html += '</p>';
     sw_pf_html += '</div>';
@@ -834,7 +835,7 @@ window.onload = function () {
     slidesPerGroup: 3,
     spaceBetween: 10,
     pagination: {
-      el: ".sw-life-pg",
+      el: ".sw-travel-pg",
       clickable: true,
     },
     breakpoints: {
