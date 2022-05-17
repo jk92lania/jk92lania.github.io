@@ -1,4 +1,15 @@
 window.onload = function () {
+  console.log(window.innerWidth);
+  AOS.init({
+
+    disable: function () {
+      let desktop = 1280;
+      
+      return window.innerWidth < desktop;
+    } // 1280px 이상일 때 disable
+  
+  });
+
   // gotop button hide
   let quickmenu = $('.quickmenu');
   let topmenu = $('.topmenu');
@@ -17,7 +28,11 @@ window.onload = function () {
     about_top = $('.about').offset().top - header_h;
     life_top = $('.life').offset().top - header_h;
     gnbLinkPos = [ about_top, port_top, skill_top, life_top];
-  }
+  };
+
+  $(window).resize(function(){
+    makeTop();
+  });
 
   $(window).scroll(function () {
     let nowTop = $(this).scrollTop();
@@ -29,7 +44,7 @@ window.onload = function () {
     }
 
     animateNowPos(nowTop);   
-  })
+  });
 
   quickmenu.mouseenter(function(){
     $('.quickmenu-icon').removeClass('quickmenu-icon-active');
@@ -49,7 +64,7 @@ window.onload = function () {
       }        
 
     });
-  }
+  };
 
   // gotop button action
   quickmenu.click(function () {
@@ -77,11 +92,16 @@ window.onload = function () {
     slidesPerGroup: 1,
     spaceBetween: 30,
     breakpoints: {
-      1000: {
+      1400: {
         slidesPerView: 3,
         slidesPerGroup: 1,
-
+        
       },
+      800 : {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+
+      }
     }
 
   };
@@ -90,59 +110,170 @@ window.onload = function () {
 
 
   // mbti 그래프
-  let mbti_e_value = 17.2;
-  let mbti_i_value = 16.4;
-  let mbti_n_value = 7.8;
-  let mbti_s_value = 23.5;
+  let mbti_e_value = 29.03;
+  let mbti_i_value = 25.28;
+  let mbti_n_value = 12.69;
+  let mbti_s_value = 11.23;
   let mbti_f_value = 37.4;
   let mbti_t_value = 51.6;
-  let mbti_p_value = 6;
-  let mbti_j_value = 4.2;
+  let mbti_p_value = 0.78;
+  let mbti_j_value = 6.59;
 
 
+  // let mbti_chart = bb.generate({
+    
+  //   data: {
+  //     x: "x",
+  //     columns: [
+  //       ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
+  //       ["ENTJ", mbti_e_value, mbti_i_value, mbti_n_value, mbti_s_value, mbti_t_value, mbti_f_value, mbti_j_value, mbti_p_value]
+  //     ],
+  //     type: "radar", // for ESM specify as: radar()
+  //     colors : {
+  //       ENTJ : "#4D7080"
+  //     },
+  //     labels: true
+  //   },
+  //   radar: {
+  //     axis: {
+  //       max: 50,
+  //       text: {
+  //         position: {
+  //           x: -20,
+  //           y: -15
+  //         }
+  //       }        
+  //     },
+  //     level: {
+  //       depth: 4
+  //     },
+  //     direction: {
+  //       clockwise: true
+  //     }, 
+  //     width : {
+  //       ratio : 0.9
+  //     },    
+  //   },
+    
+  //   bindto: "#mbtiChart"
+  // });
+
+  // setTimeout(function(){
+  //   mbti_chart.data.colors({            
+  //     ENTJ: d3.rgb("#A3C0CC").darker(1)
+  //   });
+  // }, 2000);
   let mbti_chart = bb.generate({
     
     data: {
       x: "x",
       columns: [
-        ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
-        ["ENTJ", mbti_e_value, mbti_i_value, mbti_n_value, mbti_s_value, mbti_t_value, mbti_f_value, mbti_j_value, mbti_p_value]
+        ["x",
+        "내향/외향",
+        "감각/직관",
+        "감정/사고",
+        "인식/판단",
       ],
-      type: "radar", // for ESM specify as: radar()
+        // ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
+        ["ENTJ", 0, 
+        0, 
+        0, 
+        0, 
+      ],
+      [
+        "else",
+        -0, 
+        -0, 
+        -0, 
+        -0
+
+      ]
+      ],
+      type: "bar", // for ESM specify as: radar()
       colors : {
-        ENTJ : "#4D7080"
+        ENTJ : "#4D7080",
+        else : "#b3cbd5"
       },
-      labels: true
+      groups : [
+        ["ENTJ",
+        "else"]
+      ],
+      labels: {
+        format : function(v, id) {
+          return Math.abs(v);
+        }
+      }
     },
-    radar: {
-      axis: {
-        max: 50,
-        text: {
-          position: {
-            x: -20,
-            y: -15
+    axis : {
+      rotated : true,
+      x : {
+        type: "category",
+        tick: {
+          tooltip: true
+        } 
+      },
+      y : {
+        tick : {
+          format : function(v) {
+            return Math.abs(v);
           }
-        }        
-      },
-      level: {
-        depth: 4
-      },
-      direction: {
-        clockwise: true
-      }, 
+        },
+      }
+    },
+    grid: {
+      y: {
+        show: true,
+        lines: [
+          {
+            value: 0,
+            class: "base-line"
+          }
+        ]
+      }
+    },
+    bar : {
       width : {
-        ratio : 0.9
-      },    
+        ratio : 0.9,
+        max : 30
+      }
+    },
+    tooltip: {
+      format: {
+        value: function(v) {
+      return Math.abs(v);
+     }
+      }
     },
     
     bindto: "#mbtiChart"
   });
 
   setTimeout(function(){
-    mbti_chart.data.colors({            
-      ENTJ: d3.rgb("#A3C0CC").darker(1)
+    mbti_chart.load({
+      columns: [
+        ["x",
+        "내향/외향",
+        "감각/직관",
+        "감정/사고",
+        "인식/판단",
+      ],
+        // ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
+        ["ENTJ", mbti_e_value, 
+        mbti_n_value, 
+        mbti_t_value, 
+        mbti_j_value, 
+      ],
+      [
+        "else",
+        -mbti_i_value, 
+        -mbti_s_value, 
+        -mbti_f_value, 
+        -mbti_p_value
+
+      ]
+      ]
     });
-  }, 2000);
+  }, 1000);
 
  
 
@@ -538,10 +669,11 @@ window.onload = function () {
       'css': 'css',
       'js': 'js',
       'pc': 'PC',
+      'mobile': 'Mobile',
       'git': 'https://github.com/jk92lania/portfolio',
       'study': '개인',
       'day': '20',
-      'info' : '100% 개인 작업하였습니다. 배운 것을 토대로 제작하였습니다. 반응형 추가중입니다.'
+      'info' : '100% 개인 작업하였습니다. 배운 것을 토대로 제작하였습니다. billboard.js 등을 추가 사용하였습니다.'
     },
     {
       'name': '생명보험협회',
@@ -716,7 +848,7 @@ window.onload = function () {
   // portfolio slide
   let sw_port = new Swiper(".sw-portfolio", {
     slidesPerView: 1,
-    slidesPerColumn: 2,
+    slidesPerColumn: 0,
     slidesPerColumnFill: 'row',
     slidesPerGroup: 1,
     spaceBetween: 30,
@@ -732,14 +864,9 @@ window.onload = function () {
       },
       800: {
         slidesPerView: 2,
-        slidesPerColumn: 3,
-        slidesPerGroup: 2,
-      },
-      640: {
-        slidesPerView: 2,
         slidesPerColumn: 2,
         slidesPerGroup: 2,
-      },
+      }
     }
   });
 
@@ -853,46 +980,56 @@ window.onload = function () {
 
   $('.pdf').click(function(event){
       event.preventDefault();
-      //저장 영역 div id
-    html2canvas($('#wrap')[0] ,{	
-      //logging : true,		// 디버그 목적 로그
-      //proxy: "html2canvasproxy.php",
-      allowTaint : true,	// cross-origin allow 
-      useCORS: true,		// CORS 사용한 서버로부터 이미지 로드할 것인지 여부
-      scale : 2,		// 기본 96dpi에서 해상도를 두 배로 증가
-      
-      
-    }).then(function(canvas) {	
-      // 캔버스를 이미지로 변환
-      var imgData = canvas.toDataURL('image/png');
-
-      var imgWidth = 190; // 이미지 가로 길이(mm) / A4 기준 210mm
-      var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
-      var imgHeight = canvas.height * imgWidth / canvas.width;
-      var heightLeft = imgHeight;
-      var margin = 10; // 출력 페이지 여백설정
-      var doc = new jsPDF('p', 'mm');
-      var position = 0;
-
-      // 첫 페이지 출력
-      doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      // 한 페이지 이상일 경우 루프 돌면서 출력
-      while (heightLeft >= 20) {			// 35
-      position = heightLeft - imgHeight;
-      position = position - 20 ;		// -25
-
-      doc.addPage();
-      doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-      }
-
-      // 파일 저장
-      doc.save('jukyeong.pdf');
-    });
-
+      download_pdf();
   });
+
+  $('.quickmenu-pdf').click(function(event){
+      event.preventDefault();
+      download_pdf();
+  });
+
+
+
+  function download_pdf() {
+      //저장 영역 div id
+      html2canvas($('#wrap')[0] ,{	
+        //logging : true,		// 디버그 목적 로그
+        //proxy: "html2canvasproxy.php",
+        allowTaint : true,	// cross-origin allow 
+        useCORS: true,		// CORS 사용한 서버로부터 이미지 로드할 것인지 여부
+        scale : 2,		// 기본 96dpi에서 해상도를 두 배로 증가
+        
+        
+      }).then(function(canvas) {	
+        // 캔버스를 이미지로 변환
+        var imgData = canvas.toDataURL('image/png');
+  
+        var imgWidth = 190; // 이미지 가로 길이(mm) / A4 기준 210mm
+        var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+        var imgHeight = canvas.height * imgWidth / canvas.width;
+        var heightLeft = imgHeight;
+        var margin = 10; // 출력 페이지 여백설정
+        var doc = new jsPDF('p', 'mm');
+        var position = 0;
+  
+        // 첫 페이지 출력
+        doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+  
+        // 한 페이지 이상일 경우 루프 돌면서 출력
+        while (heightLeft >= 20) {			// 35
+        position = heightLeft - imgHeight;
+        position = position - 20 ;		// -25
+  
+        doc.addPage();
+        doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+        }
+  
+        // 파일 저장
+        doc.save('jukyeong.pdf');
+      });
+  }
 
   makeTop();
 
