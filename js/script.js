@@ -73,6 +73,7 @@ window.onload = function () {
     }, 400);
   });
 
+  // 메뉴 누를시 스크롤 이동
   $.each(gnbLink, function(index, item) {
     $(this).click(function(event){
       event.preventDefault();
@@ -82,6 +83,11 @@ window.onload = function () {
     });
   });
 
+  // nav-more menu 
+  let nav_more = $('.nav-more');
+  nav_more.click(function(){
+    $(this).toggleClass('nav-more-close');
+  });
 
 
   // about slide
@@ -622,8 +628,8 @@ window.onload = function () {
 
   // skill slide
   let skill = new Swiper(".sw-skill", {
-    slidesPerView: 2,
-    slidesPerColumn: 2,
+    slidesPerView: 1,
+    slidesPerColumn: 1,
     spaceBetween: 0,
     slidesPerColumnFill: 'row',
     breakpoints: {
@@ -635,8 +641,11 @@ window.onload = function () {
       640: {
         slidesPerView: 3,
         slidesPerColumn: 2,
-
       },
+      480 : {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+      }
     },
     pagination : {
       el : ".sw-skill-pg",

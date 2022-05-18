@@ -84,6 +84,18 @@ body {
 
 }
 
+.menu-more span {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #806E59;
+    margin: 2px auto;
+    border-radius: 15px;
+    
+    transition: all 0.5s;
+}
+
 .left {
     position: relative;
     display: block;
@@ -228,17 +240,6 @@ body {
     margin-top: 30px;
 }
 
-.quickmenu-more span {
-    position: relative;
-    display: block;
-    width: 30px;
-    height: 4px;
-    background-color: #806E59;
-    margin: 2px auto;
-    border-radius: 15px;
-    
-    transition: all 0.5s;
-}
 
 .quickmenu:hover .quickmenu-more span {
     height: 0;
@@ -551,6 +552,29 @@ body {
     display: block;
 }
 
+.nav-more {
+    margin: 0 20px;
+    display: none;
+}
+
+.nav-more-close span:nth-child(1) {
+    position: absolute;
+    transform: translateY(0px) rotate(-135deg);
+}
+.nav-more-close span:nth-child(2) {
+    transform: scaleY(0);
+}
+.nav-more-close span:nth-child(3) {
+    transform: scaleY(0);
+}
+.nav-more-close span:nth-child(4) {
+    transform: scaleY(0);
+}
+.nav-more-close span:nth-child(5) {
+    position: absolute;
+    transform: translateY(-19px) rotate(135deg);
+}
+
 .gnb {
     position: relative;
     display: block;
@@ -602,6 +626,15 @@ body {
 }
 
 .gnb li a:hover::before {
+}
+
+@media all and (max-width:800px) {
+    .nav-more {
+        display: block;
+    }
+    .gnb {
+        display: none;
+    }
 }
 
 /* //상단 */
@@ -1761,6 +1794,13 @@ body {
     font-size: 14px;
     color: #777;
     margin-top: 10px;
+}
+
+@media all and (max-width:480px) {
+    .contact-wrap a i {
+        width: 18vw;
+        height: 18vw;
+    }
 }
 
 /* //contact */
