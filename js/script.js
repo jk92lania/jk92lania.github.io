@@ -110,170 +110,187 @@ window.onload = function () {
 
 
   // mbti 그래프
-  let mbti_e_value = 29.03;
-  let mbti_i_value = 25.28;
-  let mbti_n_value = 12.69;
-  let mbti_s_value = 11.23;
-  let mbti_f_value = 37.4;
-  let mbti_t_value = 51.6;
-  let mbti_p_value = 0.78;
-  let mbti_j_value = 6.59;
+  // let mbti_e_value = 29.03;
+  // let mbti_i_value = 25.28;
+  // let mbti_n_value = 12.69;
+  // let mbti_s_value = 11.23;
+  // let mbti_f_value = 37.4;
+  // let mbti_t_value = 51.6;
+  // let mbti_p_value = 0.78;
+  // let mbti_j_value = 6.59;
+  let mbti_entj = 67.9;
+  let mbti_estj = 66.75;
+  let mbti_intp = 66;
+  let mbti_istp = 65.05;
+  let mbti_entp = 60;
+  let mbti_estp = 56.95;
+  let mbti_intj = 52.65;
+  let mbti_enfp = 49.75;
 
 
-  // let mbti_chart = bb.generate({
-    
-  //   data: {
-  //     x: "x",
-  //     columns: [
-  //       ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
-  //       ["ENTJ", mbti_e_value, mbti_i_value, mbti_n_value, mbti_s_value, mbti_t_value, mbti_f_value, mbti_j_value, mbti_p_value]
-  //     ],
-  //     type: "radar", // for ESM specify as: radar()
-  //     colors : {
-  //       ENTJ : "#4D7080"
-  //     },
-  //     labels: true
-  //   },
-  //   radar: {
-  //     axis: {
-  //       max: 50,
-  //       text: {
-  //         position: {
-  //           x: -20,
-  //           y: -15
-  //         }
-  //       }        
-  //     },
-  //     level: {
-  //       depth: 4
-  //     },
-  //     direction: {
-  //       clockwise: true
-  //     }, 
-  //     width : {
-  //       ratio : 0.9
-  //     },    
-  //   },
-    
-  //   bindto: "#mbtiChart"
-  // });
-
-  // setTimeout(function(){
-  //   mbti_chart.data.colors({            
-  //     ENTJ: d3.rgb("#A3C0CC").darker(1)
-  //   });
-  // }, 2000);
   let mbti_chart = bb.generate({
     
     data: {
       x: "x",
       columns: [
-        ["x",
-        "내향/외향",
-        "감각/직관",
-        "감정/사고",
-        "인식/판단",
+        ["x", "ENTJ", "ESTJ", "INTP", "ISTP", "ENTP", "ESTP", "INTJ", "INFP"],
+        ["I", 
+        mbti_entj, 
+        mbti_estj, 
+        mbti_intp, 
+        mbti_istp, 
+        mbti_entp, 
+        mbti_estp, 
+        mbti_intj, 
+        mbti_enfp]
       ],
-        // ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
-        ["ENTJ", 0, 
-        0, 
-        0, 
-        0, 
-      ],
-      [
-        "else",
-        -0, 
-        -0, 
-        -0, 
-        -0
-
-      ]
-      ],
-      type: "bar", // for ESM specify as: radar()
+      type: "radar", // for ESM specify as: radar()
       colors : {
-        ENTJ : "#4D7080",
-        else : "#b3cbd5"
+        ENTJ : "#4D7080"
       },
-      groups : [
-        ["ENTJ",
-        "else"]
-      ],
-      labels: {
-        format : function(v, id) {
-          return Math.abs(v);
-        }
-      }
+      labels: true
     },
-    axis : {
-      rotated : true,
-      x : {
-        type: "category",
-        tick: {
-          tooltip: true
-        } 
+    radar: {
+      axis: {
+        max: 80,
+        text: {
+          position: {
+            x: -20,
+            y: -5
+          }
+        }        
       },
-      y : {
-        tick : {
-          format : function(v) {
-            return Math.abs(v);
-          }
-        },
-      }
-    },
-    grid: {
-      y: {
-        show: true,
-        lines: [
-          {
-            value: 0,
-            class: "base-line"
-          }
-        ]
-      }
-    },
-    bar : {
+      level: {
+        depth: 4
+      },
+      direction: {
+        clockwise: true
+      }, 
       width : {
-        ratio : 0.9,
-        max : 30
-      }
-    },
-    tooltip: {
-      format: {
-        value: function(v) {
-      return Math.abs(v);
-     }
-      }
+        ratio : 0.9
+      },    
     },
     
     bindto: "#mbtiChart"
   });
 
   setTimeout(function(){
-    mbti_chart.load({
-      columns: [
-        ["x",
-        "내향/외향",
-        "감각/직관",
-        "감정/사고",
-        "인식/판단",
-      ],
-        // ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
-        ["ENTJ", mbti_e_value, 
-        mbti_n_value, 
-        mbti_t_value, 
-        mbti_j_value, 
-      ],
-      [
-        "else",
-        -mbti_i_value, 
-        -mbti_s_value, 
-        -mbti_f_value, 
-        -mbti_p_value
-
-      ]
-      ]
+    mbti_chart.data.colors({            
+      ENTJ: d3.rgb("#A3C0CC").darker(1)
     });
-  }, 1000);
+  }, 2000);
+
+  // let mbti_chart = bb.generate({
+    
+  //   data: {
+  //     x: "x",
+  //     columns: [
+  //       ["x",
+  //       "내향/외향",
+  //       "감각/직관",
+  //       "감정/사고",
+  //       "인식/판단",
+  //     ],
+  //       // ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
+  //       ["ENTJ", 0, 
+  //       0, 
+  //       0, 
+  //       0, 
+  //     ],
+  //     [
+  //       "else",
+  //       -0, 
+  //       -0, 
+  //       -0, 
+  //       -0
+
+  //     ]
+  //     ],
+  //     type: "bar", // for ESM specify as: radar()
+  //     colors : {
+  //       ENTJ : "#4D7080",
+  //       else : "#b3cbd5"
+  //     },
+  //     groups : [
+  //       ["ENTJ",
+  //       "else"]
+  //     ],
+  //     labels: {
+  //       format : function(v, id) {
+  //         return Math.abs(v);
+  //       }
+  //     }
+  //   },
+  //   axis : {
+  //     rotated : true,
+  //     x : {
+  //       type: "category",
+  //       tick: {
+  //         tooltip: true
+  //       } 
+  //     },
+  //     y : {
+  //       tick : {
+  //         format : function(v) {
+  //           return Math.abs(v);
+  //         }
+  //       },
+  //     }
+  //   },
+  //   grid: {
+  //     y: {
+  //       show: true,
+  //       lines: [
+  //         {
+  //           value: 0,
+  //           class: "base-line"
+  //         }
+  //       ]
+  //     }
+  //   },
+  //   bar : {
+  //     width : {
+  //       ratio : 0.9,
+  //       max : 30
+  //     }
+  //   },
+  //   tooltip: {
+  //     format: {
+  //       value: function(v) {
+  //     return Math.abs(v);
+  //    }
+  //     }
+  //   },
+    
+  //   bindto: "#mbtiChart"
+  // });
+
+  // setTimeout(function(){
+  //   mbti_chart.load({
+  //     columns: [
+  //       ["x",
+  //       "내향/외향",
+  //       "감각/직관",
+  //       "감정/사고",
+  //       "인식/판단",
+  //     ],
+  //       // ["x", "외향", "내향", "감각", "직관", "사고", "감정", "판단", "인식"],
+  //       ["ENTJ", mbti_e_value, 
+  //       mbti_n_value, 
+  //       mbti_t_value, 
+  //       mbti_j_value, 
+  //     ],
+  //     [
+  //       "else",
+  //       -mbti_i_value, 
+  //       -mbti_s_value, 
+  //       -mbti_f_value, 
+  //       -mbti_p_value
+
+  //     ]
+  //     ]
+  //   });
+  // }, 1000);
 
  
 

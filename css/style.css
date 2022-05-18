@@ -673,13 +673,10 @@ body {
 }
 
 
-.title-first h1 {
+.title-first h1{
     position: relative;
     display: inline-block;
-    font-size: 85px;
-    font-weight: 800;
-    color: #806E59;
-    margin-top: 24px;
+    margin-top: 32px;
     
     /* -webkit-text-stroke: 1px #806E59; */
     /* text-shadow: 6px 3px 0px #333; */
@@ -689,6 +686,9 @@ body {
 .title-first h1 i {
     position: relative;
     display: inline-block;
+    font-size: 85px;
+    font-weight: 800;
+    color: #806E59;
 }
 
 
@@ -805,7 +805,7 @@ body {
 .about-face img {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%, -50%);
     width: 100%;
 }
