@@ -1655,8 +1655,17 @@ body {
     transition: all 0.3s;
 }
 
+.sw-life-small {
+    width: calc((100% - 50% - (10px * 5)) / 5) !important;
+}
+
+.sw-life-big {
+    width: 50% !important;
+}
+
 .sw-life .swiper-slide:hover .life-box {
-    aspect-ratio: 1 / 1;    
+    aspect-ratio: 1 / 1;
+       
 }
 
 
