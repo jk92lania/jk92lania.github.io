@@ -982,7 +982,29 @@ window.onload = function () {
   });
 
 
-  // life slide
+  // life slide  
+  let sw_life_slide = $('.sw-life .swiper-slide');
+  let slideCount = sw_life_slide.length;
+  let sw_life_w = $('.sw-life').width();
+  $.each(sw_life_slide, function(index, item){
+    $(this).find('.life-box').mouseenter(function(){
+      if(index >= nowSlide && index <= (nowSlide+perView-1)) {
+        sw_life_slide.removeClass('sw-life-small');
+        for(let i = 0; i < perView; i++) {
+          sw_life_slide.eq(nowSlide+i).addClass('sw-life-small');      
+
+        }
+      };
+      sw_life_slide.removeClass('sw-life-big');      
+      $(this).parent().addClass('sw-life-big');
+    });
+    $(this).find('.life-box').mouseleave(function(){
+      sw_life_slide.removeClass('sw-life-small');
+      sw_life_slide.removeClass('sw-life-big');      
+    });
+  });
+
+
   let nowSlide = 0;
   let perView = 6;
   let sw_life = new Swiper(".sw-life", {
@@ -999,11 +1021,19 @@ window.onload = function () {
     on: {
       activeIndexChange: function () {
         nowSlide = this.realIndex; //현재 슬라이드 index 갱신
-        sw_life_slide.removeClass('sw-life-small');
-        for(let i = 0; i < perView; i++) {
-          sw_life_slide.eq(nowSlide+i).addClass('sw-life-small');      
 
-        }
+        sw_life_slide.removeClass('sw-life-small');
+        sw_life_slide.removeClass('sw-life-big');
+
+
+        // $.each(sw_life_slide, function(index, item){
+        //   if($(this).hasClass('sw-life-big')){
+        //     for(let i = 0; i < perView; i++) {
+        //       sw_life_slide.eq(nowSlide+i).addClass('sw-life-small');      
+    
+        //     }
+        //   }
+        // });
       }
     },
     breakpoints: {
@@ -1018,27 +1048,6 @@ window.onload = function () {
     }
   });
 
-  let sw_life_slide = $('.sw-life .swiper-slide');
-  let slideCount = sw_life_slide.length;
-  let sw_life_w = $('.sw-life').width();
-  $.each(sw_life_slide, function(index, item){
-    $(this).find('.life-box').mouseenter(function(){
-      if(index >= nowSlide && index <= (nowSlide+perView-1)) {
-        sw_life_slide.removeClass('sw-life-small');
-        for(let i = 0; i < perView; i++) {
-          sw_life_slide.eq(nowSlide+i).addClass('sw-life-small');      
-
-        }
-      };
-      $(this).parent().addClass('sw-life-big');
-
-    });
-    $(this).find('.life-box').mouseleave(function(){
-      sw_life_slide.removeClass('sw-life-small');
-      sw_life_slide.removeClass('sw-life-big');
-      
-    });
-  });
 
 
   $('.pdf').click(function(event){
