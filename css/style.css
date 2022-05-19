@@ -265,6 +265,11 @@ body {
     overflow: hidden;
 }
 
+.quickmenu-icon span {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
 .quickmenu-icon-active {
     margin: 14px 0;
     width: 50px;
@@ -1615,29 +1620,70 @@ body {
     margin: 40px 0;
 }
 
-.life .container {}
+.life .container {
+    height: 800px;
 
+}
+
+.sw-life .swiper-wrapper {
+    align-items: center;
+}
 
 .sw-life .swiper-slide {
-    height: 700px;
+    /* width: calc((100% / 6) - 12px);
+    margin: 0 5px; */
+    height: 800px;
+    
+    /* transform: translateX(-50%); */
+    transition: all 0.3s;
 }
 
-.sw-life .life-box {
-    position: absolute;
-    left: 0;
-    top: 0%;
+.sw-life-slide-big {
+    width: 600px !important;
+}
+
+.sw-life-slide-small {
+    transform: translateX(-100%) scaleX(0.8);
+}
+
+.life-box {
+    position: relative;
     display: block;
     width: 100%;
-    height: 360px;
+    height: 600px;
+
+    transition: all 0.3s;
 }
 
+.sw-life .swiper-slide:hover .life-box {
+    aspect-ratio: 1 / 1;    
+}
+
+
 .sw-life .swiper-slide-next .life-box {
-    top: 20%;
+    margin-top: 50px;
 }
 
 .sw-life .swiper-slide-next+.swiper-slide .life-box {
-    top: 40%;
+    margin-top: 100px;
+    /* top: 40%; */
 }
+
+.sw-life .swiper-slide-next+.swiper-slide +.swiper-slide .life-box{
+    margin-top: 100px;
+    /* top: 40%; */
+}
+
+.sw-life .swiper-slide-next +.swiper-slide +.swiper-slide +.swiper-slide .life-box{
+    margin-top: 50px;
+    /* top: 40%; */
+}
+
+.sw-life .swiper-slide-next +.swiper-slide +.swiper-slide +.swiper-slide .life-box:hover{
+    
+}
+
+
 
 .life-1 {
     background: url('../images/life_travel_004.jpg') no-repeat center;
@@ -1655,32 +1701,44 @@ body {
 }
 
 .life-4 {
-    background: url('../images/life_read_004.jpg') no-repeat center;
+    background: url('../images/life_travel_005.jpg') no-repeat center;
     background-size: cover;
 }
 
 .life-5 {
-    background: url('../images/life_read_006.png') no-repeat center;
+    background: url('../images/life_travel_006.jpg') no-repeat center;
     background-size: cover;
 }
 
 .life-6 {
-    background: url('../images/life_read_007.png') no-repeat center;
+    background: url('../images/life_read_004.jpg') no-repeat center;
     background-size: cover;
 }
 
 .life-7 {
-    background: url('../images/life_show_004.png') no-repeat center;
+    background: url('../images/life_travel_001.jpg') no-repeat center;
     background-size: cover;
 }
 
 .life-8 {
-    background: url('../images/life_show_005.png') no-repeat center;
+    background: url('../images/life_show_002.jpg') no-repeat center;
     background-size: cover;
 }
 
 .life-9 {
     background: url('../images/life_show_003.png') no-repeat center;
+    background-size: cover;
+}
+.life-10 {
+    background: url('../images/life_show_004.png') no-repeat center;
+    background-size: cover;
+}
+.life-11 {
+    background: url('../images/life_show_005.png') no-repeat center;
+    background-size: cover;
+}
+.life-12 {
+    background: url('../images/life_show_006.jpg') no-repeat center;
     background-size: cover;
 }
 

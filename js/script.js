@@ -984,24 +984,69 @@ window.onload = function () {
 
   // life slide
   let sw_life = new Swiper(".sw-life", {
+    // loop : true,
     slidesPerView: 3,
-    slidesPerGroup: 3,
+    // slidesPerGroup: 3,
     spaceBetween: 10,
     pagination: {
-      el: ".sw-travel-pg",
+      el: ".sw-life-pg",
       clickable: true,
     },
+    // touchRatio: 0,//드래그 금지
     breakpoints: {
       1000: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
+        slidesPerView: 6,
+        // slidesPerGroup: 1,
       },
       800: {
         slidesPerView: 3,
-        slidesPerGroup: 3,
+        // slidesPerGroup: 3,
       },
     }
   });
+
+  let sw_life_slide = $('.sw-life .swiper-slide');
+  $.each(sw_life_slide, function(index, item){
+    $(this).mouseenter(function(){
+      $(this).addClass('sw-life-slide-big');      
+      muCenter($(this));
+      // $(this).find('.life-box').css('width', '100%');
+    });
+    $(this).mouseleave(function(){
+      $(this).removeClass('sw-life-slide-big');
+      
+    });
+  });
+
+  
+function muCenter(target){
+  var snbwrap = $('.sw-life .swiper-wrapper');
+  var targetPos = target.position();
+  var box = $('.sw-life');
+  var boxHarf = box.width()/2;
+  var pos;
+  var listWidth=0;
+  
+  snbwrap.find('.swiper-slide').each(function(){ listWidth += $(this).outerWidth(); })
+  
+  var selectTargetPos = targetPos.left + target.outerWidth()/2;
+  if (selectTargetPos <= boxHarf) { // left
+      pos = 0;
+  }else if ((listWidth - selectTargetPos) <= boxHarf) { //right
+      pos = listWidth-box.width() + 100;
+  }else {
+      pos = selectTargetPos - boxHarf;
+  }
+  
+  setTimeout(function(){snbwrap.css({
+      "transform": "translate3d("+ (pos*-1) +"px, 0, 0)",
+      "transition-duration": "500ms"
+  })}, 200);
+}
+
+
+
+
 
 
   $('.pdf').click(function(event){
