@@ -1,5 +1,4 @@
 window.onload = function () {
-  console.log(window.innerWidth);
   AOS.init({
 
     disable: function () {
@@ -32,6 +31,7 @@ window.onload = function () {
 
   $(window).resize(function(){
     makeTop();
+    contact_icon_resize();
   });
 
   $(window).scroll(function () {
@@ -1049,6 +1049,28 @@ window.onload = function () {
   });
 
 
+  function contact_icon_resize(){
+    let win_width = window.innerWidth;
+    console.log(win_width);
+    let contact_icon = $('.contact-wrap > a > i');
+    if(win_width > 1200) {
+      contact_icon.removeClass('fa-5x');
+      contact_icon.removeClass('fa-6x');
+      contact_icon.addClass('fa-9x');
+    } else if(win_width > 480) {
+      contact_icon.removeClass('fa-5x');
+      contact_icon.removeClass('fa-9x');
+      contact_icon.addClass('fa-6x');
+    } else {
+      contact_icon.removeClass('fa-9x');
+      contact_icon.removeClass('fa-6x');
+      contact_icon.addClass('fa-5x');
+
+    }
+  }
+
+
   makeTop();
+  contact_icon_resize();
 
 }

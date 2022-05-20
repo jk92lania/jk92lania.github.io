@@ -1956,9 +1956,13 @@ body {
 }
 
 @media all and (max-width:480px) {
+    .contact-wrap a {
+        margin: 0 3.125vw;
+    }
     .contact-wrap a i {
         width: 18vw;
         height: 18vw;
+        line-height: 18vw !important;
     }
 }
 
