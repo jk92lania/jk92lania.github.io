@@ -207,11 +207,14 @@ body {
         width: 100%;
         margin: 0;
     }
-    .flex-left {
-        /* flex-basis: 0px; */
+}
+
+@media all and (max-width:1024px) {
+    .title-main {
+        font-size: 3.125vw;
     }
-    
-    .flex-right {
+    .title-sub {
+        font-size: 1.95vw;
     }
 }
 
@@ -342,7 +345,7 @@ body {
     transition: all 0.3s;
 }
 
-@media all and (max-width:800px) {
+@media all and (max-width:1024px) {
     .quickmenu {
         display: none !important;
     }    
@@ -633,7 +636,7 @@ body {
 .gnb li a:hover::before {
 }
 
-@media all and (max-width:800px) {
+@media all and (max-width:768px) {
     .nav-more {
         display: block;
     }
@@ -653,13 +656,13 @@ body {
 .visual {
     position: relative;
     display: block;
-    padding-top: 90px;
+    padding-top: 80px;
     background-color: #cdbaa4;
 }
 
 .visual .container {
     text-align: center;
-    height: 550px;
+    height: 587px;
     padding: 40px 0;
 }
 
@@ -669,6 +672,8 @@ body {
     top: 0;
     display: block;
     width: 380px;
+
+    margin-top: 40px;
 }
 
 .visual-bg img {
@@ -746,7 +751,7 @@ body {
 
 
 
-@media all and (max-width:1400px) {
+@media all and (max-width:1680px) {
     .visual-bg {
         left:unset;
         right: 2vw;
@@ -758,21 +763,45 @@ body {
 }
 @media all and (max-width:1200px) {
     .title-first {
-        width: 60vw;
-    }
-}
-@media all and (max-width:1000px) {
-    .title-first {
         width: calc(90vw - 380px);
     }
-    
+    .visual-bg {
+        margin-right: 3.9vw;
+    }
 }
-@media all and (max-width:800px) {
+@media all and (max-width:1024px) {
+    .title-first {
+        width: calc(90vw - 37.1vw);
+    }
+    .visual-bg {
+        width: 37.1vw;
+    }
+}
+@media all and (max-width:768px) {
       .visual-bg {
           display: none;
       }
       .title-first {
         width: 96vw;
+    }
+}
+@media all and (max-width:480px) {
+    .visual .container {
+        padding: 5.2vw 0;
+    }
+    .title-first {
+        font-size: 8.4vw;
+        line-height: 12.5vw;
+    }
+    .title-first h1 {
+        margin-top: 3.125vw;
+    }
+    .title-first h1 i {
+        font-size: 12.5vw;
+    }
+    .title-first h1 i::before {
+        width: 1.83vw;
+        height: 1.83vw;
     }
 }
 
@@ -797,12 +826,53 @@ body {
 }
 
 
+.about-face {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.about-face img {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.swiper-slide-active .about-face {
+    text-align: right;
+    width: 90%;
+    height: 90%;
+    
+}
+
+
+.swiper-slide-next .about-face {
+    margin-top: 4vw;
+    margin-left: -5vw;
+    text-align: left;
+    width: 116%;
+    height: 116%;
+    z-index: -1;
+}
+
+.swiper-slide-next+.swiper-slide .about-face {    
+    margin-top: 2vw;
+}
+
+
+
 .about-info {
     position: relative;
     display: block;
     width: 100%;
+    height: 200px;
 
-    font-size: 18px;
+    font-size: 20px;
     line-height: 26px;
     color: #333;
     word-break: keep-all;
@@ -832,39 +902,11 @@ body {
     text-align: justify;
 }
 
-.about-face {
-    position: relative;
-    display: inline-block;
-    width: 80%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-}
-
-.about-face img {
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-}
-
-.swiper-slide-active .about-face {
-    text-align: right;
-    width: 90%;
-    
-}
 
 .swiper-slide-active .about-info {    
     width: 90%;
 }
 
-.swiper-slide-next .about-face {
-    margin-top: 4vw;
-    margin-left: -5vw;
-    text-align: left;
-    width: 116%;
-    z-index: -1;
-}
 
 .swiper-slide-next .about-info {
     margin-left: -5vw;
@@ -874,15 +916,34 @@ body {
     width: 116%;
 }
 
-.swiper-slide-next+.swiper-slide .about-face {    
-    margin-top: 2vw;
-}
 
 .swiper-slide-next+.swiper-slide .about-info {
 }
 
+@media all and (max-width:1680px) {
+    .sw-about {
+        margin: 0 40px;
+    }
+}
 
-@media all and (max-width:1400px) {
+@media all and (max-width:1200px) {
+    .about-info strong {
+        font-size: 3.34vw;
+    }
+    
+    .swiper-slide-next .about-info strong {
+        font-size: 4.58vw;
+    }
+}
+
+@media all and (max-width:1080px) {
+    .about {
+        margin: 7.41vw;
+    }
+    .sw-about {
+        margin: 6vw 2vw 0;
+        width: calc(100% - 4vw);
+    }
     .swiper-slide-active .about-face {
         width: 90%;        
     }
@@ -902,13 +963,13 @@ body {
     .swiper-slide-next .about-info span{
         width: 110%;
     }
-    .sw-about {
-        margin: 6vw 2vw 0;
-        width: calc(100% - 4vw);
-    }
 }
 
-@media all and (max-width:800px) {
+@media all and (max-width:768px) {
+    
+    .about-info {
+        height: 18.52vw;
+    }
     .sw-about .swiper-slide-active {
         text-align: center;     
     }
@@ -932,7 +993,13 @@ body {
 }
 
 @media all and (max-width:640px) {
+    .about-info strong {
+        font-size: 5.21vw;
+    }
     
+    .swiper-slide-next .about-info strong {
+        font-size: 7.16vw;
+    }
 }
 
 /* //나의 소개 */
@@ -1065,7 +1132,7 @@ body {
     margin-left: 20px;
 }
 
-@media all and (max-width : 1400px) {
+@media all and (max-width : 1680px) {
     #mbtiChart {
         width: 48vw;
         height: 38vw;
@@ -1075,26 +1142,51 @@ body {
     }
 }
 @media all and (max-width : 1200px) {
+    
     .mbti-wrap-info {
         padding-top: 16vw;
     }
     
 }
-@media all and (max-width : 1000px) {
+@media all and (max-width : 1024px) {
     .mbti-wrap-info {
         padding-top: 0;
     }
     .mbti-wrap  {
         display: block;
     }
+    .mbti-wrap .flex-left {
+        padding: 0;
+    }
     #mbtiChart {
         width: 90vw;
+        height: 90vw;
+    }
+    #mbtiChart .bb-axis text {
+        font-size: 15px;
+    }
+    .mbti-wrap .flex-right {
+        margin-top: 4.88vw;
     }
     .sw-mbti {
         width: 90vw;
     }
     .sw-mbti .swiper-slide-active {
         text-align: center;     
+    }
+    .mbti-more {
+        font-size: 1.76vw;
+    }
+    .mbti-more dt {
+        font-size: 2.93vw;
+
+    }
+    
+}
+@media all and (max-width : 768px) {
+    #mbtiChart {
+        width: 100vw;
+        height: 100vw;
     }
     
 }
