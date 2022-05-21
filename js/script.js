@@ -670,7 +670,7 @@ window.onload = function () {
       'origin': 'http://www.palgongtea.co.kr/',
       'study': '개인',
       'day': '8',
-      'info' : '100% 개인 작업하였습니다. 표작성 및 swiper 배치 등에 대해 배워나갔습니다.'
+      'info' : '100% 개인 작업하였습니다. 표 작성 및 swiper 배치 등에 대해 배웠습니다.'
     },
     {
       'name': '삼양맛샵',
@@ -685,7 +685,7 @@ window.onload = function () {
       'origin': 'https://sydeliciousshop.com/',
       'study': '개인',
       'day': '6',
-      'info' : '100% 개인 작업하였습니다. swiper 동작시 애니메이션 등 이벤트를 추가하는 방법에 대해 공부하였습니다.'
+      'info' : '100% 개인 작업하였습니다. swiper 동작시 이벤트를 추가 하는 방법에 대해 공부하였습니다.'
     },
     {
       'name': '포트폴리오',
@@ -699,7 +699,7 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/portfolio',
       'study': '개인',
       'day': '20',
-      'info' : '100% 개인 작업하였습니다. 배운 것을 토대로 제작하였습니다. billboard.js 등을 추가 사용하였습니다.'
+      'info' : '100% 개인 작업하였습니다. 배운 것을 토대로 제작하였습니다. billboard.js 등을 추가 했습니다.'
     },
     {
       'name': '생명보험협회',
@@ -715,7 +715,7 @@ window.onload = function () {
       'origin': 'https://www.klia.or.kr/',
       'study': '스터디용',
       'day': '10',
-      'info' : '수업을 들으며 제작하였습니다. 원페이지 제작방법을 배웠습니다.'
+      'info' : '수업을 들으며 제작하였습니다. 원페이지 제작 방법을 배웠습니다.'
     },
     {
       'name': '산청군청',
@@ -746,7 +746,7 @@ window.onload = function () {
       'origin': 'https://shop.hansalim.or.kr/shopping/spMain.do',
       'study': '스터디용',
       'day': '8',
-      'info' : '수업을 들으며 제작하였습니다. 장바구니 계산 및 json 방식에 대해 배워나갔습니다.'
+      'info' : '수업을 들으며 제작하였습니다. 장바구니 계산 및 json 방식에 대해 배웠습니다.'
     },
     {
       'name': '풀무원',
@@ -761,7 +761,7 @@ window.onload = function () {
       'origin': 'https://greenjuice.pulmuone.com/',
       'study': '스터디용',
       'day': '4',
-      'info' : '수업을 들으며 제작하였습니다. js를 이용한 class 추가, 제거 및 slide 제작에 대해 배워나갔습니다.'
+      'info' : '수업을 들으며 제작하였습니다. js를 이용한 class 추가, 제거 및 slide 제작에 대해 배웠습니다.'
     },
     {
       'name': '부산대학교병원',
@@ -776,7 +776,7 @@ window.onload = function () {
       'origin': 'https://www.pnuh.or.kr/pnuh/main/main.do?rbsIdx=1',
       'study': '스터디용',
       'day': '6',
-      'info' : '수업을 들으며 제작하였습니다. 헤더 제작, 슬라이드 더보기 제작하는 방법에 대해 배워나갔습니다.'
+      'info' : '수업을 들으며 제작하였습니다. 헤더 제작, 슬라이드 더보기 제작하는 방법에 대해 배웠습니다.'
     },
     {
       'name': 'stx건설',
@@ -791,7 +791,7 @@ window.onload = function () {
       'origin': 'http://www.stxconst.co.kr/',
       'study': '스터디용',
       'day': '3',
-      'info' : '수업을 들으며 제작하였습니다. 헤더 제작 등에 대해 배워나갔습니다.'
+      'info' : '수업을 들으며 제작 했습니다. 헤더 제작 등에 대해 배웠습니다.'
     },
   ];
 
@@ -996,9 +996,12 @@ window.onload = function () {
         }
       };
       sw_life_slide.removeClass('sw-life-big');      
+      sw_life_slide.find('.life-txt').removeClass('sw-life-txt-active');
       $(this).parent().addClass('sw-life-big');
+      $(this).parent().find('.life-txt').addClass('sw-life-txt-active');
     });
     $(this).find('.life-box').mouseleave(function(){
+      sw_life_slide.find('.life-txt').removeClass('sw-life-txt-active');
       sw_life_slide.removeClass('sw-life-small');
       sw_life_slide.removeClass('sw-life-big');      
     });
