@@ -322,7 +322,7 @@ window.onload = function () {
   // profile slide
   let sw_profile = new Swiper(".sw-profile", {
     slidesPerView: 2,
-    spaceBetween: 10,
+    spaceBetween: 0,
     breakpoints: {
       1000: {
         slidesPerView: 4,
@@ -337,7 +337,7 @@ window.onload = function () {
 
   // skill html
   let barHtml = new ProgressBar.Circle(skillHtml, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -349,7 +349,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'
@@ -374,7 +374,7 @@ window.onload = function () {
 
   // skill css
   let barCss = new ProgressBar.Circle(skillCss, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -386,7 +386,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'
@@ -411,7 +411,7 @@ window.onload = function () {
 
   // skill js
   let barJs = new ProgressBar.Circle(skillJs, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -423,7 +423,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'
@@ -447,7 +447,7 @@ window.onload = function () {
 
   // skill jquery
   let barJq = new ProgressBar.Circle(skillJq, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -459,7 +459,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'
@@ -483,7 +483,7 @@ window.onload = function () {
 
   // skill 반응형
   let barRes = new ProgressBar.Circle(skillRs, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -495,7 +495,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'
@@ -519,7 +519,7 @@ window.onload = function () {
 
   // skill github
   let barGit = new ProgressBar.Circle(skillGit, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -531,7 +531,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'
@@ -555,7 +555,7 @@ window.onload = function () {
 
   // skill scss
   let barScss = new ProgressBar.Circle(skillScss, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -567,7 +567,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'
@@ -591,7 +591,7 @@ window.onload = function () {
 
   // skill vue
   let barVue = new ProgressBar.Circle(skillVue, {
-    strokeWidth: 3,
+    strokeWidth: 5,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -603,7 +603,7 @@ window.onload = function () {
       alignToBottom: false
     },
     from: {
-      color: '#CDBAA4'
+      color: '#806E59'
     },
     to: {
       color: '#806E59'

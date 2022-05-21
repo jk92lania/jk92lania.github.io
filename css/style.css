@@ -54,17 +54,6 @@ body {
     text-align: center;
 }
 
-.title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: calc(100% + 22px);
-    transform: translateX(-50%);
-    display: block;
-    width: 50px;
-    height: 5px;
-    background-color: #A3C0CC;
-}
 
 .title-sub {
     position: relative;
@@ -75,13 +64,24 @@ body {
 
 .title-main {
     position: relative;
-    display: block;
+    display: inline-block;
 
     font-size: 32px;
     font-weight: 800;
     margin: 10px 0 40px;
     text-transform: uppercase;
+}
 
+.title-main::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #4D7080;
 }
 
 .menu-more span {
@@ -730,7 +730,7 @@ body {
 .title-first h1 i {
     position: relative;
     display: inline-block;
-    font-size: 85px;
+    font-size: 77px;
     font-weight: 800;
     color: #806E59;
 }
@@ -740,7 +740,7 @@ body {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 110%;
+    bottom: 120%;
     transform: translateX(-50%);
     display: block;
     width: 14px;
@@ -1648,18 +1648,18 @@ body {
     width: 90%;
     height: 90%;
     border-radius: 50%;
-    border: 25px solid #cdbaa4;
+    border: 25px solid #FFF3E6;
     z-index: -1;
 }
 
 .skill-info {
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 42%;
     transform: translate(-50%, -50%);
     display: block;
     width: auto;
-    height: 100px;
+    height: 65px;
     text-align: center;
     padding: 0 20px;
 }
@@ -1669,8 +1669,11 @@ body {
 }
 
 .skill-name {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    transform: translateX(-50%);
+    display: block;
 
     font-size: 20px;
     font-weight: 700;
@@ -1678,7 +1681,6 @@ body {
     text-transform: uppercase;
     color: #333;
     white-space: nowrap;
-    padding-top: 6px;
 }
 
 
@@ -1916,15 +1918,20 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    line-height: 120px;
+    line-height: 112px;
 }
+
 
 .kakao i {
     line-height: 110px !important;
 }
 
+.survey i {
+    line-height: 108px !important;
+}
+
 .pdf i {
-    line-height: 102px !important;
+    line-height: 108px !important;
     
 }
 
