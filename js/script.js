@@ -337,7 +337,7 @@ window.onload = function () {
 
   // skill html
   let barHtml = new ProgressBar.Circle(skillHtml, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -374,7 +374,7 @@ window.onload = function () {
 
   // skill css
   let barCss = new ProgressBar.Circle(skillCss, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -411,7 +411,7 @@ window.onload = function () {
 
   // skill js
   let barJs = new ProgressBar.Circle(skillJs, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -447,7 +447,7 @@ window.onload = function () {
 
   // skill jquery
   let barJq = new ProgressBar.Circle(skillJq, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -483,7 +483,7 @@ window.onload = function () {
 
   // skill 반응형
   let barRes = new ProgressBar.Circle(skillRs, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -519,7 +519,7 @@ window.onload = function () {
 
   // skill github
   let barGit = new ProgressBar.Circle(skillGit, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -555,7 +555,7 @@ window.onload = function () {
 
   // skill scss
   let barScss = new ProgressBar.Circle(skillScss, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -591,7 +591,7 @@ window.onload = function () {
 
   // skill vue
   let barVue = new ProgressBar.Circle(skillVue, {
-    strokeWidth: 5,
+    strokeWidth: 4,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
@@ -988,22 +988,46 @@ window.onload = function () {
   let sw_life_w = $('.sw-life').width();
   $.each(sw_life_slide, function(index, item){
     $(this).find('.life-box').mouseenter(function(){
-      if(index >= nowSlide && index <= (nowSlide+perView-1)) {
-        sw_life_slide.removeClass('sw-life-small');
-        for(let i = 0; i < perView; i++) {
-          sw_life_slide.eq(nowSlide+i).addClass('sw-life-small');      
+      sw_life_w = sw_life.width;
+      if(sw_life_w >= 1024) {
+        perView = 6;
+      } else if(sw_life_w >= 420) {
+        perView = 3;
+      } else {
+        perView = 1;
+        return;
+      }
+      
 
+      if(index >= nowSlide && index <= (nowSlide+perView-1)) {
+        sw_life_slide.removeClass('sw-life-small-6');
+        sw_life_slide.removeClass('sw-life-small-3');
+        for(let i = 0; i < perView; i++) {
+          if(perView == 6) {
+            sw_life_slide.eq(nowSlide+i).addClass('sw-life-small-6');      
+
+          } else if(perView == 3) {
+            sw_life_slide.eq(nowSlide+i).addClass('sw-life-small-3');     
+          }
         }
       };
-      sw_life_slide.removeClass('sw-life-big');      
+      if(perView == 6) {   
+        sw_life_slide.removeClass('sw-life-big-6');      
+        $(this).parent().addClass('sw-life-big-6');
+
+      } else if(perView == 3) { 
+        sw_life_slide.removeClass('sw-life-big-3');      
+        $(this).parent().addClass('sw-life-big-3');
+      }
       sw_life_slide.find('.life-txt').removeClass('sw-life-txt-active');
-      $(this).parent().addClass('sw-life-big');
       $(this).parent().find('.life-txt').addClass('sw-life-txt-active');
     });
     $(this).find('.life-box').mouseleave(function(){
       sw_life_slide.find('.life-txt').removeClass('sw-life-txt-active');
-      sw_life_slide.removeClass('sw-life-small');
-      sw_life_slide.removeClass('sw-life-big');      
+      sw_life_slide.removeClass('sw-life-small-6');
+      sw_life_slide.removeClass('sw-life-big-6');      
+      sw_life_slide.removeClass('sw-life-small-3');
+      sw_life_slide.removeClass('sw-life-big-3');      
     });
   });
 
@@ -1012,10 +1036,10 @@ window.onload = function () {
   let perView = 6;
   let sw_life = new Swiper(".sw-life", {
     // loop : true,
-    slidesPerView: 3,
+    slidesPerView: 1,
     initialSlide : nowSlide,
     // slidesPerGroup: 3,
-    spaceBetween: 10,
+    spaceBetween: 0,
     pagination: {
       el: ".sw-life-pg",
       clickable: true,
@@ -1024,29 +1048,21 @@ window.onload = function () {
     on: {
       activeIndexChange: function () {
         nowSlide = this.realIndex; //현재 슬라이드 index 갱신
-
-        sw_life_slide.removeClass('sw-life-small');
-        sw_life_slide.removeClass('sw-life-big');
-
-
-        // $.each(sw_life_slide, function(index, item){
-        //   if($(this).hasClass('sw-life-big')){
-        //     for(let i = 0; i < perView; i++) {
-        //       sw_life_slide.eq(nowSlide+i).addClass('sw-life-small');      
-    
-        //     }
-        //   }
-        // });
+        
+        sw_life_slide.removeClass('sw-life-small-6');
+        sw_life_slide.removeClass('sw-life-big-6');
+        sw_life_slide.removeClass('sw-life-small-3');
+        sw_life_slide.removeClass('sw-life-big-3');
       }
     },
     breakpoints: {
-      1000: {
-        slidesPerView: perView,
-        // slidesPerGroup: 1,
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 10,
       },
-      800: {
+      420: {
         slidesPerView: 3,
-        // slidesPerGroup: 3,
+        spaceBetween: 10,
       },
     }
   });
@@ -1054,7 +1070,7 @@ window.onload = function () {
 
   function contact_icon_resize(){
     let win_width = window.innerWidth;
-    console.log(win_width);
+    // console.log(win_width);
     let contact_icon = $('.contact-wrap > a > i');
     if(win_width > 1200) {
       contact_icon.removeClass('fa-5x');

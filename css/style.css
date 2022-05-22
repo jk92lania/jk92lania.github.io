@@ -1093,10 +1093,6 @@ body {
     color: #806E59;
 }
 
-.mbti-more-week {
-    color: #806E59;
-}
-
 
 .mbti-entj {
     position: relative;
@@ -1722,32 +1718,26 @@ body {
     padding: 40px 0;
 }
 
-.sw-life .swiper-wrapper {
-    align-items: center;
+.sw-life {
+    width: 100%;
+    height: 50vw;
+    height: calc(45vw + 180px);
 }
 
 .sw-life .swiper-slide {
     /* width: calc((100% / 6) - 12px);
     margin: 0 5px; */
-    height: 800px;
+    height: 45vw;
     
     /* transform: translateX(-50%); */
     transition: all 0.3s;
-}
-
-.sw-life-slide-big {
-    width: 600px !important;
-}
-
-.sw-life-slide-small {
-    transform: translateX(-100%) scaleX(0.8);
 }
 
 .life-box {
     position: relative;
     display: block;
     width: 100%;
-    height: 600px;
+    height: 100%;
 
     transition: all 0.3s;
 }
@@ -1766,12 +1756,20 @@ body {
     text-overflow: ellipsis;
 }
 
-.sw-life-small {
+.sw-life-small-6 {
     width: calc((100% - 50% - (10px * 5)) / 5) !important;
 }
 
-.sw-life-big {
+.sw-life-big-6 {
     width: 50% !important;
+}
+
+.sw-life-small-3 {
+    width: calc((100% - 75% - (10px * 2)) / 2) !important;
+}
+
+.sw-life-big-3 {
+    width: 75% !important;
 }
 
 .sw-life-txt-active {
@@ -1892,6 +1890,28 @@ body {
         padding: 0px 20px;
     }
 }
+@media all and (max-width:1024px) {    
+.sw-life {
+    height: calc(60vw + 180px);
+}
+
+.sw-life .swiper-slide {
+    height: 60vw;    
+    transition: all 0.3s;
+}
+}
+@media all and (max-width:420px) {    
+.sw-life {
+    height: calc(100vw + 60px);
+}
+
+.sw-life .swiper-slide {
+    height: 100vw;    
+    transition: all 0.3s;
+}
+}
+
+
 /* //삶 */
 
 
