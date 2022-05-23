@@ -631,6 +631,7 @@ window.onload = function () {
     slidesPerView: 1,
     slidesPerColumn: 1,
     spaceBetween: 0,
+    watchOverflow : true,
     slidesPerColumnFill: 'row',
     breakpoints: {
       800: {
@@ -779,6 +780,29 @@ window.onload = function () {
       'info' : '수업을 들으며 제작하였습니다. 헤더 제작, 슬라이드 더보기 제작하는 방법에 대해 배웠습니다.'
     },
     {
+      'name': 'todo - vue',
+      'imgurl': 'images/port_vue_003.png',
+      'imgurlbefore': 'images/port_vue_002.png',
+      'vue': 'vue',
+      'pc': 'PC',
+      'git': 'https://github.com/jk92lania/todoapp',
+      'study': '스터디용',
+      'day': '10',
+      'info' : '수업을 들으며 제작 했습니다. vue를 배우며 제작하였습니다.'
+    },
+    {
+      'name': 'stx건설 - vue',
+      'imgurl': 'images/port_stx_002.png',
+      'imgurlbefore': 'images/port_stx_004.png',
+      'vue': 'vue',
+      'pc': 'PC',
+      'work': 'https://jk92lania.github.io/stx-demo/',
+      'git': 'https://github.com/jk92lania/stx-vue',
+      'study': '스터디용',
+      'day': '10',
+      'info' : '수업을 들으며 제작 했습니다. stx건설을 vue로 제작하며 배웠습니다.'
+    },
+    {
       'name': 'stx건설',
       'imgurl': 'images/port_stx_002.png',
       'imgurlbefore': 'images/port_stx_004.png',
@@ -799,7 +823,7 @@ window.onload = function () {
   let sw_pf_html = '';
   for (let i = 0; i < sw_pf_total; i++) {
     let temp_data = sw_pf_data[i];
-    sw_pf_html += '<div class="swiper-slide">';
+    sw_pf_html += '<div class="list">';
     sw_pf_html += '<div class="portfolio-box">';
 
     sw_pf_html += '<div class="pf-box-img"><img src=\"';
@@ -852,6 +876,9 @@ window.onload = function () {
     if (temp_data.js) {
       sw_pf_html += '<span class="pf-box-label label-js">js</span>';
     }
+    if (temp_data.vue) {
+      sw_pf_html += '<span class="pf-box-label">vue</span>';
+    }
     if (temp_data.pc) {
       sw_pf_html += '<span class="pf-box-label label-pc">';
       sw_pf_html += temp_data.pc;
@@ -870,31 +897,129 @@ window.onload = function () {
   let sw_pf_wrapper = $('.sw-portfolio .swiper-wrapper');
   sw_pf_wrapper.html(sw_pf_html);
 
+  slideAct();
+  
+  function slideAct(){
+    let view = 0; //보이는 슬라이드 개수
+    let realInx = []; //현재 페이지
+    let swiperArr = []; //슬라이드 배열
+    
+    //슬라이드 배열 생성
+    $(".sw-portfolio").each(function(){
+        realInx.push(0);
+        swiperArr.push(undefined);
+    })
+	
+    //디바이스 체크
+    let winWChk = 'pc';
+    let winW = window.innerWidth;
+    $(window).on('load resize', function (){
+        winW = window.innerWidth;
+        if(winWChk != 'mo' && winW <= 768){ //모바일 버전으로 전환할 때
+            slideList();
+            winWChk = 'mo';
+        }
+        if(winWChk != 'pc' && winW >= 769){ //PC 버전으로 전환할 때
+            slideList();
+            winWChk = 'pc';
+        }
+    }) 
+
+    slideList();
+    function slideList(){
+        //리스트 초기화
+        if ($('.sw-portfolio .list').parent().hasClass('swiper-slide')){
+            $('.sw-portfolio .swiper-slide-duplicate').remove();
+            $('.sw-portfolio .list').unwrap('swiper-slide');
+        }
+        
+        //보이는 슬라이드 개수 설정
+        $(".sw-portfolio").each(function(index){
+          console.log("port : " + index);
+            if (window.innerWidth > 1024){ //PC 버전
+                view = 6;
+            }else if(window.innerWidth > 768){ //pad 버전
+                view = 4;
+            }else{ //mobile 버전
+                view = 2;
+            }
+
+            //리스트 그룹 생성 (swiper-slide element 추가)
+            var num = 0;
+            $(this).addClass("sw-portfolio-" + index);
+            $(".sw-portfolio-" + index).find('.list').each(function(i) {
+                $(this).addClass("list"+(Math.floor((i+view)/view)));
+                num = Math.floor((i+view)/view);
+            }).promise().done(function(){
+                for (var i = 1; i < num+1; i++) {
+                    $(".sw-portfolio-" + index).find('.list'+i+'').wrapAll('<div class="swiper-slide"></div>');
+                    $(".sw-portfolio-" + index).find('.list'+i+'').removeClass('list'+i+'');
+                }
+            });
+        }).promise().done(function(){
+            sliderStart();
+        });
+    }
+    
+    function sliderStart(){
+        $(".sw-portfolio").each(function(index){
+            //슬라이드 초기화
+            if(swiperArr[index] != undefined) {
+                swiperArr[index].destroy();
+                swiperArr[index] == undefined;
+            }
+
+            //슬라이드 실행
+            swiperArr[index] = new Swiper('.sw-portfolio-' + index + ' .inner', {
+                slidesPerView: 1,
+                initialSlide :Math.floor(realInx[index]/view),
+                resistanceRatio : 0,
+                loop:true,
+                navigation: {
+                    nextEl: $('.sw-portfolio-' + index).find('.sw-portfolio-next'),
+                    prevEl: $('.sw-portfolio-' + index).find('.sw-portfolio-prev'),
+                },
+                on: {
+                    slideChange: function () {
+                        realInx[index] = this.realIndex*view
+                    }
+                },
+            });
+
+            //슬라이드 배열 값 추가
+            if(swiperArr[index] == undefined) {
+                swiperArr[index] = swiper;
+            }
+        }); 
+    }
+}
+
 
   // portfolio slide
-  let sw_port = new Swiper(".sw-portfolio", {
-    slidesPerView: 1,
-    slidesPerColumn: 0,
-    slidesPerColumnFill: 'row',
-    slidesPerGroup: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: ".sw-portfolio-pg",
-      clickable: true,
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 3,
-        slidesPerColumn: 4,
-        slidesPerGroup: 3,
-      },
-      800: {
-        slidesPerView: 2,
-        slidesPerColumn: 2,
-        slidesPerGroup: 2,
-      }
-    }
-  });
+  // let sw_port = new Swiper(".sw-portfolio", {
+  //   slidesPerView: 1,
+  //   slidesPerColumn: 1,
+  //   slidesPerColumnFill: 'row',
+  //   slidesPerGroup: 1,
+  //   spaceBetween: 30,
+  //   // watchOverflow : true,
+  //   pagination: {
+  //     el: ".sw-portfolio-pg",
+  //     clickable: true,
+  //   },
+  //   breakpoints: {
+  //     1200: {
+  //       slidesPerView: 3,
+  //       slidesPerColumn: 3,
+  //       slidesPerGroup: 9,
+  //     },
+  //     800: {
+  //       slidesPerView: 2,
+  //       slidesPerColumn: 2,
+  //       slidesPerGroup: 2,
+  //     }
+  //   }
+  // });
 
   // all portfolio
   let all_pf_close = $('.all-pf-close');
