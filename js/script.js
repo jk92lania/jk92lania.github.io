@@ -83,11 +83,37 @@ window.onload = function () {
     });
   });
 
-  // nav-more menu 
-  let nav_more = $('.nav-more');
-  nav_more.click(function(){
-    $(this).toggleClass('nav-more-close');
+  // m-menu 
+  let m_btn_list = $('.m-btn-list');
+  let m_menu_wrap = $('.m-menu-wrap');
+  let m_menu = $('.m-menu');
+  m_btn_list.click(function(){
+    $(this).toggleClass('menu-more-close');
+    m_menu_wrap.toggleClass('m-menu-active');    
   });
+  m_menu_wrap.click(function(){
+    m_btn_list.toggleClass('menu-more-close');
+    $(this).toggleClass('m-menu-active');  
+  });
+  m_menu.click(function(event){
+    event.stopPropagation();
+  });
+
+    // m-menu 누를시 스크롤 이동
+    let m_gnbLink = $('.m-gnb li a');
+    $.each(m_gnbLink, function(index, item) {
+      $(this).click(function(event){
+        event.preventDefault();
+        m_btn_list.toggleClass('menu-more-close');
+        m_menu_wrap.toggleClass('m-menu-active');           
+        $('html').animate({
+          scrollTop : gnbLinkPos[index]
+        }, 400);
+      });
+    });
+  
+
+
 
 
   // about slide
@@ -628,25 +654,21 @@ window.onload = function () {
 
   // skill slide
   let skill = new Swiper(".sw-skill", {
-    slidesPerView: 1,
+    slidesPerView: 2,
     slidesPerColumn: 1,
     spaceBetween: 0,
     watchOverflow : true,
     slidesPerColumnFill: 'row',
     breakpoints: {
-      800: {
+      1024: {
         slidesPerView: 4,
         slidesPerColumn: 2,
 
       },
-      640: {
+      768: {
         slidesPerView: 3,
         slidesPerColumn: 2,
       },
-      480 : {
-        slidesPerView: 2,
-        slidesPerColumn: 2,
-      }
     },
     pagination : {
       el : ".sw-skill-pg",
@@ -791,6 +813,18 @@ window.onload = function () {
       'info' : '수업을 들으며 제작 했습니다. vue를 배우며 제작하였습니다.'
     },
     {
+      'name': 'todo - php',
+      'imgurl': 'images/port_vue_003.png',
+      'imgurlbefore': 'images/port_vue_002.png',
+      'vue': 'vue',
+      'pc': 'PC',
+      'work': 'http://paragon.dothome.co.kr/list',
+      'git': 'https://github.com/jk92lania/todo-vue-php',
+      'study': '스터디용',
+      'day': '10',
+      'info' : '수업을 들으며 제작 했습니다. vue, php를 배우며 제작하였습니다.'
+    },
+    {
       'name': 'stx건설 - vue',
       'imgurl': 'images/port_stx_002.png',
       'imgurlbefore': 'images/port_stx_004.png',
@@ -896,8 +930,8 @@ window.onload = function () {
   }
   let sw_pf_wrapper = $('.sw-portfolio .swiper-wrapper');
   sw_pf_wrapper.html(sw_pf_html);
-
   slideAct();
+
   
   function slideAct(){
     let view = 0; //보이는 슬라이드 개수
@@ -915,84 +949,101 @@ window.onload = function () {
     let winW = window.innerWidth;
     $(window).on('load resize', function (){
         winW = window.innerWidth;
-        if(winWChk != 'mo' && winW <= 768){ //모바일 버전으로 전환할 때
+        if(winWChk != 'mo' && winW <= 480){ //모바일 버전으로 전환할 때
             slideList();
             winWChk = 'mo';
-        }
-        if(winWChk != 'pc' && winW >= 769){ //PC 버전으로 전환할 때
+        } else if(winWChk != 'pad' && winW <= 1200 && winW > 480){ //패드 버전으로 전환할 때
+            slideList();
+            winWChk = 'pad';
+        }else if(winWChk != 'pc' && winW > 1200){ //PC 버전으로 전환할 때
             slideList();
             winWChk = 'pc';
         }
     }) 
 
-    slideList();
-    function slideList(){
-        //리스트 초기화
-        if ($('.sw-portfolio .list').parent().hasClass('swiper-slide')){
-            $('.sw-portfolio .swiper-slide-duplicate').remove();
-            $('.sw-portfolio .list').unwrap('swiper-slide');
-        }
-        
-        //보이는 슬라이드 개수 설정
-        $(".sw-portfolio").each(function(index){
-          console.log("port : " + index);
-            if (window.innerWidth > 1024){ //PC 버전
-                view = 6;
-            }else if(window.innerWidth > 768){ //pad 버전
-                view = 4;
-            }else{ //mobile 버전
-                view = 2;
-            }
+      slideList();
+      function slideList(){
+          //리스트 초기화
+          $('.sw-portfolio .list').removeClass('portfolio-list-1');
+          $('.sw-portfolio .list').removeClass('portfolio-list-2');
+          if ($('.sw-portfolio .list').parent().hasClass('swiper-slide')){
+            console.log('e');
+              $('.sw-portfolio .swiper-slide-duplicate').remove();
+              $('.sw-portfolio .list').unwrap('.swiper-slide');
+          }
+          
+          //보이는 슬라이드 개수 설정
+          $(".sw-portfolio").each(function(index){
+            console.log("port : " + index);
+              if (window.innerWidth > 1200){ //PC 버전
+                  view = 9;
+              }else if(window.innerWidth > 480){ //pad 버전
+                  view = 4;
+              }else{ //mobile 버전
+                  view = 1;
+              }
+              
+              if(view == 4) {
+                $('.sw-portfolio .list').addClass('portfolio-list-2');
+              } else if(view == 1) {
+                $('.sw-portfolio .list').addClass('portfolio-list-1');
 
-            //리스트 그룹 생성 (swiper-slide element 추가)
-            var num = 0;
-            $(this).addClass("sw-portfolio-" + index);
-            $(".sw-portfolio-" + index).find('.list').each(function(i) {
-                $(this).addClass("list"+(Math.floor((i+view)/view)));
-                num = Math.floor((i+view)/view);
-            }).promise().done(function(){
-                for (var i = 1; i < num+1; i++) {
-                    $(".sw-portfolio-" + index).find('.list'+i+'').wrapAll('<div class="swiper-slide"></div>');
-                    $(".sw-portfolio-" + index).find('.list'+i+'').removeClass('list'+i+'');
-                }
-            });
-        }).promise().done(function(){
-            sliderStart();
-        });
-    }
-    
-    function sliderStart(){
-        $(".sw-portfolio").each(function(index){
-            //슬라이드 초기화
-            if(swiperArr[index] != undefined) {
-                swiperArr[index].destroy();
-                swiperArr[index] == undefined;
-            }
+              }
 
-            //슬라이드 실행
-            swiperArr[index] = new Swiper('.sw-portfolio-' + index + ' .inner', {
-                slidesPerView: 1,
-                initialSlide :Math.floor(realInx[index]/view),
-                resistanceRatio : 0,
-                loop:true,
-                navigation: {
-                    nextEl: $('.sw-portfolio-' + index).find('.sw-portfolio-next'),
-                    prevEl: $('.sw-portfolio-' + index).find('.sw-portfolio-prev'),
-                },
-                on: {
-                    slideChange: function () {
-                        realInx[index] = this.realIndex*view
-                    }
-                },
-            });
+              //리스트 그룹 생성 (swiper-slide element 추가)
+              var num = 0;
+              $(this).addClass("sw-portfolio-" + index);
+              $(".sw-portfolio-" + index).find('.list').each(function(i) {
+                  $(this).addClass("list"+(Math.floor((i+view)/view)));
+                  num = Math.floor((i+view)/view);
+              }).promise().done(function(){
+                  for (var i = 1; i < num+1; i++) {
+                      $(".sw-portfolio-" + index).find('.list'+i+'').wrapAll('<div class="swiper-slide"></div>');
+                      $(".sw-portfolio-" + index).find('.list'+i+'').removeClass('list'+i+'');
+                  }
+              });
+          }).promise().done(function(){
+              sliderStart();
+          });
+      }
+      
+      function sliderStart(){
+          $(".sw-portfolio").each(function(index){
+              //슬라이드 초기화
+              if(swiperArr[index] != undefined) {
+                  swiperArr[index].destroy();
+                  swiperArr[index] == undefined;
+              }
 
-            //슬라이드 배열 값 추가
-            if(swiperArr[index] == undefined) {
-                swiperArr[index] = swiper;
-            }
-        }); 
-    }
-}
+              //슬라이드 실행
+              swiperArr[index] = new Swiper('.sw-portfolio-' + index + ' .inner', {
+                  slidesPerView: 1,
+                  initialSlide :Math.floor(realInx[index]/view),
+                  resistanceRatio : 0,
+                  loop:true,
+                  // navigation: {
+                  //     nextEl: $('.sw-portfolio-' + index).find('.sw-portfolio-next'),
+                  //     prevEl: $('.sw-portfolio-' + index).find('.sw-portfolio-prev'),
+                  // },
+                  pagination: {
+                    el: ".sw-portfolio-pg",
+                    clickable: true,
+                  },
+                  on: {
+                      slideChange: function () {
+                          realInx[index] = this.realIndex*view
+                          console.log(realInx);
+                      }
+                  },
+              });
+
+              //슬라이드 배열 값 추가
+              if(swiperArr[index] == undefined) {
+                  swiperArr[index] = swiper;
+              }
+          }); 
+      }
+  }
 
 
   // portfolio slide
