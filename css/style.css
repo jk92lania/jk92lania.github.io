@@ -574,6 +574,14 @@ body {
         display: none;
     }
 }
+@media all and (max-width:480px) {
+    .header {
+        position: absolute;
+    }
+    .m-btn-list {
+        position: absolute;
+    }
+}
 
 /* //상단 */
 
@@ -718,6 +726,7 @@ body {
 @media all and (max-width:480px) {
     .visual .container {
         padding: 5.2vw 0;
+        height: calc(100vh - 80px);
     }
     .title-first {
         font-size: 10vw;
@@ -765,25 +774,34 @@ body {
 
 .about-face {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 80%;
-    height: 80%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
+    font-size: 0;
+    padding-bottom: 80%;
+    margin: 0 auto;
 }
 
-.about-face img {
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+.face-1 {
+    background: url('../images/about_005.jpg') no-repeat center;
+    background-size: cover;
+}
+.face-2 {
+    background: url('../images/about_002.jpg') no-repeat center;
+    background-size: cover;
+}
+.face-3 {
+    background: url('../images/about_003.jpg') no-repeat center;
+    background-size: cover;
+}
+.face-4 {
+    background: url('../images/about_008.png') no-repeat center;
+    background-size: cover;
 }
 
 .swiper-slide-active .about-face {
     text-align: right;
     width: 90%;
-    height: 90%;
+    padding-bottom: 90%;
     
 }
 
@@ -793,7 +811,7 @@ body {
     margin-left: -3vw;
     text-align: left;
     width: 116%;
-    height: 116%;
+    padding-bottom: 116%;
     z-index: -1;
 }
 
@@ -888,7 +906,8 @@ body {
         width: calc(100% - 4vw);
     }
     .swiper-slide-active .about-face {
-        width: 86%;        
+        width: 86%;
+        padding-bottom: 86%;        
     }
     .swiper-slide-active .about-info {
         width: 86%;        
@@ -896,6 +915,7 @@ body {
     .swiper-slide-next .about-face {
         margin-left: -8vw;
         width: 110%;
+        padding-bottom: 110%;        
     }
     .swiper-slide-next .about-info{
         margin-left: -8vw;
@@ -1762,10 +1782,6 @@ body {
 .sw-life .swiper-slide-next +.swiper-slide +.swiper-slide +.swiper-slide .life-box{
     margin-top: 50px;
     /* top: 40%; */
-}
-
-.sw-life .swiper-slide-next +.swiper-slide +.swiper-slide +.swiper-slide .life-box:hover{
-    
 }
 
 
