@@ -869,11 +869,6 @@ body {
     margin-left: -3vw;
 }
 
-.swiper-slide-next .about-info {
-    /* width: 116%; */
-}
-
-
 .swiper-slide-next+.swiper-slide .about-info {
 }
 
