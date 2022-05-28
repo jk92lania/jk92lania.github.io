@@ -1732,6 +1732,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-bottom: 80px;
 }
 
 .sw-life-small-6 {
