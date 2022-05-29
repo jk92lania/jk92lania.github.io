@@ -708,7 +708,7 @@ window.onload = function () {
       'origin': 'https://sydeliciousshop.com/',
       'study': '개인',
       'day': '6',
-      'info' : '100% 개인 작업하였습니다. swiper 동작시 이벤트를 추가 하는 방법에 대해 공부하였습니다.'
+      'info' : '100% 개인 작업하였습니다. swiper 동작시 이벤트를 추가 하는 방법에 대해 공부 하였습니다.'
     },
     {
       'name': '포트폴리오',
@@ -722,7 +722,7 @@ window.onload = function () {
       'git': 'https://github.com/jk92lania/portfolio',
       'study': '개인',
       'day': '20',
-      'info' : '100% 개인 작업하였습니다. 배운 것을 토대로 제작하였습니다. billboard.js 등을 추가 했습니다.'
+      'info' : '스터디한 클론 코드 작업을 모아 포트폴리오로 제작하였습니다. billboard.js 등을 추가 했습니다.'
     },
     {
       'name': '생명보험협회',

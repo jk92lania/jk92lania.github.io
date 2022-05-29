@@ -766,7 +766,7 @@ body {
 .about-face {
     position: relative;
     display: inline-block;
-    width: 80%;
+    width: 94%;
     height: 80%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
@@ -789,8 +789,8 @@ body {
 
 
 .swiper-slide-next .about-face {
-    margin-top: 4vw;
-    margin-left: -3vw;
+    margin-top: 6vw;
+    margin-left: -2vw;
     text-align: left;
     width: 116%;
     height: 116%;
@@ -848,7 +848,7 @@ body {
 
 
 .swiper-slide-next .about-info {
-    margin-left: -3vw;
+    margin-left: -2vw;
 }
 
 .swiper-slide-next .about-info {
@@ -985,6 +985,14 @@ body {
     padding-top: 300px;
 }
 
+.mbti-wrap-info h4 {
+    position: relative;
+    display: block;
+    color: #4D7080;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 16px;
+}
 
 .sw-mbti {
     width: 600px;
